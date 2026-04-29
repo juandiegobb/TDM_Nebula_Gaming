@@ -13,5 +13,10 @@
     "id": 3,
     "name": "General Gaming",
     "description": "Canal general para hablar de videojuegos y comunidad."
+  },
+  {
+    "id": 4,
+    "name": "voleyy",
+    "description": ""
   }
 ]

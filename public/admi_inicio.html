@@ -8,6 +8,74 @@
     <link rel="stylesheet" href="./css/admi_inicio.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
+<!-- MODAL CREAR SERVIDOR -->
+<div class="modal-overlay" id="crearServidorModal">
+    <div class="modal">
+
+        <!-- PASO 1 -->
+        <div class="modal-step" id="paso1">
+            <button class="modal-close" id="closeModal">✕</button>
+            <h2 class="modal-title">Crear Servidor</h2>
+            <p class="modal-subtitle">Tu servidor es donde tú y tus amigos se reúnen. Crea el tuyo y empieza a hablar</p>
+
+            <div class="modal-body">
+                <div class="image-upload" id="imageUpload">
+                    <button class="img-remove" id="imgRemove">✕</button>
+                    <span class="img-plus">+</span>
+                    <div class="img-circle"></div>
+                    <input type="file" id="imgInput" accept="image/*" hidden>
+                </div>
+
+                <div class="modal-fields">
+                    <label>NOMBRE DEL SERVIDOR</label>
+                    <div class="input-count">
+                        <input type="text" id="serverName" maxlength="100" placeholder="Ingresa un nombre">
+                        <span id="nameCount">0/100</span>
+                    </div>
+
+                    <label>DESCRIPCION (OPCIONAL)</label>
+                    <div class="input-count">
+                        <textarea id="serverDesc" maxlength="500" placeholder="¿De qué trata tu servidor?"></textarea>
+                        <span id="descCount">0/500</span>
+                    </div>
+
+                    <label>AÑADIR MIEMBROS</label>
+                    <button class="add-members-btn" id="goToMembers">
+                        <i class="fa-solid fa-user-plus fa-2x"></i>
+                    </button>
+                </div>
+            </div>
+
+            <button class="create-btn" id="irPaso2">CREAR SERVIDOR</button>
+        </div>
+
+        <!-- PASO 2 -->
+        <div class="modal-step hidden" id="paso2">
+            <button class="modal-close" id="closeModal2">✕</button>
+            <h2 class="modal-title">Crear Servidor</h2>
+            <p class="modal-subtitle">Tu servidor es donde tú y tus amigos se reúnen. Crea el tuyo y empieza a hablar</p>
+
+            <div class="steps-indicator">
+                <div class="step-circle active">1</div>
+                <div class="step-line"></div>
+                <div class="step-circle active">2</div>
+            </div>
+
+            <div class="rules-box">
+                <h3>REGLAS SUGERIDAS</h3>
+                <ul id="rulesList">
+                    <li><span class="rule-dot">●</span> <span class="rule-text">Sé respetuoso con todos</span> <button class="rule-remove" data-index="0">✕</button></li>
+                    <li><span class="rule-dot">●</span> <span class="rule-text">Sé respetuoso con todos</span> <button class="rule-remove" data-index="1">✕</button></li>
+                    <li><span class="rule-dot">●</span> <span class="rule-text">Sé respetuoso con todos</span> <button class="rule-remove" data-index="2">✕</button></li>
+                </ul>
+                <button class="add-rule-btn" id="addRuleBtn"><i class="fa-solid fa-circle-plus"></i> AGREGAR REGLA</button>
+            </div>
+
+            <button class="create-btn" id="crearServidorBtn">CREAR SERVIDOR</button>
+        </div>
+
+    </div>
+</div>
 <body>
 
     <aside class="sidebar" id="channelDots">

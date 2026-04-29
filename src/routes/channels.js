@@ -1,5 +1,5 @@
 const { getUsers } = require("../models/users");
-const { getChannels } = require("../models/channels");
+const { getChannels, saveChannels } = require("../models/channels");
 
 function safeUser(user) {
     return {
@@ -16,13 +16,12 @@ function safeUser(user) {
 function getLoggedUser(req) {
     if (req.isAuthenticated && req.isAuthenticated()) return req.user;
     if (req.session?.appUser) return req.session.appUser;
-    
-    // Leer desde localStorage enviado como header
+
     try {
         const userHeader = req.headers["x-user"];
         if (userHeader) return JSON.parse(decodeURIComponent(userHeader));
     } catch {}
-    
+
     return null;
 }
 
@@ -57,11 +56,6 @@ function buildChannelsWithUsers() {
 function handleChannelsRoutes(req, res) {
     if (!req.url.startsWith("/api/channels")) return false;
 
-    if (req.method !== "GET") {
-        sendJson(res, 405, { error: "Método no permitido" });
-        return true;
-    }
-
     if (!isAdmin(req)) {
         sendJson(res, 403, { error: "Solo un administrador puede ver los canales y sus usuarios." });
         return true;
@@ -70,22 +64,39 @@ function handleChannelsRoutes(req, res) {
     const parts = req.url.split("?")[0].split("/").filter(Boolean);
 
     // GET /api/channels
-    if (parts.length === 2) {
+    if (req.method === "GET" && parts.length === 2) {
         sendJson(res, 200, buildChannelsWithUsers());
         return true;
     }
 
     // GET /api/channels/:id/users
-    if (parts.length === 4 && parts[3] === "users") {
+    if (req.method === "GET" && parts.length === 4 && parts[3] === "users") {
         const channelId = Number(parts[2]);
         const channel = buildChannelsWithUsers().find(item => Number(item.id) === channelId);
-
-        if (!channel) {
-            sendJson(res, 404, { error: "Canal no encontrado" });
-            return true;
-        }
-
+        if (!channel) { sendJson(res, 404, { error: "Canal no encontrado" }); return true; }
         sendJson(res, 200, channel.users);
+        return true;
+    }
+
+    // POST /api/channels
+    if (req.method === "POST" && parts.length === 2) {
+        let body = "";
+        req.on("data", chunk => (body += chunk));
+        req.on("end", () => {
+            try {
+                const { name, description } = JSON.parse(body);
+                if (!name) { sendJson(res, 400, { error: "El nombre es obligatorio" }); return; }
+                const channels = getChannels();
+                const newChannel = {
+                    id: channels.length ? Math.max(...channels.map(c => Number(c.id))) + 1 : 1,
+                    name,
+                    description: description || ""
+                };
+                channels.push(newChannel);
+                saveChannels(channels);
+                sendJson(res, 201, newChannel);
+            } catch { sendJson(res, 400, { error: "JSON inválido" }); }
+        });
         return true;
     }
 

@@ -185,6 +185,122 @@ async function initAdmin() {
         localStorage.removeItem("user");
         window.location.href = "/login.html";
     });
+    // ─── MODAL CREAR SERVIDOR ─────────────────────────
+const modal = document.getElementById("crearServidorModal");
+const paso1 = document.getElementById("paso1");
+const paso2 = document.getElementById("paso2");
+
+// Abrir modal desde el botón + del sidebar
+document.querySelector(".add").addEventListener("click", () => {
+    modal.classList.add("open");
+});
+
+// Cerrar modal
+document.getElementById("closeModal").addEventListener("click", () => {
+    modal.classList.remove("open");
+    paso1.classList.remove("hidden");
+    paso2.classList.add("hidden");
+});
+document.getElementById("closeModal2").addEventListener("click", () => {
+    modal.classList.remove("open");
+    paso1.classList.remove("hidden");
+    paso2.classList.add("hidden");
+});
+
+// Cerrar al hacer clic fuera
+modal.addEventListener("click", (e) => {
+    if (e.target === modal) {
+        modal.classList.remove("open");
+        paso1.classList.remove("hidden");
+        paso2.classList.add("hidden");
+    }
+});
+
+// Contadores de caracteres
+document.getElementById("serverName").addEventListener("input", function () {
+    document.getElementById("nameCount").textContent = `${this.value.length}/100`;
+});
+document.getElementById("serverDesc").addEventListener("input", function () {
+    document.getElementById("descCount").textContent = `${this.value.length}/500`;
+});
+
+// Upload imagen
+document.getElementById("imageUpload").addEventListener("click", () => {
+    document.getElementById("imgInput").click();
+});
+document.getElementById("imgInput").addEventListener("change", function () {
+    if (this.files[0]) {
+        const url = URL.createObjectURL(this.files[0]);
+        let preview = document.querySelector(".img-preview");
+        if (!preview) {
+            preview = document.createElement("img");
+            preview.className = "img-preview";
+            document.getElementById("imageUpload").appendChild(preview);
+        }
+        preview.src = url;
+    }
+});
+
+// Ir a añadir miembros
+document.getElementById("goToMembers").addEventListener("click", (e) => {
+    e.stopPropagation();
+    window.location.href = "/anadir_miembros.html";
+});
+
+// Ir al paso 2
+document.getElementById("irPaso2").addEventListener("click", async () => {
+    const name = document.getElementById("serverName").value.trim();
+    if (!name) {
+        alert("El nombre del servidor es obligatorio.");
+        return;
+    }
+    paso1.classList.add("hidden");
+    paso2.classList.remove("hidden");
+});
+
+// Quitar regla
+document.getElementById("rulesList").addEventListener("click", (e) => {
+    if (e.target.classList.contains("rule-remove")) {
+        e.target.closest("li").remove();
+    }
+});
+
+// Agregar regla
+document.getElementById("addRuleBtn").addEventListener("click", () => {
+    const text = prompt("Escribe la nueva regla:");
+    if (!text) return;
+    const li = document.createElement("li");
+    li.innerHTML = `<span class="rule-dot">●</span> <span class="rule-text">${text.toUpperCase()}</span> <button class="rule-remove">✕</button>`;
+    document.getElementById("rulesList").appendChild(li);
+});
+
+// Crear servidor (guardar en channels.json)
+document.getElementById("crearServidorBtn").addEventListener("click", async () => {
+    const name = document.getElementById("serverName").value.trim();
+    const desc = document.getElementById("serverDesc").value.trim();
+
+    try {
+        const res = await fetch("/api/channels", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                "x-user": encodeURIComponent(localStorage.getItem("user"))
+            },
+            body: JSON.stringify({ name, description: desc })
+        });
+
+        if (!res.ok) throw new Error("Error al crear el servidor");
+
+        modal.classList.remove("open");
+        paso1.classList.remove("hidden");
+        paso2.classList.add("hidden");
+        document.getElementById("serverName").value = "";
+        document.getElementById("serverDesc").value = "";
+        await loadChannels();
+    } catch (e) {
+        alert("Error: " + e.message);
+    }
+});
 }
 
 initAdmin().catch(error => {
