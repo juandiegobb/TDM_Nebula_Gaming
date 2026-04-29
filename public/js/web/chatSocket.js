@@ -12,9 +12,11 @@ import {
 let socket;
 let currentUser;
 let currentChannelId = null;
+let autoJoinChannelId = null;
 
-export function connect(user) {
+export function connect(user, selectedChannelId = null) {
     currentUser = user;
+    autoJoinChannelId = selectedChannelId;
     const wsUrl = location.hostname === "localhost" ? "ws://localhost:3000" : `wss://${location.host}`;
 
     socket = new WebSocket(wsUrl);
@@ -32,6 +34,10 @@ export function connect(user) {
         switch (data.type) {
             case "channels":
                 renderChannels(data.channels, joinChannel);
+                if (autoJoinChannelId) {
+                    joinChannel(autoJoinChannelId);
+                    autoJoinChannelId = null;
+                }
                 break;
 
             case "channel_joined":

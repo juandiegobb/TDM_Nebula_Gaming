@@ -68,7 +68,10 @@ function renderSidebarDots() {
         dot.title = channel.name;
         dot.textContent = String(channel.name || "#").trim().charAt(0).toUpperCase();
         dot.dataset.channelId = channel.id;
-        dot.addEventListener("click", () => selectChannel(channel.id));
+        dot.addEventListener("click", () => {
+            localStorage.setItem("selectedChannelId", channel.id);
+            window.location.href = "/chat.html";
+        });
         channelDots.insertBefore(dot, channelDots.querySelector(".add"));
     });
 }
