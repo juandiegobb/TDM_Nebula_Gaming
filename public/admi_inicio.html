@@ -19,11 +19,17 @@
             <p class="modal-subtitle">Tu servidor es donde tú y tus amigos se reúnen. Crea el tuyo y empieza a hablar</p>
 
             <div class="modal-body">
-                <div class="image-upload" id="imageUpload">
-                    <button class="img-remove" id="imgRemove">✕</button>
-                    <span class="img-plus">+</span>
-                    <div class="img-circle"></div>
-                    <input type="file" id="imgInput" accept="image/*" hidden>
+                <div class="image-upload-section">
+                    <div class="image-upload" id="imageUpload">
+                        <button class="img-remove" id="imgRemove">✕</button>
+                        <span class="img-plus">+</span>
+                        <div class="img-circle"></div>
+                        <input type="file" id="imgInput" accept="image/*" hidden>
+                    </div>
+                    <div class="image-url-input">
+                        <label>O INGRESA UNA URL</label>
+                        <input type="text" id="serverImgUrl" placeholder="https://ejemplo.com/imagen.jpg">
+                    </div>
                 </div>
 
                 <div class="modal-fields">
@@ -120,10 +126,16 @@
                             <h3>CANALES DE CHAT</h3>
                             <p>Canales registrados en <strong>channels.json</strong></p>
                         </div>
-                        <button id="refreshBtn">
-                            <i class="fa-solid fa-rotate-right"></i>
-                            ACTUALIZAR
-                        </button>
+                        <div class="header-buttons">
+                            <button id="createChannelBtn">
+                                <i class="fa-solid fa-plus"></i>
+                                CREAR CANAL
+                            </button>
+                            <button id="refreshBtn">
+                                <i class="fa-solid fa-rotate-right"></i>
+                                ACTUALIZAR
+                            </button>
+                        </div>
                     </div>
 
                     <div class="channels-grid" id="channelsGrid">

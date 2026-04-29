@@ -84,7 +84,12 @@ function renderChannels() {
 
     channelsGrid.innerHTML = channels.map(channel => `
         <button class="channel-card ${Number(channel.id) === Number(selectedChannelId) ? "active" : ""}" data-channel-id="${escapeHTML(channel.id)}">
-            <div class="channel-icon"><i class="fa-solid fa-hashtag"></i></div>
+            <div class="channel-icon">
+                ${channel.img ? 
+                    `<img src="${escapeHTML(channel.img)}" alt="${escapeHTML(channel.name)}" class="channel-img">` : 
+                    `<span class="channel-letter">${escapeHTML(String(channel.name || "#").trim().charAt(0).toUpperCase())}</span>`
+                }
+            </div>
             <div class="channel-info">
                 <strong>${escapeHTML(channel.name)}</strong>
                 <span>${escapeHTML(channel.description || "Canal de chat")}</span>
@@ -174,6 +179,11 @@ async function initAdmin() {
 
     refreshBtn.addEventListener("click", loadChannels);
 
+    // Botón para crear canal
+    document.getElementById("createChannelBtn").addEventListener("click", () => {
+        document.getElementById("crearServidorModal").classList.add("open");
+    });
+
     goChatBtn.addEventListener("click", () => {
         window.location.href = "/chat.html";
     });
@@ -190,6 +200,19 @@ const modal = document.getElementById("crearServidorModal");
 const paso1 = document.getElementById("paso1");
 const paso2 = document.getElementById("paso2");
 
+// Función para limpiar el modal
+function resetModal() {
+    paso1.classList.remove("hidden");
+    paso2.classList.add("hidden");
+    document.getElementById("serverName").value = "";
+    document.getElementById("serverDesc").value = "";
+    document.getElementById("serverImgUrl").value = "";
+    document.getElementById("nameCount").textContent = "0/100";
+    document.getElementById("descCount").textContent = "0/500";
+    const preview = document.querySelector(".img-preview");
+    if (preview) preview.remove();
+}
+
 // Abrir modal desde el botón + del sidebar
 document.querySelector(".add").addEventListener("click", () => {
     modal.classList.add("open");
@@ -198,21 +221,18 @@ document.querySelector(".add").addEventListener("click", () => {
 // Cerrar modal
 document.getElementById("closeModal").addEventListener("click", () => {
     modal.classList.remove("open");
-    paso1.classList.remove("hidden");
-    paso2.classList.add("hidden");
+    resetModal();
 });
 document.getElementById("closeModal2").addEventListener("click", () => {
     modal.classList.remove("open");
-    paso1.classList.remove("hidden");
-    paso2.classList.add("hidden");
+    resetModal();
 });
 
 // Cerrar al hacer clic fuera
 modal.addEventListener("click", (e) => {
     if (e.target === modal) {
         modal.classList.remove("open");
-        paso1.classList.remove("hidden");
-        paso2.classList.add("hidden");
+        resetModal();
     }
 });
 
@@ -224,7 +244,7 @@ document.getElementById("serverDesc").addEventListener("input", function () {
     document.getElementById("descCount").textContent = `${this.value.length}/500`;
 });
 
-// Upload imagen
+// Upload imagen desde archivo
 document.getElementById("imageUpload").addEventListener("click", () => {
     document.getElementById("imgInput").click();
 });
@@ -238,6 +258,21 @@ document.getElementById("imgInput").addEventListener("change", function () {
             document.getElementById("imageUpload").appendChild(preview);
         }
         preview.src = url;
+        document.getElementById("serverImgUrl").value = "";
+    }
+});
+
+// Ingresar URL de imagen
+document.getElementById("serverImgUrl").addEventListener("input", function () {
+    if (this.value.trim()) {
+        let preview = document.querySelector(".img-preview");
+        if (!preview) {
+            preview = document.createElement("img");
+            preview.className = "img-preview";
+            document.getElementById("imageUpload").appendChild(preview);
+        }
+        preview.src = this.value.trim();
+        document.getElementById("imgInput").value = "";
     }
 });
 
@@ -278,6 +313,9 @@ document.getElementById("addRuleBtn").addEventListener("click", () => {
 document.getElementById("crearServidorBtn").addEventListener("click", async () => {
     const name = document.getElementById("serverName").value.trim();
     const desc = document.getElementById("serverDesc").value.trim();
+    const imgUrl = document.getElementById("serverImgUrl").value.trim();
+    const imgPreview = document.querySelector(".img-preview");
+    const img = imgUrl || (imgPreview ? imgPreview.src : null);
 
     try {
         const res = await fetch("/api/channels", {
@@ -286,7 +324,7 @@ document.getElementById("crearServidorBtn").addEventListener("click", async () =
                 "Content-Type": "application/json",
                 "x-user": encodeURIComponent(localStorage.getItem("user"))
             },
-            body: JSON.stringify({ name, description: desc })
+            body: JSON.stringify({ name, description: desc, img })
         });
 
         if (!res.ok) throw new Error("Error al crear el servidor");
@@ -296,6 +334,9 @@ document.getElementById("crearServidorBtn").addEventListener("click", async () =
         paso2.classList.add("hidden");
         document.getElementById("serverName").value = "";
         document.getElementById("serverDesc").value = "";
+        document.getElementById("serverImgUrl").value = "";
+        const preview = document.querySelector(".img-preview");
+        if (preview) preview.remove();
         await loadChannels();
     } catch (e) {
         alert("Error: " + e.message);

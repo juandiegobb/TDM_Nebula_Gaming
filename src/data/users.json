@@ -17,7 +17,8 @@
     "img": "https://i.pravatar.cc/150?img=2",
     "grupos": [
       1,
-      2
+      2,
+      5
     ]
   },
   {
@@ -28,7 +29,10 @@
     "rol": "user",
     "img": "https://lh3.googleusercontent.com/a/ACg8ocLoXE5OI0or8EVG52imG6UXv5VCmEeIQRPKOoe-qnXbwTPFd3KL=s96-c",
     "grupos": [
-      2
+      2,
+      3,
+      1,
+      5
     ],
     "provider": "google"
   },
@@ -40,7 +44,8 @@
     "rol": "user",
     "img": "https://i.pravatar.cc/150?img=4",
     "grupos": [
-      2
+      2,
+      5
     ]
   },
   {
@@ -51,7 +56,9 @@
     "rol": "user",
     "img": "https://i.pravatar.cc/150?img=5",
     "grupos": [
-      2
+      2,
+      1,
+      5
     ]
   },
   {
@@ -61,7 +68,68 @@
     "email": "psbecerra@uniboyaca.edu.co",
     "rol": "user",
     "img": "https://lh3.googleusercontent.com/a/ACg8ocKleuJs-jI2d_kgoasgy7iia7eT_yHuyalH8wdhutjWUEYVPw=s96-c",
-    "grupos": [],
+    "grupos": [
+      3,
+      5
+    ],
     "provider": "google"
+  },
+  {
+    "id": 7,
+    "name": "Usuario6",
+    "password": "pass123",
+    "email": "user6@chat.com",
+    "rol": "user",
+    "img": "https://i.pravatar.cc/150?img=6",
+    "grupos": [
+      1,
+      2
+    ]
+  },
+  {
+    "id": 8,
+    "name": "Usuario7",
+    "password": "pass456",
+    "email": "user7@chat.com",
+    "rol": "user",
+    "img": "https://i.pravatar.cc/150?img=7",
+    "grupos": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": 9,
+    "name": "Usuario8",
+    "password": "pass789",
+    "email": "user8@chat.com",
+    "rol": "user",
+    "img": "https://i.pravatar.cc/150?img=8",
+    "grupos": [
+      1
+    ]
+  },
+  {
+    "id": 10,
+    "name": "Usuario9",
+    "password": "pass012",
+    "email": "user9@chat.com",
+    "rol": "user",
+    "img": "https://i.pravatar.cc/150?img=9",
+    "grupos": [
+      2
+    ]
+  },
+  {
+    "id": 11,
+    "name": "Usuario10",
+    "password": "pass345",
+    "email": "user10@chat.com",
+    "rol": "user",
+    "img": "https://i.pravatar.cc/150?img=10",
+    "grupos": [
+      1,
+      3
+    ]
   }
 ]
