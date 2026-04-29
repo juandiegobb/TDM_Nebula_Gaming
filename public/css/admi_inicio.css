@@ -210,6 +210,11 @@ body {
     margin-top: 5px;
 }
 
+.header-buttons {
+    display: flex;
+    gap: 10px;
+}
+
 .card-header button {
     background: linear-gradient(90deg, #6a00ff, #a100ff);
     border: none;
@@ -259,6 +264,22 @@ body {
     justify-content: center;
     align-items: center;
     flex-shrink: 0;
+    overflow: hidden;
+}
+
+.channel-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 15px;
+    display: block;
+}
+
+.channel-letter {
+    font-weight: bold;
+    font-size: 18px;
+    color: white;
+    text-transform: uppercase;
 }
 
 .channel-info {
@@ -442,6 +463,24 @@ body {
         width: 105px;
         height: 105px;
     }
+
+    .modal-body {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .image-upload-section {
+        width: 100%;
+        align-items: center;
+    }
+
+    .image-url-input {
+        width: 100%;
+    }
+
+    .image-url-input input {
+        width: 100%;
+    }
 }
 /* ─── MODAL ───────────────────────────────────────── */
 .modal-overlay {
@@ -502,6 +541,12 @@ body {
     gap: 24px;
 }
 
+.image-upload-section {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
 /* Imagen */
 .image-upload {
     position: relative;
@@ -520,6 +565,29 @@ body {
 
 .image-upload:hover {
     border-color: #39ff14;
+}
+
+.image-url-input {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.image-url-input label {
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    color: #cfcfcf;
+}
+
+.image-url-input input {
+    width: 160px;
+    background: #1f2222;
+    border: 1px solid #3a3a3a;
+    border-radius: 8px;
+    color: white;
+    padding: 8px 10px;
+    font-size: 12px;
 }
 
 .img-remove {

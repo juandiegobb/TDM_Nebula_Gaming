@@ -17,6 +17,16 @@
   {
     "id": 4,
     "name": "voleyy",
-    "description": ""
+    "description": "Descripcion del canal de voleyy"
+  },
+  {
+    "id": 5,
+    "name": "Canal de Valorant",
+    "description": "Para todos los jugadores profesionales de valorant"
+  },
+  {
+    "id": 6,
+    "name": "Fortnite Torneo",
+    "description": "jugadores pros de Fortnite"
   }
 ]
