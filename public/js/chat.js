@@ -1,0 +1,62 @@
+import { getCurrentUser } from "./services/api.js";
+import { connect, sendMessage } from "./web/chatSocket.js";
+import { showUserList, clearUser, redirectToLogin } from "./ui/chatUI.js";
+
+async function loadUser() {
+    const localUser = JSON.parse(localStorage.getItem("user"));
+    if (localUser) return localUser;
+
+    const data = await getCurrentUser();
+    if (!data.authenticated) return null;
+
+    localStorage.setItem("user", JSON.stringify(data.user));
+    return data.user;
+}
+
+async function initChat() {
+    const user = await loadUser();
+    if (!user) {
+        redirectToLogin();
+        return;
+    }
+
+    document.getElementById("chat-username").textContent = "Bienvenido " + user.name;
+
+    const chatForm = document.getElementById("chatForm");
+    const messageInput = document.getElementById("messageInput");
+    const logoutBtn = document.getElementById("logoutBtn");
+    const sidebar = document.getElementById("userSidebar");
+    const toggleBtn = document.getElementById("usersToggle");
+    const closeBtn = document.getElementById("closeSidebar");
+
+    connect(user);
+
+    chatForm.addEventListener("submit", function(e) {
+        e.preventDefault();
+        const text = messageInput.value.trim();
+
+        if (text) {
+            sendMessage(text);
+            messageInput.value = "";
+        }
+    });
+
+    logoutBtn.addEventListener("click", function() {
+        clearUser();
+        window.location.href = "/auth/logout";
+    });
+
+    toggleBtn.addEventListener("click", () => {
+        showUserList(sidebar, true);
+    });
+
+    closeBtn.addEventListener("click", () => {
+        showUserList(sidebar, false);
+    });
+}
+
+initChat().catch((err) => {
+    console.error("Error iniciando chat:", err);
+    clearUser();
+    redirectToLogin();
+});

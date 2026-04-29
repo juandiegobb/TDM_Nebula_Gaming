@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nebula Gaming | Admin</title>
+
+    <link rel="stylesheet" href="./css/admi_inicio.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+    <aside class="sidebar" id="channelDots">
+        <div class="sidebar-title">NG</div>
+        <div class="add" title="Crear canal próximamente">+</div>
+    </aside>
+
+    <div class="main">
+
+        <header class="topbar">
+            <div class="logo">
+                <div class="circle"></div>
+                <span>NEBULA GAMING S.A.S.</span>
+            </div>
+
+            <div class="topbar-actions">
+                <button class="ghost-btn" id="goChatBtn">
+                    <i class="fa-solid fa-comments"></i>
+                    Ir al chat
+                </button>
+                <button class="ghost-btn" id="goMembersBtn">
+                    <i class="fa-solid fa-user-plus"></i>
+                    Añadir Miembros
+                </button>
+                <button class="ghost-btn danger" id="logoutBtn">
+                    <i class="fa-solid fa-right-from-bracket"></i>
+                    Salir
+                </button>
+                <div class="profile-mini" id="miniProfile">
+                    <img id="miniProfileImg" alt="Admin">
+                    <div class="status"></div>
+                </div>
+            </div>
+        </header>
+
+        <div class="container">
+            <div class="left">
+
+                <div class="card">
+                    <div class="card-header">
+                        <div>
+                            <h3>CANALES DE CHAT</h3>
+                            <p>Canales registrados en <strong>channels.json</strong></p>
+                        </div>
+                        <button id="refreshBtn">
+                            <i class="fa-solid fa-rotate-right"></i>
+                            ACTUALIZAR
+                        </button>
+                    </div>
+
+                    <div class="channels-grid" id="channelsGrid">
+                        <div class="empty-state">Cargando canales...</div>
+                    </div>
+                </div>
+
+                <div class="card small">
+                    <div class="card-header clean">
+                        <div>
+                            <h3 id="selectedChannelTitle">USUARIOS DEL CANAL</h3>
+                            <p id="selectedChannelDescription">Selecciona un canal para ver sus usuarios.</p>
+                        </div>
+                    </div>
+
+                    <div class="users-grid" id="channelUsersGrid">
+                        <div class="empty-state">Sin canal seleccionado.</div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="right">
+                <div class="profile-big">
+                    <img id="profileImg" alt="Administrador">
+                </div>
+
+                <span class="role" id="adminRole">ADMIN</span>
+                <h2 id="adminName">Administrador</h2>
+                <p id="adminEmail">admin@chat.com</p>
+
+                <div class="stats">
+                    <div>
+                        <strong id="totalChannels">0</strong>
+                        <span>Canales</span>
+                    </div>
+                    <div>
+                        <strong id="totalUsers">0</strong>
+                        <span>Usuarios asignados</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script type="module" src="./js/admin_inicio.js"></script>
+</body>
+</html>

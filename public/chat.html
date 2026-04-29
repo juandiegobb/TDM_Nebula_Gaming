@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChatApp - Chat</title>
+    <link rel="stylesheet" href="./css/global.css"/>
+    <link rel="stylesheet" href="./css/chat.css"/>
+    <link rel="stylesheet" href="./css/sidebar.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+</head>
+<body>
+    <aside class="channel-sidebar">
+        <div class="channel-brand">
+            <i class="fa-solid fa-gamepad"></i>
+            <span>Nebula</span>
+        </div>
+        <h3>Canales</h3>
+        <ul id="channelList" class="channel-list">
+            <!-- canales dinámicos -->
+        </ul>
+    </aside>
+
+    <div class="chat-container">
+        <header class="chat-header">
+            <h2 id="chat-username">Bienvenido</h2>
+            <div class="header-actions">
+                <button id="usersToggle" class="icon-btn"><i class="fa-solid fa-users"></i></button>
+                <button id="logoutBtn" class="icon-btn"><i class="fa-solid fa-right-from-bracket"></i></button>
+            </div>
+        </header>
+
+        <main class="chat-main">
+            <div class="channel-title" id="currentChannelName">Cargando canales...</div>
+            <div id="messages" class="messages"></div>
+        </main>
+
+        <form id="chatForm" class="chat-input">
+            <input type="text" id="messageInput" placeholder="Escribe un mensaje..." autocomplete="off" required/>
+            <button type="submit" class="send-btn"><i class="fa-solid fa-paper-plane"></i></button>
+        </form>
+    </div>
+
+    <!-- Sidebar de usuarios -->
+    <aside id="userSidebar" class="user-sidebar">
+        <div class="sidebar-header">
+            <h3>Usuarios conectados</h3>
+            <button id="closeSidebar" class="icon-btn close-btn">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+        <ul id="userList">
+            <!-- usuarios dinámicos -->
+        </ul>
+    </aside>
+
+    <script type="module" src="./js/chat.js"></script>
+</body>
+</html>

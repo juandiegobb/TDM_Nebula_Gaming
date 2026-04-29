@@ -1,0 +1,67 @@
+[
+  {
+    "id": 1,
+    "name": "Admin",
+    "password": "1234",
+    "email": "admin@chat.com",
+    "rol": "admin",
+    "img": "https://i.pravatar.cc/150?img=1",
+    "grupos": []
+  },
+  {
+    "id": 2,
+    "name": "Usuario",
+    "password": "abcd",
+    "email": "user@chat.com",
+    "rol": "user",
+    "img": "https://i.pravatar.cc/150?img=2",
+    "grupos": [
+      1,
+      2
+    ]
+  },
+  {
+    "id": 3,
+    "name": "JUAN DIEGO CASTILLO JIMÉNEZ",
+    "password": "",
+    "email": "jdcastilloj@uniboyaca.edu.co",
+    "rol": "user",
+    "img": "https://lh3.googleusercontent.com/a/ACg8ocLoXE5OI0or8EVG52imG6UXv5VCmEeIQRPKOoe-qnXbwTPFd3KL=s96-c",
+    "grupos": [
+      2
+    ],
+    "provider": "google"
+  },
+  {
+    "id": 4,
+    "name": "Usuario4",
+    "password": "pass678",
+    "email": "user4@chat.com",
+    "rol": "user",
+    "img": "https://i.pravatar.cc/150?img=4",
+    "grupos": [
+      2
+    ]
+  },
+  {
+    "id": 5,
+    "name": "Usuario5",
+    "password": "pass910",
+    "email": "user5@chat.com",
+    "rol": "user",
+    "img": "https://i.pravatar.cc/150?img=5",
+    "grupos": [
+      2
+    ]
+  },
+  {
+    "id": 6,
+    "name": "PAULA SELENE BECERRA MORALES",
+    "password": "",
+    "email": "psbecerra@uniboyaca.edu.co",
+    "rol": "user",
+    "img": "https://lh3.googleusercontent.com/a/ACg8ocKleuJs-jI2d_kgoasgy7iia7eT_yHuyalH8wdhutjWUEYVPw=s96-c",
+    "grupos": [],
+    "provider": "google"
+  }
+]

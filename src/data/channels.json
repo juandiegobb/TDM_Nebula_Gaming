@@ -1,0 +1,17 @@
+[
+  {
+    "id": 1,
+    "name": "Torneo de FIFA",
+    "description": "Canal para organizar partidas, horarios y resultados del torneo de FIFA."
+  },
+  {
+    "id": 2,
+    "name": "Torneo de LOL",
+    "description": "Canal para equipos, partidas, brackets y coordinación del torneo de League of Legends."
+  },
+  {
+    "id": 3,
+    "name": "General Gaming",
+    "description": "Canal general para hablar de videojuegos y comunidad."
+  }
+]

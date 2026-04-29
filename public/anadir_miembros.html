@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nebula Gaming | Añadir Miembros</title>
+    <link rel="stylesheet" href="./css/anadir_miembros.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+    <aside class="sidebar" id="channelDots">
+        <div class="sidebar-title">NG</div>
+    </aside>
+
+    <div class="main">
+
+        <header class="topbar">
+            <div class="logo">
+                <div class="circle"></div>
+                <span>NEBULA GAMING S.A.S.</span>
+            </div>
+            <div class="topbar-actions">
+                <button class="ghost-btn" id="goAdminBtn">
+                    <i class="fa-solid fa-arrow-left"></i>
+                    Volver al panel
+                </button>
+                <button class="ghost-btn danger" id="logoutBtn">
+                    <i class="fa-solid fa-right-from-bracket"></i>
+                    Salir
+                </button>
+                <div class="profile-mini">
+                    <img id="miniProfileImg" alt="Admin">
+                    <div class="status"></div>
+                </div>
+            </div>
+        </header>
+
+        <div class="page-title-section">
+            <h1 class="page-title">AÑADIR MIEMBROS</h1>
+        </div>
+
+        <div class="container">
+            <div class="channels-columns" id="channelsColumns">
+                <div class="empty-state">Cargando canales...</div>
+            </div>
+        </div>
+
+        <div class="bottom-bar">
+            <button class="confirm-btn" id="confirmBtn">
+                <i class="fa-solid fa-user-plus"></i>
+                AÑADIR MIEMBROS
+            </button>
+        </div>
+
+    </div>
+
+    <script type="module" src="./js/anadir_miembros.js"></script>
+</body>
+</html>
