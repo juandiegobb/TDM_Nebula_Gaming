@@ -94,3 +94,36 @@ export async function removeMemberFromChannel(channelId, userId) {
     if (!res.ok) throw new Error("Error al quitar miembro");
     return res.json();
 }
+export async function getAvailableUsersForChannels() {
+    const user = localStorage.getItem("user");
+    const headers = {};
+    if (user) headers["x-user"] = encodeURIComponent(user);
+
+    const res = await fetch("/api/channels/available-users", { headers });
+
+    if (!res.ok) {
+        const error = await res.json().catch(() => ({ error: "No se pudieron cargar los usuarios" }));
+        throw new Error(error.error || "No se pudieron cargar los usuarios");
+    }
+
+    return res.json();
+}
+
+export async function createChannelWithMembers(data) {
+    const user = localStorage.getItem("user");
+    const headers = { "Content-Type": "application/json" };
+    if (user) headers["x-user"] = encodeURIComponent(user);
+
+    const res = await fetch("/api/channels", {
+        method: "POST",
+        headers,
+        body: JSON.stringify(data)
+    });
+
+    if (!res.ok) {
+        const error = await res.json().catch(() => ({ error: "Error al crear el canal" }));
+        throw new Error(error.error || "Error al crear el canal");
+    }
+
+    return res.json();
+}

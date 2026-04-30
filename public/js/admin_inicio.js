@@ -1,4 +1,9 @@
-import { getCurrentUser, getChannelsWithUsers } from "./services/api.js";
+import {
+    getCurrentUser,
+    getChannelsWithUsers,
+    getAvailableUsersForChannels,
+    createChannelWithMembers
+} from "./services/api.js";
 
 const channelsGrid = document.getElementById("channelsGrid");
 const channelUsersGrid = document.getElementById("channelUsersGrid");
@@ -17,6 +22,8 @@ const miniProfileImg = document.getElementById("miniProfileImg");
 
 let channels = [];
 let selectedChannelId = null;
+let availableUsers = [];
+let selectedMemberIds = new Set();
 
 function escapeHTML(value) {
     return String(value ?? "")
@@ -30,7 +37,7 @@ function escapeHTML(value) {
 function getLocalUser() {
     try {
         return JSON.parse(localStorage.getItem("user"));
-    } catch (error) {
+    } catch {
         return null;
     }
 }
@@ -85,8 +92,8 @@ function renderChannels() {
     channelsGrid.innerHTML = channels.map(channel => `
         <button class="channel-card ${Number(channel.id) === Number(selectedChannelId) ? "active" : ""}" data-channel-id="${escapeHTML(channel.id)}">
             <div class="channel-icon">
-                ${channel.img ? 
-                    `<img src="${escapeHTML(channel.img)}" alt="${escapeHTML(channel.name)}" class="channel-img">` : 
+                ${channel.img ?
+                    `<img src="${escapeHTML(channel.img)}" alt="${escapeHTML(channel.name)}" class="channel-img">` :
                     `<span class="channel-letter">${escapeHTML(String(channel.name || "#").trim().charAt(0).toUpperCase())}</span>`
                 }
             </div>
@@ -170,6 +177,119 @@ async function loadChannels() {
     updateStats();
 }
 
+function renderSelectedMembersPreview() {
+    const selectedMembersPreview = document.getElementById("selectedMembersPreview");
+    if (!selectedMembersPreview) return;
+
+    const selectedUsers = availableUsers.filter(user => selectedMemberIds.has(Number(user.id)));
+
+    if (!selectedUsers.length) {
+        selectedMembersPreview.innerHTML = `<span class="members-empty">Sin miembros seleccionados</span>`;
+        return;
+    }
+
+    selectedMembersPreview.innerHTML = selectedUsers.map(user => `
+        <span class="member-chip">
+            <img src="${escapeHTML(user.img || "https://i.pravatar.cc/150")}" alt="${escapeHTML(user.name)}">
+            ${escapeHTML(user.name)}
+            <button type="button" class="remove-selected-member" data-user-id="${escapeHTML(user.id)}">✕</button>
+        </span>
+    `).join("");
+
+    selectedMembersPreview.querySelectorAll(".remove-selected-member").forEach(button => {
+        button.addEventListener("click", () => {
+            selectedMemberIds.delete(Number(button.dataset.userId));
+            renderMembersPicker(document.getElementById("membersSearch")?.value || "");
+            renderSelectedMembersPreview();
+        });
+    });
+}
+
+function renderMembersPicker(search = "") {
+    const membersList = document.getElementById("membersList");
+    const membersCount = document.getElementById("membersCount");
+    if (!membersList) return;
+
+    const query = search.trim().toLowerCase();
+    const filteredUsers = availableUsers.filter(user => {
+        const name = String(user.name || "").toLowerCase();
+        const email = String(user.email || "").toLowerCase();
+        return name.includes(query) || email.includes(query);
+    });
+
+    if (membersCount) membersCount.textContent = `${selectedMemberIds.size} seleccionado(s)`;
+
+    if (!filteredUsers.length) {
+        membersList.innerHTML = `<div class="members-empty">No hay usuarios disponibles.</div>`;
+        return;
+    }
+
+    membersList.innerHTML = filteredUsers.map(user => {
+        const userId = Number(user.id);
+        const checked = selectedMemberIds.has(userId) ? "checked" : "";
+
+        return `
+            <label class="member-option">
+                <input type="checkbox" value="${escapeHTML(userId)}" ${checked}>
+                <img src="${escapeHTML(user.img || "https://i.pravatar.cc/150")}" alt="${escapeHTML(user.name)}">
+                <span>
+                    <strong>${escapeHTML(user.name)}</strong>
+                    <small>${escapeHTML(user.email || "Sin email")}</small>
+                </span>
+            </label>
+        `;
+    }).join("");
+
+    membersList.querySelectorAll('input[type="checkbox"]').forEach(input => {
+        input.addEventListener("change", () => {
+            const userId = Number(input.value);
+            if (input.checked) selectedMemberIds.add(userId);
+            else selectedMemberIds.delete(userId);
+            renderMembersPicker(document.getElementById("membersSearch")?.value || "");
+            renderSelectedMembersPreview();
+        });
+    });
+}
+
+async function openMembersPicker() {
+    const membersPanel = document.getElementById("membersPanel");
+    const membersList = document.getElementById("membersList");
+    const membersSearch = document.getElementById("membersSearch");
+
+    if (!membersPanel) return;
+
+    membersPanel.classList.remove("hidden");
+    if (membersList) membersList.innerHTML = `<div class="members-empty">Cargando usuarios...</div>`;
+
+    try {
+        availableUsers = await getAvailableUsersForChannels();
+        if (membersSearch) membersSearch.value = "";
+        renderMembersPicker();
+        renderSelectedMembersPreview();
+    } catch (error) {
+        if (membersList) membersList.innerHTML = `<div class="members-empty error">${escapeHTML(error.message)}</div>`;
+    }
+}
+
+function closeMembersPicker() {
+    document.getElementById("membersPanel")?.classList.add("hidden");
+}
+
+function resetModal() {
+    document.getElementById("paso1").classList.remove("hidden");
+    document.getElementById("paso2").classList.add("hidden");
+    document.getElementById("serverName").value = "";
+    document.getElementById("serverDesc").value = "";
+    document.getElementById("serverImgUrl").value = "";
+    document.getElementById("nameCount").textContent = "0/100";
+    document.getElementById("descCount").textContent = "0/500";
+    const preview = document.querySelector(".img-preview");
+    if (preview) preview.remove();
+    selectedMemberIds.clear();
+    closeMembersPicker();
+    renderSelectedMembersPreview();
+}
+
 async function initAdmin() {
     const admin = await loadAdminUser();
     if (!admin) return;
@@ -177,16 +297,17 @@ async function initAdmin() {
     renderAdminProfile(admin);
     await loadChannels();
 
+    const modal = document.getElementById("crearServidorModal");
+    const paso1 = document.getElementById("paso1");
+    const paso2 = document.getElementById("paso2");
+
     refreshBtn.addEventListener("click", loadChannels);
 
-    // Botón para crear canal
-    document.getElementById("createChannelBtn").addEventListener("click", () => {
-        document.getElementById("crearServidorModal").classList.add("open");
-    });
+    document.getElementById("createChannelBtn").addEventListener("click", () => modal.classList.add("open"));
+    document.querySelector(".add").addEventListener("click", () => modal.classList.add("open"));
 
-    goChatBtn.addEventListener("click", () => {
-        window.location.href = "/chat.html";
-    });
+    goChatBtn.addEventListener("click", () => window.location.href = "/chat.html");
+
     document.getElementById("goMembersBtn").addEventListener("click", () => {
         window.location.href = "/anadir_miembros.html";
     });
@@ -195,61 +316,39 @@ async function initAdmin() {
         localStorage.removeItem("user");
         window.location.href = "/login.html";
     });
-    // ─── MODAL CREAR SERVIDOR ─────────────────────────
-const modal = document.getElementById("crearServidorModal");
-const paso1 = document.getElementById("paso1");
-const paso2 = document.getElementById("paso2");
 
-// Función para limpiar el modal
-function resetModal() {
-    paso1.classList.remove("hidden");
-    paso2.classList.add("hidden");
-    document.getElementById("serverName").value = "";
-    document.getElementById("serverDesc").value = "";
-    document.getElementById("serverImgUrl").value = "";
-    document.getElementById("nameCount").textContent = "0/100";
-    document.getElementById("descCount").textContent = "0/500";
-    const preview = document.querySelector(".img-preview");
-    if (preview) preview.remove();
-}
-
-// Abrir modal desde el botón + del sidebar
-document.querySelector(".add").addEventListener("click", () => {
-    modal.classList.add("open");
-});
-
-// Cerrar modal
-document.getElementById("closeModal").addEventListener("click", () => {
-    modal.classList.remove("open");
-    resetModal();
-});
-document.getElementById("closeModal2").addEventListener("click", () => {
-    modal.classList.remove("open");
-    resetModal();
-});
-
-// Cerrar al hacer clic fuera
-modal.addEventListener("click", (e) => {
-    if (e.target === modal) {
+    document.getElementById("closeModal").addEventListener("click", () => {
         modal.classList.remove("open");
         resetModal();
-    }
-});
+    });
 
-// Contadores de caracteres
-document.getElementById("serverName").addEventListener("input", function () {
-    document.getElementById("nameCount").textContent = `${this.value.length}/100`;
-});
-document.getElementById("serverDesc").addEventListener("input", function () {
-    document.getElementById("descCount").textContent = `${this.value.length}/500`;
-});
+    document.getElementById("closeModal2").addEventListener("click", () => {
+        modal.classList.remove("open");
+        resetModal();
+    });
 
-// Upload imagen desde archivo
-document.getElementById("imageUpload").addEventListener("click", () => {
-    document.getElementById("imgInput").click();
-});
-document.getElementById("imgInput").addEventListener("change", function () {
-    if (this.files[0]) {
+    modal.addEventListener("click", (event) => {
+        if (event.target === modal) {
+            modal.classList.remove("open");
+            resetModal();
+        }
+    });
+
+    document.getElementById("serverName").addEventListener("input", function () {
+        document.getElementById("nameCount").textContent = `${this.value.length}/100`;
+    });
+
+    document.getElementById("serverDesc").addEventListener("input", function () {
+        document.getElementById("descCount").textContent = `${this.value.length}/500`;
+    });
+
+    document.getElementById("imageUpload").addEventListener("click", () => {
+        document.getElementById("imgInput").click();
+    });
+
+    document.getElementById("imgInput").addEventListener("change", function () {
+        if (!this.files[0]) return;
+
         const url = URL.createObjectURL(this.files[0]);
         let preview = document.querySelector(".img-preview");
         if (!preview) {
@@ -259,12 +358,11 @@ document.getElementById("imgInput").addEventListener("change", function () {
         }
         preview.src = url;
         document.getElementById("serverImgUrl").value = "";
-    }
-});
+    });
 
-// Ingresar URL de imagen
-document.getElementById("serverImgUrl").addEventListener("input", function () {
-    if (this.value.trim()) {
+    document.getElementById("serverImgUrl").addEventListener("input", function () {
+        if (!this.value.trim()) return;
+
         let preview = document.querySelector(".img-preview");
         if (!preview) {
             preview = document.createElement("img");
@@ -273,75 +371,66 @@ document.getElementById("serverImgUrl").addEventListener("input", function () {
         }
         preview.src = this.value.trim();
         document.getElementById("imgInput").value = "";
-    }
-});
+    });
 
-// Ir a añadir miembros
-document.getElementById("goToMembers").addEventListener("click", (e) => {
-    e.stopPropagation();
-    window.location.href = "/anadir_miembros.html";
-});
+    document.getElementById("goToMembers").addEventListener("click", async (event) => {
+        event.preventDefault();
+        event.stopPropagation();
+        await openMembersPicker();
+    });
 
-// Ir al paso 2
-document.getElementById("irPaso2").addEventListener("click", async () => {
-    const name = document.getElementById("serverName").value.trim();
-    if (!name) {
-        alert("El nombre del servidor es obligatorio.");
-        return;
-    }
-    paso1.classList.add("hidden");
-    paso2.classList.remove("hidden");
-});
+    document.getElementById("closeMembersPanel")?.addEventListener("click", closeMembersPicker);
+    document.getElementById("confirmMembersBtn")?.addEventListener("click", closeMembersPicker);
+    document.getElementById("membersSearch")?.addEventListener("input", (event) => renderMembersPicker(event.target.value));
 
-// Quitar regla
-document.getElementById("rulesList").addEventListener("click", (e) => {
-    if (e.target.classList.contains("rule-remove")) {
-        e.target.closest("li").remove();
-    }
-});
+    document.getElementById("irPaso2").addEventListener("click", () => {
+        const name = document.getElementById("serverName").value.trim();
+        if (!name) {
+            alert("El nombre del servidor es obligatorio.");
+            return;
+        }
+        paso1.classList.add("hidden");
+        paso2.classList.remove("hidden");
+    });
 
-// Agregar regla
-document.getElementById("addRuleBtn").addEventListener("click", () => {
-    const text = prompt("Escribe la nueva regla:");
-    if (!text) return;
-    const li = document.createElement("li");
-    li.innerHTML = `<span class="rule-dot">●</span> <span class="rule-text">${text.toUpperCase()}</span> <button class="rule-remove">✕</button>`;
-    document.getElementById("rulesList").appendChild(li);
-});
+    document.getElementById("rulesList").addEventListener("click", (event) => {
+        if (event.target.classList.contains("rule-remove")) {
+            event.target.closest("li").remove();
+        }
+    });
 
-// Crear servidor (guardar en channels.json)
-document.getElementById("crearServidorBtn").addEventListener("click", async () => {
-    const name = document.getElementById("serverName").value.trim();
-    const desc = document.getElementById("serverDesc").value.trim();
-    const imgUrl = document.getElementById("serverImgUrl").value.trim();
-    const imgPreview = document.querySelector(".img-preview");
-    const img = imgUrl || (imgPreview ? imgPreview.src : null);
+    document.getElementById("addRuleBtn").addEventListener("click", () => {
+        const text = prompt("Escribe la nueva regla:");
+        if (!text) return;
+        const li = document.createElement("li");
+        li.innerHTML = `<span class="rule-dot">●</span> <span class="rule-text">${escapeHTML(text).toUpperCase()}</span> <button class="rule-remove">✕</button>`;
+        document.getElementById("rulesList").appendChild(li);
+    });
 
-    try {
-        const res = await fetch("/api/channels", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-                "x-user": encodeURIComponent(localStorage.getItem("user"))
-            },
-            body: JSON.stringify({ name, description: desc, img })
-        });
+    document.getElementById("crearServidorBtn").addEventListener("click", async () => {
+        const name = document.getElementById("serverName").value.trim();
+        const desc = document.getElementById("serverDesc").value.trim();
+        const imgUrl = document.getElementById("serverImgUrl").value.trim();
+        const imgPreview = document.querySelector(".img-preview");
+        const img = imgUrl || (imgPreview ? imgPreview.src : null);
 
-        if (!res.ok) throw new Error("Error al crear el servidor");
+        try {
+            await createChannelWithMembers({
+                name,
+                description: desc,
+                img,
+                memberIds: [...selectedMemberIds]
+            });
 
-        modal.classList.remove("open");
-        paso1.classList.remove("hidden");
-        paso2.classList.add("hidden");
-        document.getElementById("serverName").value = "";
-        document.getElementById("serverDesc").value = "";
-        document.getElementById("serverImgUrl").value = "";
-        const preview = document.querySelector(".img-preview");
-        if (preview) preview.remove();
-        await loadChannels();
-    } catch (e) {
-        alert("Error: " + e.message);
-    }
-});
+            modal.classList.remove("open");
+            resetModal();
+            await loadChannels();
+        } catch (error) {
+            alert("Error: " + error.message);
+        }
+    });
+
+    renderSelectedMembersPreview();
 }
 
 initAdmin().catch(error => {

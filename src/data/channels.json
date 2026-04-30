@@ -28,5 +28,16 @@
     "id": 6,
     "name": "Fortnite Torneo",
     "description": "jugadores pros de Fortnite"
+  },
+  {
+    "id": 7,
+    "name": "FIFA Torneo 2",
+    "description": "kjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjj"
+  },
+  {
+    "id": 8,
+    "name": "Torneo Ejemplo",
+    "description": "Ejemplo esperando que funcione",
+    "img": null
   }
 ]

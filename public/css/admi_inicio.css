@@ -803,3 +803,174 @@ body {
     gap: 6px;
     font-weight: bold;
 }
+
+/* Selector real de miembros para crear canal */
+.selected-members-preview {
+    min-height: 34px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    align-items: center;
+    padding: 8px;
+    background: #1f2222;
+    border: 1px solid #3a3a3a;
+    border-radius: 10px;
+}
+
+.member-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: #3a3a3a;
+    color: #fff;
+    border: 1px solid #39ff14;
+    border-radius: 999px;
+    padding: 4px 8px 4px 4px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.member-chip img {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.remove-selected-member {
+    background: transparent;
+    border: none;
+    color: #39ff14;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.members-panel {
+    margin-top: 18px;
+    background: #1f2222;
+    border: 1px solid #3a3a3a;
+    border-radius: 12px;
+    padding: 14px;
+}
+
+.members-panel-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 10px;
+}
+
+.members-panel-header strong {
+    display: block;
+    font-size: 14px;
+    text-transform: uppercase;
+}
+
+.members-panel-header span {
+    color: #aaa;
+    font-size: 12px;
+}
+
+#closeMembersPanel {
+    background: transparent;
+    border: none;
+    color: #39ff14;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.members-search {
+    width: 100%;
+    background: #2b2b2b;
+    border: 1px solid #3a3a3a;
+    border-radius: 8px;
+    color: #fff;
+    padding: 10px 12px;
+    margin-bottom: 10px;
+    outline: none;
+}
+
+.members-search:focus {
+    border-color: #39ff14;
+}
+
+.members-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    max-height: 210px;
+    overflow-y: auto;
+    padding-right: 4px;
+}
+
+.member-option {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: #2b2b2b;
+    border: 1px solid #3a3a3a;
+    border-radius: 10px;
+    padding: 8px;
+    cursor: pointer;
+}
+
+.member-option:hover {
+    border-color: #39ff14;
+}
+
+.member-option input {
+    accent-color: #39ff14;
+}
+
+.member-option img {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.member-option span {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+}
+
+.member-option strong {
+    font-size: 13px;
+    color: #fff;
+}
+
+.member-option small {
+    font-size: 11px;
+    color: #aaa;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.members-empty {
+    color: #aaa;
+    font-size: 12px;
+}
+
+.members-empty.error {
+    color: #ff6b6b;
+}
+
+.confirm-members-btn {
+    width: 100%;
+    margin-top: 12px;
+    background: transparent;
+    color: #39ff14;
+    border: 1px solid #39ff14;
+    border-radius: 10px;
+    padding: 10px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.confirm-members-btn:hover {
+    background: rgba(57, 255, 20, 0.08);
+}

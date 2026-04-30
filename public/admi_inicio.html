@@ -46,10 +46,29 @@
                     </div>
 
                     <label>AÑADIR MIEMBROS</label>
-                    <button class="add-members-btn" id="goToMembers">
+                    <button class="add-members-btn" id="goToMembers" type="button">
                         <i class="fa-solid fa-user-plus fa-2x"></i>
                     </button>
+
+                    <div class="selected-members-preview" id="selectedMembersPreview">
+                        <span class="members-empty">Sin miembros seleccionados</span>
+                    </div>
                 </div>
+            </div>
+
+            <div class="members-panel hidden" id="membersPanel">
+                <div class="members-panel-header">
+                    <div>
+                        <strong>Seleccionar miembros</strong>
+                        <span id="membersCount">0 seleccionado(s)</span>
+                    </div>
+                    <button type="button" id="closeMembersPanel">x</button>
+                </div>
+                <input type="search" id="membersSearch" class="members-search" placeholder="Buscar usuario por nombre o email">
+                <div class="members-list" id="membersList">
+                    <div class="members-empty">Presiona añadir miembros para cargar usuarios.</div>
+                </div>
+                <button type="button" class="confirm-members-btn" id="confirmMembersBtn">GUARDAR MIEMBROS</button>
             </div>
 
             <button class="create-btn" id="irPaso2">CREAR SERVIDOR</button>

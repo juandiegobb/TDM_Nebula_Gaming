@@ -6,7 +6,9 @@
     "email": "admin@chat.com",
     "rol": "admin",
     "img": "https://i.pravatar.cc/150?img=1",
-    "grupos": []
+    "grupos": [
+      8
+    ]
   },
   {
     "id": 2,
@@ -18,7 +20,8 @@
     "grupos": [
       1,
       2,
-      5
+      5,
+      8
     ]
   },
   {
@@ -32,7 +35,8 @@
       2,
       3,
       1,
-      5
+      5,
+      8
     ],
     "provider": "google"
   },
@@ -58,7 +62,8 @@
     "grupos": [
       2,
       1,
-      5
+      5,
+      8
     ]
   },
   {
@@ -70,7 +75,8 @@
     "img": "https://lh3.googleusercontent.com/a/ACg8ocKleuJs-jI2d_kgoasgy7iia7eT_yHuyalH8wdhutjWUEYVPw=s96-c",
     "grupos": [
       3,
-      5
+      5,
+      8
     ],
     "provider": "google"
   },
