@@ -39,5 +39,17 @@
     "name": "Torneo Ejemplo",
     "description": "Ejemplo esperando que funcione",
     "img": null
+  },
+  {
+    "id": 9,
+    "name": "Torneo Ejemplo FIFA",
+    "description": "ejemplo sjjs",
+    "img": "https://tse1.mm.bing.net/th/id/OIP.5w7WLYMnjFO-qHXE3xW5VgHaHa?rs=1&pid=ImgDetMain&o=7&rm=3"
+  },
+  {
+    "id": 10,
+    "name": "Fortnite Torneoooo",
+    "description": "asdasd",
+    "img": "blob:http://localhost:3000/c22c7042-0ad2-4fa3-99da-8dec0c4ccabc"
   }
 ]

@@ -308,10 +308,6 @@ async function initAdmin() {
 
     goChatBtn.addEventListener("click", () => window.location.href = "/chat.html");
 
-    document.getElementById("goMembersBtn").addEventListener("click", () => {
-        window.location.href = "/anadir_miembros.html";
-    });
-
     logoutBtn.addEventListener("click", () => {
         localStorage.removeItem("user");
         window.location.href = "/login.html";

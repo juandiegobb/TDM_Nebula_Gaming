@@ -150,22 +150,19 @@ body {
 
 .container {
     flex: 1;
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 280px;
+    grid-auto-rows: max-content;
     gap: 20px;
     padding: 20px;
     min-height: 0;
 }
 
 .left {
-    flex: 2;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    min-width: 0;
+    display: contents;
 }
 
 .right {
-    flex: 1;
     background: #2b2b2b;
     border-radius: 12px;
     padding: 30px;
@@ -174,7 +171,11 @@ body {
     align-items: center;
     justify-content: center;
     text-align: center;
-    min-width: 260px;
+    height: fit-content;
+    position: sticky;
+    top: 20px;
+    grid-column: 2;
+    grid-row: 1 / -1;
 }
 
 .card {
@@ -182,10 +183,13 @@ body {
     border-radius: 12px;
     padding: 18px;
     box-shadow: inset 0 0 0 2px #3a3a3a;
+    grid-column: 1;
+    width: 100%;
 }
 
 .card.small {
-    flex: 1;
+    grid-column: 1;
+    width: 100%;
 }
 
 .card-header {
@@ -231,8 +235,9 @@ body {
 
 .channels-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 14px;
+    width: 100%;
 }
 
 .channel-card {
@@ -302,8 +307,9 @@ body {
 
 .users-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 12px;
+    width: 100%;
 }
 
 .user-card {
@@ -419,13 +425,21 @@ body {
     font-size: 12px;
 }
 
+@media (max-width: 1200px) {
+    .container {
+        grid-template-columns: 1fr 250px;
+    }
+}
+
 @media (max-width: 900px) {
     .container {
-        flex-direction: column;
+        grid-template-columns: 1fr;
     }
 
     .right {
-        min-width: unset;
+        grid-column: 1;
+        grid-row: auto;
+        position: static;
     }
 }
 
@@ -453,6 +467,7 @@ body {
 
     .container {
         padding: 10px;
+        grid-template-columns: 1fr;
     }
 
     .card-header {
@@ -480,6 +495,11 @@ body {
 
     .image-url-input input {
         width: 100%;
+    }
+
+    .channels-grid,
+    .users-grid {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
     }
 }
 /* ─── MODAL ───────────────────────────────────────── */
