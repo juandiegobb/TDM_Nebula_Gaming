@@ -2,7 +2,8 @@ import {
     getCurrentUser,
     getChannelsWithUsers,
     getAvailableUsersForChannels,
-    createChannelWithMembers
+    createChannelWithMembers,
+    updateChannelWithMembers
 } from "./services/api.js";
 
 const channelsGrid = document.getElementById("channelsGrid");
@@ -24,6 +25,9 @@ let channels = [];
 let selectedChannelId = null;
 let availableUsers = [];
 let selectedMemberIds = new Set();
+let currentModalMode = "create";
+let editingChannelId = null;
+let imageDataUrl = null;
 
 function escapeHTML(value) {
     return String(value ?? "")
@@ -251,6 +255,110 @@ function renderMembersPicker(search = "") {
     });
 }
 
+function createRuleItem(text) {
+    const li = document.createElement("li");
+    li.innerHTML = `<span class="rule-dot">●</span> <span class="rule-text">${escapeHTML(text).toUpperCase()}</span> <button class="rule-edit">✎</button> <button class="rule-remove">✕</button>`;
+    return li;
+}
+
+function populateRuleList(rules = []) {
+    const rulesList = document.getElementById("rulesList");
+    if (!rulesList) return;
+    rulesList.innerHTML = "";
+
+    const normalizedRules = Array.isArray(rules) ? rules.map(r => String(r).trim()).filter(Boolean) : [];
+    const items = normalizedRules.length ? normalizedRules : ["Sé respetuoso con todos"];
+
+    items.forEach(rule => rulesList.appendChild(createRuleItem(rule)));
+}
+
+function collectRules() {
+    return Array.from(document.querySelectorAll("#rulesList .rule-text")).map(node => node.textContent.trim());
+}
+
+function setModalTitle(mode) {
+    const title = document.querySelector(".modal-title");
+    const button = document.getElementById("crearServidorBtn");
+    if (!title || !button) return;
+
+    if (mode === "edit") {
+        title.textContent = "Configuración del Canal";
+        button.textContent = "ACTUALIZAR CANAL";
+    } else {
+        title.textContent = "Crear Servidor";
+        button.textContent = "CREAR SERVIDOR";
+    }
+}
+
+function setImagePreview(url) {
+    clearImagePreview();
+    if (!url) return;
+
+    const preview = document.createElement("img");
+    preview.className = "img-preview";
+    preview.src = url;
+    document.getElementById("imageUpload").appendChild(preview);
+}
+
+function clearImagePreview() {
+    const preview = document.querySelector(".img-preview");
+    if (preview) preview.remove();
+}
+
+function setModalMode(mode, channel = null) {
+    currentModalMode = mode;
+    editingChannelId = mode === "edit" && channel ? Number(channel.id) : null;
+    setModalTitle(mode);
+
+    if (mode === "edit" && channel) {
+        document.getElementById("serverName").value = channel.name || "";
+        document.getElementById("serverDesc").value = channel.description || "";
+        document.getElementById("nameCount").textContent = `${String(channel.name || "").length}/100`;
+        document.getElementById("descCount").textContent = `${String(channel.description || "").length}/500`;
+        imageDataUrl = null;
+        document.getElementById("serverImgUrl").value = channel.img || "";
+        if (channel.img) setImagePreview(channel.img);
+        selectedMemberIds = new Set((channel.users || []).map(user => Number(user.id)));
+        populateRuleList(channel.rules);
+    } else {
+        resetModal();
+        populateRuleList();
+    }
+}
+
+async function awaitAvailableUsers() {
+    if (!availableUsers.length) {
+        availableUsers = await getAvailableUsersForChannels();
+    }
+    renderMembersPicker(document.getElementById("membersSearch")?.value || "");
+    renderSelectedMembersPreview();
+}
+
+async function openCreateModal() {
+    resetModal();
+    populateRuleList();
+    setModalMode("create");
+    document.getElementById("crearServidorModal").classList.add("open");
+}
+
+async function openEditModal() {
+    if (!selectedChannelId) {
+        alert("Selecciona un canal para editarlo.");
+        return;
+    }
+
+    const channel = channels.find(item => Number(item.id) === Number(selectedChannelId));
+    if (!channel) {
+        alert("Canal no encontrado.");
+        return;
+    }
+
+    resetModal();
+    setModalMode("edit", channel);
+    await awaitAvailableUsers();
+    document.getElementById("crearServidorModal").classList.add("open");
+}
+
 async function openMembersPicker() {
     const membersPanel = document.getElementById("membersPanel");
     const membersList = document.getElementById("membersList");
@@ -286,6 +394,7 @@ function resetModal() {
     const preview = document.querySelector(".img-preview");
     if (preview) preview.remove();
     selectedMemberIds.clear();
+    imageDataUrl = null;
     closeMembersPicker();
     renderSelectedMembersPreview();
 }
@@ -303,8 +412,9 @@ async function initAdmin() {
 
     refreshBtn.addEventListener("click", loadChannels);
 
-    document.getElementById("createChannelBtn").addEventListener("click", () => modal.classList.add("open"));
-    document.querySelector(".add").addEventListener("click", () => modal.classList.add("open"));
+    document.getElementById("createChannelBtn").addEventListener("click", openCreateModal);
+    document.querySelector(".add").addEventListener("click", openCreateModal);
+    document.getElementById("editChannelBtn").addEventListener("click", openEditModal);
 
     goChatBtn.addEventListener("click", () => window.location.href = "/chat.html");
 
@@ -343,29 +453,27 @@ async function initAdmin() {
     });
 
     document.getElementById("imgInput").addEventListener("change", function () {
-        if (!this.files[0]) return;
+        const file = this.files[0];
+        if (!file) return;
 
-        const url = URL.createObjectURL(this.files[0]);
-        let preview = document.querySelector(".img-preview");
-        if (!preview) {
-            preview = document.createElement("img");
-            preview.className = "img-preview";
-            document.getElementById("imageUpload").appendChild(preview);
-        }
-        preview.src = url;
+        const reader = new FileReader();
+        reader.onload = () => {
+            imageDataUrl = reader.result;
+            setImagePreview(imageDataUrl);
+        };
+        reader.readAsDataURL(file);
         document.getElementById("serverImgUrl").value = "";
     });
 
     document.getElementById("serverImgUrl").addEventListener("input", function () {
-        if (!this.value.trim()) return;
-
-        let preview = document.querySelector(".img-preview");
-        if (!preview) {
-            preview = document.createElement("img");
-            preview.className = "img-preview";
-            document.getElementById("imageUpload").appendChild(preview);
+        const value = this.value.trim();
+        imageDataUrl = null;
+        if (!value) {
+            clearImagePreview();
+            return;
         }
-        preview.src = this.value.trim();
+
+        setImagePreview(value);
         document.getElementById("imgInput").value = "";
     });
 
@@ -392,6 +500,15 @@ async function initAdmin() {
     document.getElementById("rulesList").addEventListener("click", (event) => {
         if (event.target.classList.contains("rule-remove")) {
             event.target.closest("li").remove();
+            return;
+        }
+
+        if (event.target.classList.contains("rule-edit")) {
+            const ruleText = event.target.closest("li").querySelector(".rule-text");
+            const currentText = ruleText?.textContent || "";
+            const newText = prompt("Editar regla:", currentText);
+            if (!newText) return;
+            ruleText.textContent = escapeHTML(newText).toUpperCase();
         }
     });
 
@@ -399,7 +516,7 @@ async function initAdmin() {
         const text = prompt("Escribe la nueva regla:");
         if (!text) return;
         const li = document.createElement("li");
-        li.innerHTML = `<span class="rule-dot">●</span> <span class="rule-text">${escapeHTML(text).toUpperCase()}</span> <button class="rule-remove">✕</button>`;
+        li.innerHTML = `<span class="rule-dot">●</span> <span class="rule-text">${escapeHTML(text).toUpperCase()}</span> <button class="rule-edit">✎</button> <button class="rule-remove">✕</button>`;
         document.getElementById("rulesList").appendChild(li);
     });
 
@@ -408,15 +525,29 @@ async function initAdmin() {
         const desc = document.getElementById("serverDesc").value.trim();
         const imgUrl = document.getElementById("serverImgUrl").value.trim();
         const imgPreview = document.querySelector(".img-preview");
-        const img = imgUrl || (imgPreview ? imgPreview.src : null);
+        const img = imgUrl || imageDataUrl || (imgPreview ? imgPreview.src : null);
+        const rules = collectRules();
+
+        if (!name) {
+            alert("El nombre del canal es obligatorio.");
+            return;
+        }
+
+        const payload = {
+            name,
+            description: desc,
+            img,
+            memberIds: [...selectedMemberIds],
+            rules
+        };
 
         try {
-            await createChannelWithMembers({
-                name,
-                description: desc,
-                img,
-                memberIds: [...selectedMemberIds]
-            });
+            if (currentModalMode === "edit" && editingChannelId) {
+                await updateChannelWithMembers(editingChannelId, payload);
+                selectedChannelId = editingChannelId;
+            } else {
+                await createChannelWithMembers(payload);
+            }
 
             modal.classList.remove("open");
             resetModal();

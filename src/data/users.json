@@ -143,7 +143,11 @@
     "rol": "user",
     "img": "https://lh3.googleusercontent.com/a/ACg8ocLoXE5OI0or8EVG52imG6UXv5VCmEeIQRPKOoe-qnXbwTPFd3KL=s96-c",
     "grupos": [
-      9
+      9,
+      1,
+      2,
+      3,
+      4
     ],
     "provider": "google"
   }

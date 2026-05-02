@@ -48,7 +48,12 @@ export function connect(user, selectedChannelId = null) {
 
             case "chat":
                 if (Number(data.channelId) !== Number(currentChannelId)) return;
-                addMessage(data.user, data.text, Number(data.userId) === Number(currentUser.id));
+                addMessage({
+                    name: data.user,
+                    id: data.userId,
+                    rol: data.userRole,
+                    img: data.userImg
+                }, data.text, Number(data.userId) === Number(currentUser.id));
                 break;
 
             case "system":

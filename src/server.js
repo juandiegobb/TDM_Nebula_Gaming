@@ -15,7 +15,6 @@ const WebSocket = require("ws");
 const handleUsersRoutes = require("./routes/users");
 const handleAuthRoutes = require("./routes/auth");
 const handleChannelsRoutes = require("./routes/channels");
-const handleMembersRoutes = require("./routes/members"); 
 const setupChat = require("./web/chat");
 
 // Configuración de puerto y ruta de archivos públicos
@@ -164,10 +163,10 @@ app.get("/api/me", (req, res) => {
 });
 
 // Middleware personalizado para procesar rutas específicas
+// Middleware personalizado para procesar rutas específicas
 app.use((req, res, next) => {
     if (handleUsersRoutes(req, res)) return;
     if (handleAuthRoutes(req, res)) return;
-    if (handleMembersRoutes(req, res)) return;
     if (handleChannelsRoutes(req, res)) return;
     next();
 });

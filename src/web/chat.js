@@ -203,6 +203,8 @@ function setupChat(wss) {
                     channelId,
                     user: currentConnection.user.name,
                     userId: currentConnection.user.id,
+                    userRole: currentConnection.user.rol,
+                    userImg: currentConnection.user.img,
                     text
                 });
             }

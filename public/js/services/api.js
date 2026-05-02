@@ -127,3 +127,22 @@ export async function createChannelWithMembers(data) {
 
     return res.json();
 }
+
+export async function updateChannelWithMembers(channelId, data) {
+    const user = localStorage.getItem("user");
+    const headers = { "Content-Type": "application/json" };
+    if (user) headers["x-user"] = encodeURIComponent(user);
+
+    const res = await fetch(`/api/channels/${channelId}`, {
+        method: "PUT",
+        headers,
+        body: JSON.stringify(data)
+    });
+
+    if (!res.ok) {
+        const error = await res.json().catch(() => ({ error: "Error al actualizar el canal" }));
+        throw new Error(error.error || "Error al actualizar el canal");
+    }
+
+    return res.json();
+}

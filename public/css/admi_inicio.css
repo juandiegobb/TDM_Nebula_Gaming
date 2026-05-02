@@ -233,6 +233,12 @@ body {
     white-space: nowrap;
 }
 
+.card-header button.edit-channel-btn {
+    background: #3a3a3a;
+    color: #fff;
+    border: 1px solid #555;
+}
+
 .channels-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -804,12 +810,17 @@ body {
     text-transform: uppercase;
 }
 
-.rule-remove {
+.rule-remove,
+.rule-edit {
     background: none;
     border: none;
     color: white;
     cursor: pointer;
     font-size: 14px;
+}
+
+.rule-edit {
+    color: #39ff14;
 }
 
 .add-rule-btn {

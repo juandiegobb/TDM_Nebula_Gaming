@@ -88,6 +88,13 @@ function assignUsersToChannel(users, memberIds, channelId) {
     return { ok: true, selectedMemberIds };
 }
 
+function removeUsersFromChannel(users, channelId) {
+    users.forEach(user => {
+        if (!Array.isArray(user.grupos)) return;
+        user.grupos = user.grupos.filter(id => Number(id) !== Number(channelId));
+    });
+}
+
 function buildChannelsWithUsers() {
     const users = getUsers();
     const channels = getChannels();
@@ -146,7 +153,7 @@ function handleChannelsRoutes(req, res) {
     // Después actualiza users.json agregando el id del canal al arreglo grupos de cada usuario.
     if (req.method === "POST" && parts.length === 2) {
         parseBody(req)
-            .then(({ name, description, img, memberIds }) => {
+            .then(({ name, description, img, memberIds, rules }) => {
                 const cleanName = String(name || "").trim();
                 if (!cleanName) {
                     sendJson(res, 400, { error: "El nombre es obligatorio" });
@@ -169,7 +176,8 @@ function handleChannelsRoutes(req, res) {
                     id: newChannelId,
                     name: cleanName,
                     description: String(description || "").trim(),
-                    img: img || null
+                    img: img || null,
+                    rules: Array.isArray(rules) ? rules.map(rule => String(rule).trim()).filter(Boolean) : []
                 };
 
                 channels.push(newChannel);
@@ -178,6 +186,57 @@ function handleChannelsRoutes(req, res) {
 
                 sendJson(res, 201, {
                     ...newChannel,
+                    users: users
+                        .filter(user => assignResult.selectedMemberIds.includes(Number(user.id)))
+                        .map(safeUser),
+                    userCount: assignResult.selectedMemberIds.length
+                });
+            })
+            .catch(() => sendJson(res, 400, { error: "JSON inválido" }));
+        return true;
+    }
+
+    // PUT /api/channels/:id
+    // Actualiza el canal y sincroniza la lista de miembros.
+    if (req.method === "PUT" && parts.length === 3) {
+        const channelId = Number(parts[2]);
+        parseBody(req)
+            .then(({ name, description, img, memberIds, rules }) => {
+                const cleanName = String(name || "").trim();
+                if (!cleanName) {
+                    sendJson(res, 400, { error: "El nombre es obligatorio" });
+                    return;
+                }
+
+                const users = getUsers();
+                const channels = getChannels();
+                const channelIndex = channels.findIndex(c => Number(c.id) === channelId);
+                if (channelIndex === -1) {
+                    sendJson(res, 404, { error: "Canal no encontrado" });
+                    return;
+                }
+
+                removeUsersFromChannel(users, channelId);
+                const assignResult = assignUsersToChannel(users, memberIds, channelId);
+                if (!assignResult.ok) {
+                    sendJson(res, 400, { error: assignResult.error });
+                    return;
+                }
+
+                const updatedChannel = {
+                    ...channels[channelIndex],
+                    name: cleanName,
+                    description: String(description || "").trim(),
+                    img: img || null,
+                    rules: Array.isArray(rules) ? rules.map(rule => String(rule).trim()).filter(Boolean) : []
+                };
+
+                channels[channelIndex] = updatedChannel;
+                saveChannels(channels);
+                saveUsers(users);
+
+                sendJson(res, 200, {
+                    ...updatedChannel,
                     users: users
                         .filter(user => assignResult.selectedMemberIds.includes(Number(user.id)))
                         .map(safeUser),

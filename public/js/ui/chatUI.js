@@ -26,9 +26,21 @@ export function clearMessages() {
 
 export function addMessage(user, text, isSelf = false) {
     const msgEl = document.createElement("div");
+    const isAdmin = String(user?.rol || "").toLowerCase() === "admin";
+    const userName = user?.name || "Usuario";
+
     msgEl.classList.add("message");
     if (isSelf) msgEl.classList.add("self");
-    msgEl.innerHTML = `<strong>${escapeHTML(user)}: </strong>${escapeHTML(text)}`;
+    if (isAdmin) msgEl.classList.add("admin-message");
+
+    msgEl.innerHTML = `
+        <div class="message-header">
+            <span class="message-user">${escapeHTML(userName)}</span>
+            ${isAdmin ? '<span class="message-role">ADMIN</span>' : ''}
+        </div>
+        <div class="message-text">${escapeHTML(text)}</div>
+    `;
+
     messagesDiv.appendChild(msgEl);
     messagesDiv.scrollTop = messagesDiv.scrollHeight;
 }
