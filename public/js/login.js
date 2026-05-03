@@ -33,7 +33,7 @@ loginForm.addEventListener("submit", async function(e) {
             return;
         }
 
-        window.location.href = "/chat.html";
+        window.location.href = "/chat_usuario.html";
     } catch (err) {
         console.error("Error de login:", err);
         showError(err.message || "Credenciales inválidas");

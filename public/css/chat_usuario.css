@@ -28,10 +28,10 @@
     z-index: 1000;
 }
 
-/* LNOMBRE DE USUARIO */
+/* LEFT */
 .header-left{
-    display: none;
     align-items: center;
+    display: none;
 }
 
 .brand-title{
@@ -70,39 +70,12 @@
 }
 
 
-/* ⭐ ESTRELLA */
-.star {
-    position: absolute;
-    top: -4px;
-    right: 8px;
-    width: 2px;
-    height: 25px;
-  
-}
-
-
-/* Puedes usar forma real de estrella */
-.star::before {
-    content: "★";
-    font-size: 8px;
-    color: gold;
-    font-size: 18px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
-
-
-
-
 
 /* Puntico verde */
 .status {
     position: absolute;
-    bottom: -2px;
-    right: -2px;
+    bottom: 2px;
+    right: 2px;
     width: 10px;
     height: 10px;
     background: #39ff14;
@@ -340,15 +313,6 @@
 }
 
 
-
-
-
-
-
-
-
-
-
 /* ===============================
    INPUT
 =============================== */
@@ -379,8 +343,3 @@
     font-size:20px;
     cursor:pointer;
 }
-
-
-
-
-

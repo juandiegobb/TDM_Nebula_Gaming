@@ -12,10 +12,12 @@ body {
 
 /* CONTENEDOR */
 .miembros {
-  width: 260px;
+  width: 80%;
+    height: 60%;
   background: #3a3a3a;
   padding: 10px;
   border-radius: 10px;
+  overflow-y: auto;
 }
 
 /* HEADER */
@@ -132,11 +134,15 @@ body {
 
 /* CONTENEDOR */
 .destacados {
-  width: 260px;
+  width: 80%;
+  height: 60%;
   background: #3a3a3a;
   padding: 10px;
   border-radius: 10px;
+   overflow-y: auto;  
 }
+
+
 
 /* HEADER */
 .destacados-header {

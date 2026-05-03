@@ -141,3 +141,32 @@ button {
 button:hover {
     opacity: 0.85;
 }
+
+.header{
+    position:relative;
+}
+
+.volver{
+    position:absolute;
+    left:20px;
+    top:50%;
+    transform:translateY(-50%);
+    font-size:40px;
+    color:white;
+    text-decoration:none;
+}
+
+.cerrar{
+    position:absolute;
+    right:20px;
+    top:50%;
+    transform:translateY(-50%);
+    font-size:24px;
+    color:white;
+    text-decoration:none;
+}
+
+.volver:hover,
+.cerrar:hover{
+    opacity:0.7;
+}
