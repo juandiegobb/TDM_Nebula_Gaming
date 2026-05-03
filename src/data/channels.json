@@ -2,12 +2,20 @@
   {
     "id": 1,
     "name": "Torneo de FIFA",
-    "description": "Canal para organizar partidas, horarios y resultados del torneo de FIFA."
+    "description": "Canal para organizar partidas, horarios y resultados del torneo de FIFA.",
+    "img": null,
+    "rules": [
+      "SÉ RESPETUOSO CON TODOS"
+    ]
   },
   {
     "id": 2,
     "name": "Torneo de LOL",
-    "description": "Canal para equipos, partidas, brackets y coordinación del torneo de League of Legends."
+    "description": "Canal para equipos, partidas, brackets y coordinación del torneo de League of Legends.",
+    "img": null,
+    "rules": [
+      "SÉ RESPETUOSO CON TODOS"
+    ]
   },
   {
     "id": 3,
@@ -48,7 +56,10 @@
     "id": 9,
     "name": "Torneo Ejemplo FIFA",
     "description": "ejemplo sjjs",
-    "img": "https://tse1.mm.bing.net/th/id/OIP.5w7WLYMnjFO-qHXE3xW5VgHaHa?rs=1&pid=ImgDetMain&o=7&rm=3"
+    "img": "https://tse1.mm.bing.net/th/id/OIP.5w7WLYMnjFO-qHXE3xW5VgHaHa?rs=1&pid=ImgDetMain&o=7&rm=3",
+    "rules": [
+      "SÉ RESPETUOSO CON TODOS"
+    ]
   },
   {
     "id": 10,

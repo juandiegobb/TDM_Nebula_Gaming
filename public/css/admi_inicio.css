@@ -188,7 +188,7 @@ body {
 }
 
 .card.small {
-    grid-column: 1;
+    grid-column: 1 / -1; /* ocupa todo el ancho */
     width: 100%;
 }
 

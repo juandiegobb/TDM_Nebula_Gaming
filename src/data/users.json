@@ -19,12 +19,12 @@
     "rol": "user",
     "img": "https://i.pravatar.cc/150?img=2",
     "grupos": [
-      1,
-      2,
       5,
       8,
-      9,
-      10
+      10,
+      1,
+      2,
+      9
     ]
   },
   {
@@ -35,10 +35,10 @@
     "rol": "user",
     "img": "https://i.pravatar.cc/150?img=4",
     "grupos": [
-      2,
       5,
-      9,
-      10
+      10,
+      2,
+      9
     ]
   },
   {
@@ -49,11 +49,11 @@
     "rol": "user",
     "img": "https://i.pravatar.cc/150?img=5",
     "grupos": [
-      2,
-      1,
       5,
       8,
-      10
+      10,
+      1,
+      2
     ]
   },
   {
@@ -79,9 +79,9 @@
     "rol": "user",
     "img": "https://i.pravatar.cc/150?img=6",
     "grupos": [
+      10,
       1,
-      2,
-      10
+      2
     ]
   },
   {
@@ -92,9 +92,9 @@
     "rol": "user",
     "img": "https://i.pravatar.cc/150?img=7",
     "grupos": [
-      2,
       3,
-      10
+      10,
+      2
     ]
   },
   {
@@ -105,8 +105,8 @@
     "rol": "user",
     "img": "https://i.pravatar.cc/150?img=8",
     "grupos": [
-      1,
-      10
+      10,
+      1
     ]
   },
   {
@@ -117,8 +117,8 @@
     "rol": "user",
     "img": "https://i.pravatar.cc/150?img=9",
     "grupos": [
-      2,
-      10
+      10,
+      2
     ]
   },
   {
@@ -129,10 +129,10 @@
     "rol": "user",
     "img": "https://i.pravatar.cc/150?img=10",
     "grupos": [
-      1,
       3,
-      9,
-      10
+      10,
+      1,
+      9
     ]
   },
   {
@@ -143,11 +143,8 @@
     "rol": "user",
     "img": "https://lh3.googleusercontent.com/a/ACg8ocLoXE5OI0or8EVG52imG6UXv5VCmEeIQRPKOoe-qnXbwTPFd3KL=s96-c",
     "grupos": [
-      9,
       1,
-      2,
-      3,
-      4
+      2
     ],
     "provider": "google"
   },
@@ -159,7 +156,8 @@
     "rol": "user",
     "img": "https://lh3.googleusercontent.com/a/ACg8ocLCt5WpzOFUs_XOIpZEjQJGv25q5ofm46dqvuVrmZidqK65OQ=s96-c",
     "grupos": [
-      4
+      4,
+      2
     ],
     "provider": "google"
   },
@@ -171,6 +169,30 @@
     "rol": "user",
     "img": "https://lh3.googleusercontent.com/a/ACg8ocI2dNIDlotq6-DpQFkzmSbSxmGiyUt3dHP0FrzJzQdvyGXXDl8=s96-c",
     "grupos": [],
+    "provider": "google"
+  },
+  {
+    "id": 15,
+    "name": "Juan Diego xd",
+    "password": "",
+    "email": "juanchocast17@gmail.com",
+    "rol": "user",
+    "img": "https://lh3.googleusercontent.com/a/ACg8ocIwHz-2lVAlRa2FTeEztbmy38CzW7yz5Civ2t_MUcRdyQnOHuwgDQ=s96-c",
+    "grupos": [
+      1
+    ],
+    "provider": "google"
+  },
+  {
+    "id": 16,
+    "name": "Rocamonti Hotel",
+    "password": "",
+    "email": "rocamontihotel@gmail.com",
+    "rol": "user",
+    "img": "https://lh3.googleusercontent.com/a/ACg8ocIDmFkZBvTbgtp-uWvSyCwiCnqZtPdLnX54eYpCBs6v2CDR3Og=s96-c",
+    "grupos": [
+      9
+    ],
     "provider": "google"
   }
 ]
