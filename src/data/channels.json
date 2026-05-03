@@ -17,7 +17,11 @@
   {
     "id": 4,
     "name": "voleyy",
-    "description": "Descripcion del canal de voleyy"
+    "description": "Descripcion del canal de voleyy",
+    "img": null,
+    "rules": [
+      "SÉ RESPETUOSO CON TODOS"
+    ]
   },
   {
     "id": 5,

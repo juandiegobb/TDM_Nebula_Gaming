@@ -134,7 +134,16 @@ app.get(
     "/auth/google/callback",
     passport.authenticate("google", { failureRedirect: "/login.html?error=google" }),
     (req, res) => {
-        res.redirect("/chat.html");
+        const user = req.user;
+
+        // Validación de grupos
+        if (!user.grupos || user.grupos.length === 0) {
+            // No tiene grupos
+            return res.redirect("/usuario_sin_grupo.html");
+        } else {
+            // Sí tiene grupos
+            return res.redirect("/chat_usuario.html");
+        }
     }
 );
 
