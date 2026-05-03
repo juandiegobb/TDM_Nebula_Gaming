@@ -53,14 +53,39 @@ export function addSystemMessage(text) {
     messagesDiv.scrollTop = messagesDiv.scrollHeight;
 }
 
+function getChannelInitial(name) {
+    return String(name || "?").trim().charAt(0).toUpperCase() || "?";
+}
+
 export function renderChannels(channels, onJoinChannel) {
     channelList.innerHTML = "";
 
     channels.forEach(channel => {
         const li = document.createElement("li");
-        li.classList.add("channel-item");
+        const initial = getChannelInitial(channel.name);
+        const channelImg = String(channel.img || "").trim();
+
+        li.classList.add("server-channel-item");
         li.dataset.channelId = channel.id;
-        li.innerHTML = `<i class="fa-solid fa-hashtag"></i><span>${escapeHTML(channel.name)}</span>`;
+        li.title = channel.name || "Canal";
+
+        if (channelImg) {
+            li.innerHTML = `
+                <img class="server-channel-img" src="${escapeHTML(channelImg)}" alt="${escapeHTML(channel.name || "Canal")}">
+                <span class="server-channel-letter hidden">${escapeHTML(initial)}</span>
+            `;
+
+            const img = li.querySelector(".server-channel-img");
+            const letter = li.querySelector(".server-channel-letter");
+
+            img.addEventListener("error", () => {
+                img.remove();
+                letter.classList.remove("hidden");
+            });
+        } else {
+            li.innerHTML = `<span class="server-channel-letter">${escapeHTML(initial)}</span>`;
+        }
+
         li.addEventListener("click", () => onJoinChannel(channel.id));
         channelList.appendChild(li);
     });
@@ -69,7 +94,7 @@ export function renderChannels(channels, onJoinChannel) {
 export function setActiveChannel(channel) {
     currentChannelName.textContent = `# ${channel.name}`;
 
-    document.querySelectorAll(".channel-item").forEach(item => {
+    document.querySelectorAll("#channelList .server-channel-item").forEach(item => {
         item.classList.toggle("active", Number(item.dataset.channelId) === Number(channel.id));
     });
 

@@ -33,7 +33,7 @@
 
 /* ITEMS (usa tu clase si ya existe) */
 .channel_item,
-.channel-list li {
+.server-channel-item {
     width: 46px;
     height: 46px;
     background: #6b6b6b;
@@ -45,16 +45,37 @@
     cursor: pointer;
     transition: 0.2s ease;
     font-weight: bold;
+    overflow: hidden;
+    flex-shrink: 0;
 }
 
+.server-channel-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
 
+.server-channel-letter {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    line-height: 1;
+    text-transform: uppercase;
+}
 
+.server-channel-letter.hidden {
+    display: none;
+}
 
 /* HOVER Y ACTIVO */
 .channel_item:hover,
 .channel_item.active,
-.channel-list li:hover,
-.channel-list li.active {
+.server-channel-item:hover,
+.server-channel-item.active {
     background: #a100ff;
     border-radius: 16px;
 }
