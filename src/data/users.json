@@ -118,7 +118,8 @@
     "img": "https://i.pravatar.cc/150?img=9",
     "grupos": [
       10,
-      2
+      2,
+      11
     ]
   },
   {
@@ -132,7 +133,8 @@
       3,
       10,
       1,
-      9
+      9,
+      11
     ]
   },
   {
@@ -144,7 +146,8 @@
     "img": "https://lh3.googleusercontent.com/a/ACg8ocLoXE5OI0or8EVG52imG6UXv5VCmEeIQRPKOoe-qnXbwTPFd3KL=s96-c",
     "grupos": [
       1,
-      2
+      2,
+      11
     ],
     "provider": "google"
   },
@@ -157,7 +160,8 @@
     "img": "https://lh3.googleusercontent.com/a/ACg8ocLCt5WpzOFUs_XOIpZEjQJGv25q5ofm46dqvuVrmZidqK65OQ=s96-c",
     "grupos": [
       4,
-      2
+      2,
+      11
     ],
     "provider": "google"
   },
@@ -168,7 +172,9 @@
     "email": "yeniferpulidoleon15@gmail.com",
     "rol": "user",
     "img": "https://lh3.googleusercontent.com/a/ACg8ocI2dNIDlotq6-DpQFkzmSbSxmGiyUt3dHP0FrzJzQdvyGXXDl8=s96-c",
-    "grupos": [],
+    "grupos": [
+      11
+    ],
     "provider": "google"
   },
   {
@@ -179,7 +185,8 @@
     "rol": "user",
     "img": "https://lh3.googleusercontent.com/a/ACg8ocIwHz-2lVAlRa2FTeEztbmy38CzW7yz5Civ2t_MUcRdyQnOHuwgDQ=s96-c",
     "grupos": [
-      1
+      1,
+      11
     ],
     "provider": "google"
   },
@@ -191,7 +198,8 @@
     "rol": "user",
     "img": "https://lh3.googleusercontent.com/a/ACg8ocIDmFkZBvTbgtp-uWvSyCwiCnqZtPdLnX54eYpCBs6v2CDR3Og=s96-c",
     "grupos": [
-      9
+      9,
+      11
     ],
     "provider": "google"
   }
