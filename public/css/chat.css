@@ -381,6 +381,107 @@
 }
 
 
+/* SOLO este modal del admi icono  */
+/* ===== MODAL PERFIL ESTILO PRO ===== */
 
+.profile-modal {
+    display: none;
+}
 
+.profile-modal:target {
+    display: flex;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.75);
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
 
+/* caja */
+.profile-modal-content {
+    background: #2a2b2f;
+    padding: 30px 25px;
+    border-radius: 18px;
+    width: 340px;
+    text-align: center;
+    color: white;
+    position: relative;
+    box-shadow: 0 0 40px rgba(0,0,0,0.6);
+}
+
+/* cerrar */
+.profile-close {
+    position: absolute;
+    top: 12px;
+    right: 15px;
+    font-size: 22px;
+    color: #aaa;
+    text-decoration: none;
+}
+
+.profile-close:hover {
+    color: white;
+}
+
+/* imagen */
+.profile-big img {
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+}
+
+/* badge ADMIN */
+.role {
+    display: inline-block;
+    background: #39ff14;
+    color: black;
+    padding: 6px 18px;
+    border-radius: 8px;
+    font-weight: bold;
+    margin-bottom: 12px;
+}
+
+/* nombre */
+#adminName {
+    font-size: 24px;
+    margin: 5px 0;
+}
+
+/* email */
+#adminEmail {
+    color: #bbb;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+/* stats contenedor */
+.stats {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+/* tarjetas */
+.stats div {
+    flex: 1;
+    background: #1c1d22;
+    border-radius: 12px;
+    padding: 15px 10px;
+    border: 1px solid #2f3136;
+}
+
+/* números */
+.stats strong {
+    display: block;
+    font-size: 22px;
+    color: #39ff14;
+}
+
+/* texto */
+.stats span {
+    font-size: 13px;
+    color: #ccc;
+}

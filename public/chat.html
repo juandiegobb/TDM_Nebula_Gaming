@@ -13,7 +13,7 @@
 <body>
    
     <!-- SIDEBAR 1: SERVIDORES -->
-    <aside class="server-sidebar">
+    <aside class="server-sidebar" id="channelDots">
        
         <ul id="channelList" class="channel-list">
             <!-- canales dinámicos -->
@@ -62,29 +62,6 @@
             </ul>
         </div>
 
-
-        <!-- OTRA SECCIÓN -->
-        <div class="sidebar-section">
-            <div class="section-title">
-                Chats
-                <i class="fa-solid fa-plus"></i>
-            </div>
-
-            <ul class="channel-lista">
-                <li class="channel-item">
-                    <div class="channel-icon">#</div>
-                    <span class="channel-name">General</span>
-                </li>
-
-
-                <li class="channel-item">
-                    <div class="channel-icon">#</div>
-                    <span class="channel-name">Torneo 20/03</span>
-                </li>
-            </ul>
-        </div>
-
-
     </aside>
 
 
@@ -116,12 +93,12 @@
                 </button>
 
 
-                  <div class="profile-mini">
+                  <a href="#profileModal" class="profile-mini">
                         <i class="fa-regular fa-user"></i>
                         <span class="star"></span>
                         <div class="status"></div>
-                    </div>
-            </div>
+                    </a>
+                </div>
 
 
         </header>
@@ -147,11 +124,6 @@
                         <i class="fa-solid fa-check"></i>
                     </a>
 
-                    <!-- USUARIOS -->
-                     <a href="#modalUsuarios">
-                        <i class="fa-solid fa-users"></i>
-                    </a>
-
                     <!-- CONFIGURACIÓN -->
                     <a href="confi_servidor.html" class="section-config">
                         <i class="fa-solid fa-gear"></i>
@@ -167,15 +139,6 @@
                                 <iframe src="./desplegables/menudestacados.html"></iframe>
                             </div>
                         </div>
-
-                        <!-- MODAL USUARIOS -->
-                        <div id="modalUsuarios" class="modal">
-                            <div class="modal-content">
-                                <a href="#" class="close">&times;</a>
-                                <iframe src="./desplegables/menumiembros.html"></iframe>
-                            </div>
-                        </div>
-
             </div>
 
 
@@ -205,6 +168,36 @@
         <ul id="userList"></ul>
     </aside>
 
+<div id="profileModal" class="profile-modal">
+    <div class="profile-modal-content">
+
+        <a href="#" class="profile-close">&times;</a>
+
+        <div class="right">
+            <div class="profile-big">
+                <img id="profileImg" alt="Administrador">
+            </div>
+
+            <span class="role" id="adminRole">ADMIN</span>
+            <h2 id="adminName">Administrador</h2>
+            <p id="adminEmail">admin@chat.com</p>
+
+            <div class="stats">
+                <div>
+                    <strong id="totalChannels">0</strong>
+                    <span>Canales</span>
+                </div>
+                <div>
+                    <strong id="totalUsers">0</strong>
+                    <span>Usuarios asignados</span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
     <script type="module" src="./js/chat.js"></script>
+    <script type="module" src="./js/admin_inicio.js"></script>
 </body>
 </html>
