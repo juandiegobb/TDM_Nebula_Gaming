@@ -53,7 +53,8 @@
       8,
       10,
       1,
-      2
+      2,
+      4
     ]
   },
   {
@@ -106,7 +107,8 @@
     "img": "https://i.pravatar.cc/150?img=8",
     "grupos": [
       10,
-      1
+      1,
+      4
     ]
   },
   {
@@ -119,7 +121,8 @@
     "grupos": [
       10,
       2,
-      11
+      11,
+      4
     ]
   },
   {
@@ -147,7 +150,8 @@
     "grupos": [
       1,
       2,
-      11
+      11,
+      4
     ],
     "provider": "google"
   },
@@ -159,9 +163,9 @@
     "rol": "user",
     "img": "https://lh3.googleusercontent.com/a/ACg8ocLCt5WpzOFUs_XOIpZEjQJGv25q5ofm46dqvuVrmZidqK65OQ=s96-c",
     "grupos": [
-      4,
       2,
-      11
+      11,
+      4
     ],
     "provider": "google"
   },
