@@ -3,7 +3,8 @@ import {
     getChannelsWithUsers,
     getAvailableUsersForChannels,
     createChannelWithMembers,
-    updateChannelWithMembers
+    updateChannelWithMembers,
+    deleteChannel
 } from "./services/api.js";
 
 const channelsGrid = document.getElementById("channelsGrid");
@@ -28,6 +29,8 @@ let selectedMemberIds = new Set();
 let currentModalMode = "create";
 let editingChannelId = null;
 let imageDataUrl = null;
+let deleteConfirmOverlay = null;
+let isDeletingChannel = false;
 
 function escapeHTML(value) {
     return String(value ?? "")
@@ -326,6 +329,105 @@ function setModalMode(mode, channel = null) {
     }
 }
 
+function getSelectedChannel() {
+    if (!selectedChannelId) return null;
+    return channels.find(item => Number(item.id) === Number(selectedChannelId)) || null;
+}
+
+function closeDeleteConfirmMenu() {
+    if (!deleteConfirmOverlay) return;
+    deleteConfirmOverlay.classList.remove("open");
+    deleteConfirmOverlay.setAttribute("aria-hidden", "true");
+}
+
+async function ensureDeleteConfirmMenu() {
+    if (deleteConfirmOverlay) return deleteConfirmOverlay;
+
+    const response = await fetch("/desplegables/menueliminar.html");
+    if (!response.ok) {
+        throw new Error("No se pudo cargar desplegables/menueliminar.html");
+    }
+
+    const html = await response.text();
+    const documentFragment = new DOMParser().parseFromString(html, "text/html");
+    const modal = documentFragment.querySelector(".modal");
+
+    if (!modal) {
+        throw new Error("menueliminar.html no contiene el modal de confirmación.");
+    }
+
+    deleteConfirmOverlay = document.createElement("div");
+    deleteConfirmOverlay.id = "deleteChannelOverlay";
+    deleteConfirmOverlay.className = "delete-channel-overlay";
+    deleteConfirmOverlay.setAttribute("aria-hidden", "true");
+    deleteConfirmOverlay.appendChild(modal.cloneNode(true));
+    document.body.appendChild(deleteConfirmOverlay);
+
+    deleteConfirmOverlay.addEventListener("click", (event) => {
+        if (event.target === deleteConfirmOverlay) closeDeleteConfirmMenu();
+    });
+
+    deleteConfirmOverlay.querySelector(".close")?.addEventListener("click", closeDeleteConfirmMenu);
+    deleteConfirmOverlay.querySelector(".cancel")?.addEventListener("click", closeDeleteConfirmMenu);
+    deleteConfirmOverlay.querySelector(".delete")?.addEventListener("click", confirmDeleteSelectedChannel);
+
+    return deleteConfirmOverlay;
+}
+
+async function deleteSelectedChannel() {
+    const channel = getSelectedChannel();
+    if (!channel) {
+        alert("Selecciona un canal para eliminar.");
+        return;
+    }
+
+    try {
+        const overlay = await ensureDeleteConfirmMenu();
+        const title = overlay.querySelector("h3");
+        const deleteButton = overlay.querySelector(".delete");
+
+        if (title) {
+            title.innerHTML = `¿DESEAS ELIMINAR EL CANAL?<br><strong>${escapeHTML(channel.name)}</strong>`;
+        }
+        if (deleteButton) {
+            deleteButton.disabled = false;
+            deleteButton.textContent = "ELIMINAR";
+        }
+
+        overlay.classList.add("open");
+        overlay.setAttribute("aria-hidden", "false");
+    } catch (error) {
+        alert(error.message);
+    }
+}
+
+async function confirmDeleteSelectedChannel() {
+    const channel = getSelectedChannel();
+    if (!channel || isDeletingChannel) return;
+
+    const deleteButton = deleteConfirmOverlay?.querySelector(".delete");
+    isDeletingChannel = true;
+    if (deleteButton) {
+        deleteButton.disabled = true;
+        deleteButton.textContent = "ELIMINANDO...";
+    }
+
+    try {
+        await deleteChannel(channel.id);
+        closeDeleteConfirmMenu();
+        selectedChannelId = null;
+        await loadChannels();
+    } catch (error) {
+        alert("Error al eliminar el canal: " + error.message);
+        if (deleteButton) {
+            deleteButton.disabled = false;
+            deleteButton.textContent = "ELIMINAR";
+        }
+    } finally {
+        isDeletingChannel = false;
+    }
+}
+
 async function awaitAvailableUsers() {
     if (!availableUsers.length) {
         availableUsers = await getAvailableUsersForChannels();
@@ -418,6 +520,7 @@ async function initAdmin() {
     document.getElementById("createChannelBtn").addEventListener("click", openCreateModal);
     document.querySelector(".add").addEventListener("click", openCreateModal);
     document.getElementById("editChannelBtn").addEventListener("click", openEditModal);
+    document.getElementById("deleteChannelBtn").addEventListener("click", deleteSelectedChannel);
 
     goChatBtn.addEventListener("click", () => window.location.href = "/chat.html");
 

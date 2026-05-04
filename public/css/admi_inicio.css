@@ -239,6 +239,16 @@ body {
     border: 1px solid #555;
 }
 
+.card-header button.delete-channel-btn {
+    background: #d32f2f;
+    color: #fff;
+    border: 1px solid #b71c1c;
+}
+
+.card-header button.delete-channel-btn:hover {
+    background: #b71c1c;
+}
+
 .channels-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -1004,4 +1014,90 @@ body {
 
 .confirm-members-btn:hover {
     background: rgba(57, 255, 20, 0.08);
+}
+
+/* Confirmación para eliminar canal cargada desde desplegables/menueliminar.html */
+.delete-channel-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.72);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+    padding: 20px;
+}
+
+.delete-channel-overlay.open {
+    display: flex;
+}
+
+.delete-channel-overlay .modal {
+    background: #2f2f2f;
+    padding: 24px 20px 20px;
+    border-radius: 12px;
+    width: 340px;
+    max-width: 95vw;
+    position: relative;
+    text-align: center;
+    color: white;
+    box-shadow: 0 18px 45px rgba(0, 0, 0, 0.35);
+}
+
+.delete-channel-overlay .modal h3 {
+    color: white;
+    font-size: 16px;
+    line-height: 1.45;
+    margin-bottom: 10px;
+}
+
+.delete-channel-overlay .modal h3 strong {
+    color: #39ff14;
+}
+
+.delete-channel-overlay .delete-warning {
+    color: #cfcfcf;
+    font-size: 12px;
+    margin-bottom: 20px;
+}
+
+.delete-channel-overlay .close {
+    position: absolute;
+    top: 8px;
+    right: 10px;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.delete-channel-overlay .actions {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.delete-channel-overlay .btn {
+    flex: 1;
+    border: none;
+    padding: 9px 14px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.delete-channel-overlay .cancel {
+    background: #39ff14;
+    color: black;
+}
+
+.delete-channel-overlay .delete {
+    background: #7b1d9b;
+    color: white;
+}
+
+.delete-channel-overlay .delete:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
 }

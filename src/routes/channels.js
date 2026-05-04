@@ -247,6 +247,27 @@ function handleChannelsRoutes(req, res) {
         return true;
     }
 
+    // DELETE /api/channels/:id
+    if (req.method === "DELETE" && parts.length === 3) {
+        const channelId = Number(parts[2]);
+        const channels = getChannels();
+        const users = getUsers();
+        const channelIndex = channels.findIndex(c => Number(c.id) === channelId);
+
+        if (channelIndex === -1) {
+            sendJson(res, 404, { error: "Canal no encontrado" });
+            return true;
+        }
+
+        channels.splice(channelIndex, 1);
+        removeUsersFromChannel(users, channelId);
+        saveChannels(channels);
+        saveUsers(users);
+
+        sendJson(res, 200, { message: "Canal eliminado correctamente" });
+        return true;
+    }
+
     sendJson(res, 404, { error: "Ruta no encontrada" });
     return true;
 }

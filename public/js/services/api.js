@@ -146,3 +146,21 @@ export async function updateChannelWithMembers(channelId, data) {
 
     return res.json();
 }
+
+export async function deleteChannel(channelId) {
+    const user = localStorage.getItem("user");
+    const headers = { "Content-Type": "application/json" };
+    if (user) headers["x-user"] = encodeURIComponent(user);
+
+    const res = await fetch(`/api/channels/${channelId}`, {
+        method: "DELETE",
+        headers
+    });
+
+    if (!res.ok) {
+        const error = await res.json().catch(() => ({ error: "Error al eliminar el canal" }));
+        throw new Error(error.error || "Error al eliminar el canal");
+    }
+
+    return res.json();
+} 
