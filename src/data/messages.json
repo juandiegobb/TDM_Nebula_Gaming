@@ -39,6 +39,58 @@
             "userImg": "https://i.pravatar.cc/150?img=1",
             "text": "holii",
             "createdAt": "2026-05-04T14:33:24.156Z"
+        },
+        {
+            "id": "1777911251436-2ljtl5",
+            "channelId": 1,
+            "user": "Admin",
+            "userId": 1,
+            "userRole": "admin",
+            "userImg": "https://i.pravatar.cc/150?img=1",
+            "text": "awooo",
+            "createdAt": "2026-05-04T16:14:11.436Z"
+        },
+        {
+            "id": "1777911296148-2wldjs",
+            "channelId": 1,
+            "user": "Admin",
+            "userId": 1,
+            "userRole": "admin",
+            "userImg": "https://i.pravatar.cc/150?img=1",
+            "text": "2njng",
+            "createdAt": "2026-05-04T16:14:56.148Z"
+        },
+        {
+            "id": "1777911302965-4ak3xw",
+            "channelId": 1,
+            "user": "Admin",
+            "userId": 1,
+            "userRole": "admin",
+            "userImg": "https://i.pravatar.cc/150?img=1",
+            "text": "jkl",
+            "createdAt": "2026-05-04T16:15:02.965Z"
+        },
+        {
+            "id": "1777911403468-zb4w8s",
+            "channelId": 1,
+            "user": "Admin",
+            "userId": 1,
+            "userRole": "admin",
+            "userImg": "https://i.pravatar.cc/150?img=1",
+            "text": "djdj",
+            "createdAt": "2026-05-04T16:16:43.468Z"
+        }
+    ],
+    "2": [
+        {
+            "id": "1777911424483-rvj448",
+            "channelId": 2,
+            "user": "YENIFER PULIDO LEÓN",
+            "userId": 13,
+            "userRole": "user",
+            "userImg": "https://lh3.googleusercontent.com/a/ACg8ocLCt5WpzOFUs_XOIpZEjQJGv25q5ofm46dqvuVrmZidqK65OQ=s96-c",
+            "text": "awooo",
+            "createdAt": "2026-05-04T16:17:04.483Z"
         }
     ],
     "3": [
@@ -83,6 +135,48 @@
             "userImg": "https://lh3.googleusercontent.com/a/ACg8ocLoXE5OI0or8EVG52imG6UXv5VCmEeIQRPKOoe-qnXbwTPFd3KL=s96-c",
             "text": "assssssssssssssssssss",
             "createdAt": "2026-05-04T13:31:47.435Z"
+        }
+    ],
+    "11": [
+        {
+            "id": "1777911450418-8t76gm",
+            "channelId": 11,
+            "user": "Yenifer Pulido Leon",
+            "userId": 14,
+            "userRole": "user",
+            "userImg": "https://lh3.googleusercontent.com/a/ACg8ocI2dNIDlotq6-DpQFkzmSbSxmGiyUt3dHP0FrzJzQdvyGXXDl8=s96-c",
+            "text": "awooo",
+            "createdAt": "2026-05-04T16:17:30.418Z"
+        },
+        {
+            "id": "1777911453679-uapbck",
+            "channelId": 11,
+            "user": "Yenifer Pulido Leon",
+            "userId": 14,
+            "userRole": "user",
+            "userImg": "https://lh3.googleusercontent.com/a/ACg8ocI2dNIDlotq6-DpQFkzmSbSxmGiyUt3dHP0FrzJzQdvyGXXDl8=s96-c",
+            "text": "nkanaknc",
+            "createdAt": "2026-05-04T16:17:33.679Z"
+        },
+        {
+            "id": "1777911465171-6ncpmh",
+            "channelId": 11,
+            "user": "Admin",
+            "userId": 1,
+            "userRole": "admin",
+            "userImg": "https://i.pravatar.cc/150?img=1",
+            "text": "sfsss",
+            "createdAt": "2026-05-04T16:17:45.171Z"
+        },
+        {
+            "id": "1777911467038-ln0nl7",
+            "channelId": 11,
+            "user": "Admin",
+            "userId": 1,
+            "userRole": "admin",
+            "userImg": "https://i.pravatar.cc/150?img=1",
+            "text": "sss",
+            "createdAt": "2026-05-04T16:17:47.038Z"
         }
     ]
 }

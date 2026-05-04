@@ -30,7 +30,7 @@
         <div class="modal-step" id="paso1">
             <button class="modal-close" id="closeModal">✕</button>
             <h2 class="modal-title">Crear Canal</h2>
-            <p class="modal-subtitle">Tu servidor es donde tú y tus amigos se reúnen. Crea el tuyo y empieza a hablar</p>
+            <p class="modal-subtitle">Tu servidor es donde tú y los miembros se reúnen. Crea el tuyo y empieza a hablar</p>
             <div class="modal-body">
                 <div class="image-upload-section">
                     <div class="image-upload" id="imageUpload">
@@ -91,7 +91,7 @@
         <div class="modal-step hidden" id="paso2">
             <button class="modal-close" id="closeModal2">✕</button>
             <h2 class="modal-title">Crear Servidor</h2>
-            <p class="modal-subtitle">Tu servidor es donde tú y tus amigos se reúnen. Crea el tuyo y empieza a hablar</p>
+            <p class="modal-subtitle">Tu servidor es donde tú y los miembros se reúnen. Crea el tuyo y empieza a hablar</p>
 
             <div class="steps-indicator">
                 <div class="step-circle active">1</div>
@@ -142,10 +142,6 @@
                     <span class="channel-name">Reglas</span>
                 </li>
 
-                <li class="channel-item">
-                    <div class="channel-icon">#</div>
-                    <span class="channel-name">Anuncios</span>
-                </li>
             </ul>
         </div>
 
@@ -252,7 +248,7 @@
      <!--  SIDEBAR DERECHA (USUARIOS) -->
     <aside id="userSidebar" class="user-sidebar">
         <div class="sidebar-header">
-            <h3>Usuarios conectados</h3>
+            <h3>Miembros</h3>
             <button id="closeSidebar" class="icon-btn close-btn">
                 <i class="fa-solid fa-xmark"></i>
             </button>
@@ -261,20 +257,6 @@
 
         <ul id="userList"></ul>
     </aside>
-
-<div id="profileModal" class="profile-modal">
-    <div class="profile-modal-content">
-
-        <a href="#" class="profile-close">&times;</a>
-
-        <div class="right">
-            <div class="profile-big">
-                <img id="profileImg" alt="Administrador">
-            </div>
-
-            <span class="role" id="adminRole">ADMIN</span>
-            <h2 id="adminName">Administrador</h2>
-            <p id="adminEmail">admin@chat.com</p>
 
             <div class="stats">
                 <div>
@@ -288,8 +270,7 @@
             </div>
         </div>
 
-    </div>
-</div>
+
 
     <script type="module" src="./js/chat.js"></script>
     <script type="module" src="./js/modal_crear_canal.js"></script>
