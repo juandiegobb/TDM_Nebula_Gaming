@@ -1,0 +1,46 @@
+{
+    "1": [
+        {
+            "id": "1777901439294-2f9cvd",
+            "channelId": 1,
+            "user": "Admin",
+            "userId": 1,
+            "userRole": "admin",
+            "userImg": "https://i.pravatar.cc/150?img=1",
+            "text": "hollllll",
+            "createdAt": "2026-05-04T13:30:39.294Z"
+        },
+        {
+            "id": "1777901452064-3gsdfo",
+            "channelId": 1,
+            "user": "JUAN DIEGO CASTILLO JIMÉNEZ",
+            "userId": 12,
+            "userRole": "user",
+            "userImg": "https://lh3.googleusercontent.com/a/ACg8ocLoXE5OI0or8EVG52imG6UXv5VCmEeIQRPKOoe-qnXbwTPFd3KL=s96-c",
+            "text": "xxxxxxxxxxxxx",
+            "createdAt": "2026-05-04T13:30:52.064Z"
+        }
+    ],
+    "4": [
+        {
+            "id": "1777901464989-w6jy2r",
+            "channelId": 4,
+            "user": "JUAN DIEGO CASTILLO JIMÉNEZ",
+            "userId": 12,
+            "userRole": "user",
+            "userImg": "https://lh3.googleusercontent.com/a/ACg8ocLoXE5OI0or8EVG52imG6UXv5VCmEeIQRPKOoe-qnXbwTPFd3KL=s96-c",
+            "text": "golllllllllllllllllll",
+            "createdAt": "2026-05-04T13:31:04.989Z"
+        },
+        {
+            "id": "1777901507435-96vieb",
+            "channelId": 4,
+            "user": "JUAN DIEGO CASTILLO JIMÉNEZ",
+            "userId": 12,
+            "userRole": "user",
+            "userImg": "https://lh3.googleusercontent.com/a/ACg8ocLoXE5OI0or8EVG52imG6UXv5VCmEeIQRPKOoe-qnXbwTPFd3KL=s96-c",
+            "text": "assssssssssssssssssss",
+            "createdAt": "2026-05-04T13:31:47.435Z"
+        }
+    ]
+}

@@ -1,5 +1,6 @@
 const broadcast = require("../utils/broadcast");
 const { getUsers } = require("../models/users");
+const { getMessagesByChannel, addMessageToChannel } = require("../models/messages");
 const {
     getChannelById,
     getChannelsForUser,
@@ -92,6 +93,12 @@ function joinChannel(connection, channelId) {
     send(connection.ws, {
         type: "channel_joined",
         channel
+    });
+
+    send(connection.ws, {
+        type: "messages_history",
+        channelId: Number(channelId),
+        messages: getMessagesByChannel(channelId)
     });
 
     send(connection.ws, {
@@ -198,14 +205,17 @@ function setupChat(wss) {
                 const text = String(data.text || "").trim();
                 if (!text) return;
 
-                broadcast(getChannelConnections(channelId), {
-                    type: "chat",
-                    channelId,
+                const storedMessage = addMessageToChannel(channelId, {
                     user: currentConnection.user.name,
                     userId: currentConnection.user.id,
                     userRole: currentConnection.user.rol,
                     userImg: currentConnection.user.img,
                     text
+                });
+
+                broadcast(getChannelConnections(channelId), {
+                    type: "chat",
+                    ...storedMessage
                 });
             }
         });

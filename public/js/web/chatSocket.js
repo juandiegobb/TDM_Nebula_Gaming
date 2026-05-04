@@ -46,6 +46,19 @@ export function connect(user, selectedChannelId = null) {
                 setActiveChannel(data.channel);
                 break;
 
+            case "messages_history":
+                if (Number(data.channelId) !== Number(currentChannelId)) return;
+                clearMessages();
+                (data.messages || []).forEach(message => {
+                    addMessage({
+                        name: message.user,
+                        id: message.userId,
+                        rol: message.userRole,
+                        img: message.userImg
+                    }, message.text, Number(message.userId) === Number(currentUser.id));
+                });
+                break;
+
             case "chat":
                 if (Number(data.channelId) !== Number(currentChannelId)) return;
                 addMessage({
