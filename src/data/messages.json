@@ -83,26 +83,6 @@
             "userImg": "https://lh3.googleusercontent.com/a/ACg8ocLoXE5OI0or8EVG52imG6UXv5VCmEeIQRPKOoe-qnXbwTPFd3KL=s96-c",
             "text": "assssssssssssssssssss",
             "createdAt": "2026-05-04T13:31:47.435Z"
-        },
-        {
-            "id": "1777904751791-6la69f",
-            "channelId": 4,
-            "user": "Admin",
-            "userId": 1,
-            "userRole": "admin",
-            "userImg": "https://i.pravatar.cc/150?img=1",
-            "text": "erty",
-            "createdAt": "2026-05-04T14:25:51.791Z"
-        },
-        {
-            "id": "1777905538620-43yp86",
-            "channelId": 4,
-            "user": "Admin",
-            "userId": 1,
-            "userRole": "admin",
-            "userImg": "https://i.pravatar.cc/150?img=1",
-            "text": "jsjsj",
-            "createdAt": "2026-05-04T14:38:58.620Z"
         }
     ]
 }
