@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChatApp - Chat</title>
+    <link rel="stylesheet" href="./css/global.css"/>
+    <link rel="stylesheet" href="./css/sidebar_usuario.css"/>
+    <link rel="stylesheet" href="./css/chat_usuario.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+</head>
+<body>
+   
+    <!-- SIDEBAR 1: SERVIDORES -->
+    <aside class="server-sidebar" id="channelDots">
+       
+        <ul id="channelList" class="channel-list">
+            <!-- canales dinámicos -->
+        </ul>
+    </aside>
+
+     <!--SIDEBAR 2: CANALES -->
+    <aside class="channel-sidebar">
+
+        <!-- HEADER -->
+
+
+        <!-- SECCIÓN -->
+        <div class="sidebar-section">
+
+            <ul class="channel-lista">
+                  <div class="section-title">
+                Introducción
+                <i class="fa-solid fa-plus"></i>
+                </div>
+
+
+                <li class="channel-item" data-action="description">
+                    <div class="channel-icon">#</div>
+                    <span class="channel-name">Descripción</span>
+                </li>
+
+
+                <li class="channel-item" data-action="rules">
+                    <div class="channel-icon">#</div>
+                    <span class="channel-name">Reglas</span>
+                </li>
+
+
+                <li class="channel-item">
+                    <div class="channel-icon">#</div>
+                    <span class="channel-name">Anuncios</span>
+                </li>
+            </ul>
+        </div>
+    </aside>
+
+
+     <!--  CHAT -->
+    <div class="chat-container">
+
+
+        <!-- HEADER -->
+        <header class="chat-header">
+            
+            <div class="header-left">
+                <h2 id="chat-username"></h2>
+            </div>
+
+            <div class="brand-title">
+                <div class="brand-circle">NG</div>
+                <span>Nebula Gaming S.A.S.</span>
+            </div>
+
+
+            <div class="header-actions">
+                <!-- grupo -->
+                <button id="usersToggle" class="icon-btn">
+                    <i class="fa-solid fa-users"></i>
+                </button>
+
+
+                <button id="logoutBtn" class="icon-btn">
+                    <!-- cerrar sesion -->
+                    <i class="fa-solid fa-right-from-bracket"></i>
+                </button>
+
+
+                  <div class="profile-mini">
+                        <i class="fa-regular fa-user"></i>
+                        <span class="star"></span>
+                        <div class="status"></div>
+                    </div>
+            </div>
+
+
+        </header>
+
+
+
+
+
+
+        <!-- MAIN -->
+        <main class="chat-main">
+
+
+            <div class="channel-topbar">
+                <div class="channel-left">
+                    <i class="fa-solid fa-circle-chevron-right channel-arrow"></i>
+                    <div class="channel-title" id="currentChannelName">
+                        Cargando canales...
+                    </div>
+                </div>
+            </div>
+
+            <div id="channelInfoPanel" class="channel-info-panel hidden">
+                <div class="channel-info-top">
+                    <div id="channelInfoHeader" class="channel-info-header">Información del canal</div>
+                    <button id="closeChannelInfoBtn" class="channel-info-close" type="button">✕</button>
+                </div>
+                <div id="channelInfoContent" class="channel-info-content">Presiona "Descripción" o "Reglas" para ver los detalles del canal.</div>
+            </div>
+
+            <div id="messages" class="messages"></div>
+
+
+        </main>
+
+
+
+
+        <form id="chatForm" class="chat-input">
+            <input type="text" id="messageInput" placeholder="Escribe un mensaje..." autocomplete="off" required/>
+            <button type="submit" class="send-btn"><i class="fa-solid fa-paper-plane"></i></button>
+        </form>
+    </div>
+
+     <!--  SIDEBAR DERECHA (USUARIOS) -->
+    <aside id="userSidebar" class="user-sidebar">
+        <div class="sidebar-header">
+            <h3>Usuarios conectados</h3>
+            <button id="closeSidebar" class="icon-btn close-btn">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+
+
+        <ul id="userList"></ul>
+    </aside>
+
+    <script type="module" src="./js/chat.js"></script>
+</body>
+</html>

@@ -1,0 +1,206 @@
+[
+  {
+    "id": 1,
+    "name": "Admin",
+    "password": "1234",
+    "email": "admin@chat.com",
+    "rol": "admin",
+    "img": "https://i.pravatar.cc/150?img=1",
+    "grupos": [
+      10
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Usuario",
+    "password": "abcd",
+    "email": "user@chat.com",
+    "rol": "user",
+    "img": "https://i.pravatar.cc/150?img=2",
+    "grupos": [
+      5,
+      10,
+      1,
+      2,
+      9
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Usuario4",
+    "password": "pass678",
+    "email": "user4@chat.com",
+    "rol": "user",
+    "img": "https://i.pravatar.cc/150?img=4",
+    "grupos": [
+      5,
+      10,
+      2,
+      9
+    ]
+  },
+  {
+    "id": 5,
+    "name": "Usuario5",
+    "password": "pass910",
+    "email": "user5@chat.com",
+    "rol": "user",
+    "img": "https://i.pravatar.cc/150?img=5",
+    "grupos": [
+      5,
+      10,
+      1,
+      2,
+      4
+    ]
+  },
+  {
+    "id": 6,
+    "name": "PAULA SELENE BECERRA MORALES",
+    "password": "",
+    "email": "psbecerra@uniboyaca.edu.co",
+    "rol": "user",
+    "img": "https://lh3.googleusercontent.com/a/ACg8ocKleuJs-jI2d_kgoasgy7iia7eT_yHuyalH8wdhutjWUEYVPw=s96-c",
+    "grupos": [
+      3,
+      5,
+      10
+    ],
+    "provider": "google"
+  },
+  {
+    "id": 7,
+    "name": "Usuario6",
+    "password": "pass123",
+    "email": "user6@chat.com",
+    "rol": "user",
+    "img": "https://i.pravatar.cc/150?img=6",
+    "grupos": [
+      10,
+      1,
+      2
+    ]
+  },
+  {
+    "id": 8,
+    "name": "Usuario7",
+    "password": "pass456",
+    "email": "user7@chat.com",
+    "rol": "user",
+    "img": "https://i.pravatar.cc/150?img=7",
+    "grupos": [
+      3,
+      10,
+      2
+    ]
+  },
+  {
+    "id": 9,
+    "name": "Usuario8",
+    "password": "pass789",
+    "email": "user8@chat.com",
+    "rol": "user",
+    "img": "https://i.pravatar.cc/150?img=8",
+    "grupos": [
+      10,
+      1,
+      4
+    ]
+  },
+  {
+    "id": 10,
+    "name": "Usuario9",
+    "password": "pass012",
+    "email": "user9@chat.com",
+    "rol": "user",
+    "img": "https://i.pravatar.cc/150?img=9",
+    "grupos": [
+      10,
+      2,
+      11,
+      4
+    ]
+  },
+  {
+    "id": 11,
+    "name": "Usuario10",
+    "password": "pass345",
+    "email": "user10@chat.com",
+    "rol": "user",
+    "img": "https://i.pravatar.cc/150?img=10",
+    "grupos": [
+      3,
+      10,
+      1,
+      9,
+      11
+    ]
+  },
+  {
+    "id": 12,
+    "name": "JUAN DIEGO CASTILLO JIMÉNEZ",
+    "password": "",
+    "email": "jdcastilloj@uniboyaca.edu.co",
+    "rol": "user",
+    "img": "https://lh3.googleusercontent.com/a/ACg8ocLoXE5OI0or8EVG52imG6UXv5VCmEeIQRPKOoe-qnXbwTPFd3KL=s96-c",
+    "grupos": [
+      1,
+      2,
+      11,
+      4
+    ],
+    "provider": "google"
+  },
+  {
+    "id": 13,
+    "name": "YENIFER PULIDO LEÓN",
+    "password": "",
+    "email": "ypulido@uniboyaca.edu.co",
+    "rol": "user",
+    "img": "https://lh3.googleusercontent.com/a/ACg8ocLCt5WpzOFUs_XOIpZEjQJGv25q5ofm46dqvuVrmZidqK65OQ=s96-c",
+    "grupos": [
+      2,
+      11,
+      4
+    ],
+    "provider": "google"
+  },
+  {
+    "id": 14,
+    "name": "Yenifer Pulido Leon",
+    "password": "",
+    "email": "yeniferpulidoleon15@gmail.com",
+    "rol": "user",
+    "img": "https://lh3.googleusercontent.com/a/ACg8ocI2dNIDlotq6-DpQFkzmSbSxmGiyUt3dHP0FrzJzQdvyGXXDl8=s96-c",
+    "grupos": [
+      11
+    ],
+    "provider": "google"
+  },
+  {
+    "id": 15,
+    "name": "Juan Diego xd",
+    "password": "",
+    "email": "juanchocast17@gmail.com",
+    "rol": "user",
+    "img": "https://lh3.googleusercontent.com/a/ACg8ocIwHz-2lVAlRa2FTeEztbmy38CzW7yz5Civ2t_MUcRdyQnOHuwgDQ=s96-c",
+    "grupos": [
+      1,
+      11
+    ],
+    "provider": "google"
+  },
+  {
+    "id": 16,
+    "name": "Rocamonti Hotel",
+    "password": "",
+    "email": "rocamontihotel@gmail.com",
+    "rol": "user",
+    "img": "https://lh3.googleusercontent.com/a/ACg8ocIDmFkZBvTbgtp-uWvSyCwiCnqZtPdLnX54eYpCBs6v2CDR3Og=s96-c",
+    "grupos": [
+      9,
+      11
+    ],
+    "provider": "google"
+  }
+]

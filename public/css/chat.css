@@ -1,0 +1,543 @@
+/* ===============================
+   CONTENEDOR CHAT
+=============================== */
+.chat-container{
+    margin-left:330px; /* 70 + 260 */
+    width:calc(100% - 330px);
+    height:100vh;
+    display:flex;
+    flex-direction:column;
+    padding:18px;
+    padding-top: 80px;
+}
+
+/* ===============================
+   HEADER
+=============================== */
+.chat-header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background:#1D2020;
+    padding: 20px;
+    z-index: 1000;
+}
+
+/* LNOMBRE DE USUARIO */
+.header-left{
+    display: none;
+    align-items: center;
+}
+
+.brand-title{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-left: 1px;
+      font-family: "Mr Tech-Ly St", sans-serif;
+    font-size: 23px;
+}
+
+.header-actions{
+    margin-left: auto;
+    display: flex;
+    gap: 50px;
+
+
+}
+
+/* Contenedor */
+.profile-mini {
+    position: relative;
+    width: 35px;
+    height: 35px;
+    background: #9a9a9a;
+    border-radius: 50%;
+
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Icono usuario */
+.profile-mini i {
+    font-size: 16px;
+    color: white;
+}
+
+
+/* ⭐ ESTRELLA */
+.star {
+    position: absolute;
+    top: -4px;
+    right: 8px;
+    width: 2px;
+    height: 25px;
+  
+}
+
+
+/* Puedes usar forma real de estrella */
+.star::before {
+    content: "★";
+    font-size: 8px;
+    color: gold;
+    font-size: 18px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+
+
+
+
+/* Puntico verde */
+.status {
+    position: absolute;
+    bottom: -2px;
+    right: -2px;
+    width: 10px;
+    height: 10px;
+    background: #39ff14;
+    border-radius: 50%;
+    border: 2px solid #5a5757;
+}
+
+
+.brand-circle{
+    width:50px;
+    height:50px;
+    border-radius:50%;
+    background:#000;
+    color:#fff;
+      transform: translateX(-6px);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-weight:bold;
+}
+
+
+/* ===============================
+   MAIN CHAT
+=============================== */
+.chat-main{
+    flex:1;
+    background:var(--panel);
+    border-radius:var(--radio);
+    padding:16px;
+    overflow-y:auto;
+}
+
+
+/* TOPBAR */
+.channel-topbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    position: sticky;
+    background:var(--gris);
+    padding:12px 15px;
+    border-radius:14px;
+    margin-bottom:15px;
+}
+
+.channel-info-panel{
+    background:#f9fafb;
+    border:1px solid #d5d7db;
+    border-radius:14px;
+    padding:14px 16px;
+    margin-bottom:15px;
+    color:#1f2937;
+}
+
+.channel-info-header{
+    font-size:14px;
+    font-weight:700;
+    margin-bottom:10px;
+}
+
+.channel-info-content{
+    font-size:13px;
+    line-height:1.65;
+    color:#374151;
+}
+
+.channel-info-content ol{
+    padding-left:18px;
+    margin:0;
+}
+
+.channel-info-content li{
+    margin-bottom:8px;
+}
+
+.channel-info-top{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:10px;
+    margin-bottom:12px;
+}
+
+.channel-info-close{
+    border:none;
+    background:transparent;
+    color:#374151;
+    font-size:18px;
+    cursor:pointer;
+    line-height:1;
+    padding:4px 8px;
+    transition:0.2s ease;
+}
+
+.channel-info-close:hover{
+    color:#a100ff;
+}
+
+.hidden{
+    display:none;
+}
+
+.channel-left{
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+
+.channel-title{
+    font-weight:bold;
+    color:black;
+}
+
+
+/* CONTENEDOR ICONOS */
+.channel-actions{
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+
+/* LINKS DE LOS ICONOS */
+.channel-actions a{
+    color: #aaa;
+    text-decoration: none;
+    font-size: 18px;
+    transition: 0.3s ease;
+    cursor: pointer;
+}
+
+/* EFECTO AL PASAR EL MOUSE */
+.channel-actions a:hover{
+    color: white;
+    transform: scale(1.15);
+}
+
+/* ICONOS */
+.channel-actions i{
+    pointer-events: none;
+}
+
+
+.modal-destacados{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.7);
+    display:none;
+    justify-content:center;
+    align-items:center;
+    z-index:999;
+    padding-top: 80px;
+}
+
+.modal-destacados:target{
+    display:flex;
+}
+
+.modal-content{
+    width:800px;
+    height:500px;
+    background:#1e1f22;
+    padding:15px;
+    border-radius:15px;
+    position:relative;
+}
+
+.modal-content iframe{
+    width:100%;
+    height:100%;
+    border:none;
+    border-radius:10px;
+}
+
+.close{
+    position:absolute;
+    top:10px;
+    right:15px;
+    color:white;
+    text-decoration:none;
+    font-size:28px;
+}
+
+.close:hover{
+    transform: scale(1.08);
+}
+
+
+/* Caja usuarios */
+.usuarios-modal{
+    width:450px;
+    height:auto;
+}
+
+/* Título */
+.usuarios-modal h2{
+    color:white;
+    margin-bottom:20px;
+}
+
+/* Lista */
+.lista-usuarios{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+}
+
+/* Usuario */
+.usuario-item{
+    background:#2b2d31;
+    color:white;
+    padding:12px 15px;
+    border-radius:10px;
+    display:flex;
+    align-items:center;
+    gap:10px;
+    transition:0.2s;
+}
+
+.usuario-item:hover{
+    transform:scale(1.02);
+}
+
+/* Estado */
+.estado{
+    width:10px;
+    height:10px;
+    border-radius:50%;
+}
+
+.online{
+    background:#23a559;
+}
+
+.offline{
+    background:#777;
+}
+
+/* ===============================
+   MENSAJES
+=============================== */
+.messages{
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+}
+
+
+.message{
+    background:#dcf5d2;
+    border-top:8px solid #8c00ff;
+    align-self:flex-start;
+    color:rgb(0, 0, 0);
+      max-width:70%;
+    padding:15px;
+    border-radius:12px;
+}
+
+/* TU MENSAJE */
+.message.self{
+    background:#dcf5d2;
+    border-top:8px solid #73ff00;
+    align-self:flex-end;
+    color:black;
+}
+
+/* MENSAJE OTROS */
+.message.other{
+    background:#dcf5d2;
+    color:rgb(0, 0, 0);
+    border-top:8px solid #8c00ff;
+    align-self:flex-start;
+}
+
+/* SISTEMA */
+.message.system{
+    background:none;
+    border:none;
+    padding:5px;
+    color:#bbb;
+    font-size:14px;
+    text-align:center;
+    align-self:center;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* ===============================
+   INPUT
+=============================== */
+.chat-input{
+    margin-top:14px;
+    background:var(--gris);
+    border-radius:var(--radio);
+    padding:10px 15px;
+
+
+    display:flex;
+    align-items:center;
+}
+
+
+.chat-input input{
+    flex:1;
+    border:none;
+    background:none;
+    color:white;
+    outline:none;
+}
+
+
+.send-btn{
+    border:none;
+    background:none;
+    font-size:20px;
+    cursor:pointer;
+}
+
+
+/* SOLO este modal del admi icono  */
+/* ===== MODAL PERFIL ESTILO PRO ===== */
+
+.profile-modal {
+    display: none;
+}
+
+.profile-modal:target {
+    display: flex;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.75);
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+/* caja */
+.profile-modal-content {
+    background: #2a2b2f;
+    padding: 30px 25px;
+    border-radius: 18px;
+    width: 340px;
+    text-align: center;
+    color: white;
+    position: relative;
+    box-shadow: 0 0 40px rgba(0,0,0,0.6);
+}
+
+/* cerrar */
+.profile-close {
+    position: absolute;
+    top: 12px;
+    right: 15px;
+    font-size: 22px;
+    color: #aaa;
+    text-decoration: none;
+}
+
+.profile-close:hover {
+    color: white;
+}
+
+/* imagen */
+.profile-big img {
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+}
+
+/* badge ADMIN */
+.role {
+    display: inline-block;
+    background: #39ff14;
+    color: black;
+    padding: 6px 18px;
+    border-radius: 8px;
+    font-weight: bold;
+    margin-bottom: 12px;
+}
+
+/* nombre */
+#adminName {
+    font-size: 24px;
+    margin: 5px 0;
+}
+
+/* email */
+#adminEmail {
+    color: #bbb;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+/* stats contenedor */
+.stats {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+/* tarjetas */
+.stats div {
+    flex: 1;
+    background: #1c1d22;
+    border-radius: 12px;
+    padding: 15px 10px;
+    border: 1px solid #2f3136;
+}
+
+/* números */
+.stats strong {
+    display: block;
+    font-size: 22px;
+    color: #39ff14;
+}
+
+/* texto */
+.stats span {
+    font-size: 13px;
+    color: #ccc;
+}
+

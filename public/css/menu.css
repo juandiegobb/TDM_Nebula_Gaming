@@ -1,0 +1,274 @@
+/* RESET */
+body {
+  margin: 0;
+  height: 100vh;
+  background: #1e1e1e00;
+  font-family: Arial, sans-serif;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* CONTENEDOR */
+.miembros {
+  width: 80%;
+    height: 60%;
+  background: #3a3a3a;
+  padding: 10px;
+  border-radius: 10px;
+  overflow-y: auto;
+}
+
+/* HEADER */
+.miembros-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  background: #2a2a2a;
+  border-radius: 20px;
+  padding: 8px 12px;
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: white;
+  font-weight: bold;
+}
+
+.close {
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+/* BODY */
+.miembros-body {
+  margin-top: 10px;
+  background: #2a2a2a;
+  border-radius: 15px;
+  padding: 10px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  max-height: 300px;      /*opcional */
+  overflow-y: auto;       /*scroll si hay muchos */
+}
+
+/* USER */
+.user {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  background: #3f3f3f;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+/* AVATAR */
+.avatar {
+  width: 35px;
+  height: 35px;
+  background: #888;
+  border-radius: 50%;
+  position: relative;
+}
+
+/* STATUS */
+.status {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+.online {
+  background: lime;
+}
+
+.offline {
+  background: gray;
+}
+
+/* INFO */
+.info {
+  display: flex;
+  flex-direction: column;
+}
+
+.name {
+  color: white;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.desc {
+  font-size: 11px;
+  color: #bbb;
+}
+
+/* BADGE */
+.badge {
+  font-size: 10px;
+  padding: 2px 6px;
+  border-radius: 8px;
+  margin-left: 6px;
+}
+
+.admin {
+  background: purple;
+  color: white;
+}
+
+
+
+/* CONTENEDOR */
+.destacados {
+  width: 80%;
+  height: 60%;
+  background: #3a3a3a;
+  padding: 10px;
+  border-radius: 10px;
+   overflow-y: auto;  
+}
+
+
+
+/* HEADER */
+.destacados-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  background: #2a2a2a;
+  border-radius: 20px;
+  padding: 8px 12px;
+}
+
+.destacados .title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: white;
+  font-weight: bold;
+}
+
+/* BODY */
+.destacados-body {
+  margin-top: 10px;
+  background: #2a2a2a;
+  border-radius: 15px;
+  padding: 10px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+/* ITEM */
+.item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  background: #3f3f3f;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+/* AVATAR */
+.item .avatar {
+  width: 35px;
+  height: 35px;
+  background: #888;
+  border-radius: 50%;
+}
+
+/* INFO */
+.item .info {
+  display: flex;
+  flex-direction: column;
+}
+
+.item .name {
+  color: white;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.item .desc {
+  font-size: 11px;
+  color: #bbb;
+}
+
+
+
+/* MODAL */
+.modal {
+  background: #2f2f2f;
+  padding: 20px;
+  border-radius: 10px;
+  width: 320px;
+  position: relative;
+  text-align: center;
+}
+
+/* TEXTO */
+.modal h3 {
+  color: white;
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+/* BOTÓN CERRAR */
+.modal .close {
+  position: absolute;
+  top: 8px;
+  right: 10px;
+
+  background: none;
+  border: none;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/* ACCIONES */
+.actions {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* BOTONES */
+.btn {
+  border: none;
+  padding: 6px 14px;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* CANCELAR */
+.cancel {
+  background: lime;
+  color: black;
+}
+
+/* ELIMINAR */
+.delete {
+  background: purple;
+  color: white;
+}

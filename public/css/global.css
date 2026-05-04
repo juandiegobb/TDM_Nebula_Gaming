@@ -1,0 +1,39 @@
+:root{
+    --fondo:#2B292C;
+    --panel:#1c1d22;
+    --gris:#5b5b60;
+    --gris-claro:#d9d9d9;
+    --blanco:#ffffff;
+    --negro:#111;
+    --morado:#8c00ff;
+    --verde:#73ff00;
+
+
+    --radio:16px;
+}
+
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--fondo);
+    color: var(--blanco);
+    height:100vh;
+    overflow:hidden;
+}
+
+
+/* botones iconos */
+.icon-btn{
+    background:none;
+    border:none;
+    color:white;
+    font-size:20px;
+    cursor:pointer;
+}

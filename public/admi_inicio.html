@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nebula Gaming | Admin</title>
+
+    <link rel="stylesheet" href="./css/admi_inicio.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<!-- MODAL CREAR SERVIDOR -->
+<div class="modal-overlay" id="crearServidorModal">
+    <div class="modal">
+
+        <!-- PASO 1 -->
+        <div class="modal-step" id="paso1">
+            <button class="modal-close" id="closeModal">✕</button>
+            <h2 class="modal-title">Crear Canal</h2>
+            <p class="modal-subtitle">Tu servidor es donde tú y tus amigos se reúnen. Crea el tuyo y empieza a hablar</p>
+            <div class="modal-body">
+                <div class="image-upload-section">
+                    <div class="image-upload" id="imageUpload">
+                        <button class="img-remove" id="imgRemove">✕</button>
+                        <span class="img-plus">+</span>
+                        <div class="img-circle"></div>
+                        <input type="file" id="imgInput" accept="image/*" hidden>
+                    </div>
+                    <div class="image-url-input">
+                        <label>O INGRESA UNA URL</label>
+                        <input type="text" id="serverImgUrl" placeholder="https://ejemplo.com/imagen.jpg">
+                    </div>
+                </div>
+
+                <div class="modal-fields">
+                    <label>NOMBRE DEL SERVIDOR</label>
+                    <div class="input-count">
+                        <input type="text" id="serverName" maxlength="100" placeholder="Ingresa un nombre">
+                        <span id="nameCount">0/100</span>
+                    </div>
+
+                    <label>DESCRIPCION (OPCIONAL)</label>
+                    <div class="input-count">
+                        <textarea id="serverDesc" maxlength="500" placeholder="¿De qué trata tu servidor?"></textarea>
+                        <span id="descCount">0/500</span>
+                    </div>
+
+                    <label>AÑADIR MIEMBROS</label>
+                    <button class="add-members-btn" id="goToMembers" type="button">
+                        <i class="fa-solid fa-user-plus fa-2x"></i>
+                    </button>
+
+                    <div class="selected-members-preview" id="selectedMembersPreview">
+                        <span class="members-empty">Sin miembros seleccionados</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="members-panel hidden" id="membersPanel">
+                <div class="members-panel-header">
+                    <div>
+                        <strong>Seleccionar miembros</strong>
+                        <span id="membersCount">0 seleccionado(s)</span>
+                    </div>
+                    <button type="button" id="closeMembersPanel">x</button>
+                </div>
+                <input type="search" id="membersSearch" class="members-search" placeholder="Buscar usuario por nombre o email">
+                <div class="members-list" id="membersList">
+                    <div class="members-empty">Presiona añadir miembros para cargar usuarios.</div>
+                </div>
+                <button type="button" class="confirm-members-btn" id="confirmMembersBtn">GUARDAR MIEMBROS</button>
+            </div>
+
+            <button class="create-btn" id="irPaso2">SIGUIENTE</button>
+        </div>
+
+        <!-- PASO 2 -->
+        <div class="modal-step hidden" id="paso2">
+            <button class="modal-close" id="closeModal2">✕</button>
+            <h2 class="modal-title">Crear Servidor</h2>
+            <p class="modal-subtitle">Tu servidor es donde tú y tus amigos se reúnen. Crea el tuyo y empieza a hablar</p>
+
+            <div class="steps-indicator">
+                <div class="step-circle active">1</div>
+                <div class="step-line"></div>
+                <div class="step-circle active">2</div>
+            </div>
+
+            <div class="rules-box">
+                <h3>REGLAS SUGERIDAS</h3>
+                <ul id="rulesList">
+                    <li><span class="rule-dot">●</span> <span class="rule-text">Sé respetuoso con todos</span> <button class="rule-remove" data-index="0">✕</button></li>
+                    <li><span class="rule-dot">●</span> <span class="rule-text">Sé respetuoso con todos</span> <button class="rule-remove" data-index="1">✕</button></li>
+                    <li><span class="rule-dot">●</span> <span class="rule-text">Sé respetuoso con todos</span> <button class="rule-remove" data-index="2">✕</button></li>
+                </ul>
+                <button class="add-rule-btn" id="addRuleBtn"><i class="fa-solid fa-circle-plus"></i> AGREGAR REGLA</button>
+            </div>
+
+            <button class="create-btn" id="crearServidorBtn">CREAR SERVIDOR</button>
+        </div>
+
+    </div>
+</div>
+<body>
+
+    <aside class="sidebar" id="channelDots">
+        <div class="sidebar-title">NG</div>
+        <div class="add" title="Crear canal próximamente">+</div>
+    </aside>
+
+    <div class="main">
+
+        <header class="topbar">
+            <div class="logo">
+                
+                <span>NEBULA GAMING S.A.S.</span>
+            </div>
+
+            <div class="topbar-actions">
+                <button class="ghost-btn" id="goChatBtn">
+                    <i class="fa-solid fa-comments"></i>
+                    Ir al chat
+                </button>
+                <button class="ghost-btn danger" id="logoutBtn">
+                    <i class="fa-solid fa-right-from-bracket"></i>
+                    Salir
+                </button>
+                <div class="profile-mini" id="miniProfile">
+                    <img id="miniProfileImg" alt="Admin">
+                    <div class="status"></div>
+                </div>
+            </div>
+        </header>
+
+        <div class="container">
+            <div class="left">
+
+                <div class="card">
+                    <div class="card-header">
+                        <div>
+                            <h3>CANALES DE CHAT</h3>
+                            <p>Canales registrados en <strong>channels.json</strong></p>
+                        </div>
+                        <div class="header-buttons">
+                            <button id="createChannelBtn">
+                                <i class="fa-solid fa-plus"></i>
+                                CREAR CANAL
+                            </button>
+                            <button id="editChannelBtn" class="edit-channel-btn">
+                                <i class="fa-solid fa-pen"></i>
+                                EDITAR CANAL
+                            </button>
+                            <button id="deleteChannelBtn" class="delete-channel-btn">
+                                <i class="fa-solid fa-trash"></i>
+                                ELIMINAR CANAL
+                            </button>
+                            <button id="refreshBtn">
+                                <i class="fa-solid fa-rotate-right"></i>
+                                ACTUALIZAR
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="channels-grid" id="channelsGrid">
+                        <div class="empty-state">Cargando canales...</div>
+                    </div>
+                </div>
+
+                <div class="card small">
+                    <div class="card-header clean">
+                        <div>
+                            <h3 id="selectedChannelTitle">USUARIOS DEL CANAL</h3>
+                            <p id="selectedChannelDescription">Selecciona un canal para ver sus usuarios.</p>
+                        </div>
+                    </div>
+
+                    <div class="users-grid" id="channelUsersGrid">
+                        <div class="empty-state">Sin canal seleccionado.</div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="right">
+                <div class="profile-big">
+                    <img id="profileImg" alt="Administrador">
+                </div>
+
+                <span class="role" id="adminRole">ADMIN</span>
+                <h2 id="adminName">Administrador</h2>
+                <p id="adminEmail">admin@chat.com</p>
+
+                <div class="stats">
+                    <div>
+                        <strong id="totalChannels">0</strong>
+                        <span>Canales</span>
+                    </div>
+                    <div>
+                        <strong id="totalUsers">0</strong>
+                        <span>Usuarios Registradoss</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script type="module" src="./js/admin_inicio.js"></script>
+</body>
+</html>

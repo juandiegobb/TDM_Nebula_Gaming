@@ -1,0 +1,172 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #1e1e1e;
+    color: white;
+}
+
+/* HEADER */
+.header {
+    width: 100%;
+    background: linear-gradient(to bottom, #2b2b2b, #1e1e1e);
+    text-align: center;
+    padding: 18px 0;
+    font-size: 22px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    border-bottom: 1px solid #444;
+}
+
+/* LAYOUT GENERAL */
+.container {
+    display: flex;
+    height: calc(100vh - 60px);
+}
+
+/* SIDEBAR */
+.sidebar {
+    width: 260px;
+    background: #6b6b6b;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.sidebar h2 {
+    font-size: 18px;
+}
+
+.sidebar .edit {
+    cursor: pointer;
+}
+
+.sidebar p {
+    margin-top: 10px;
+    opacity: 0.8;
+}
+
+/* MAIN */
+.main {
+    flex: 1;
+    padding: 20px;
+}
+
+/* COLUMNAS */
+.columns {
+    display: flex;
+    gap: 20px;
+    height: 100%;
+}
+
+/* CADA COLUMNA */
+.column {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    background: #2a2a2a;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+/* HEADER DE COLUMNA */
+.column-header {
+    padding: 12px;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.online {
+    background: #39ff14;
+    color: black;
+}
+
+.featured {
+    background: #a020f0;
+}
+
+/* LISTA (DINÁMICA) */
+.list {
+    flex: 1;
+    overflow-y: auto;
+}
+
+/* ITEMS */
+.item {
+    padding: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #444;
+    transition: background 0.2s;
+}
+
+.item:hover {
+    background: #333;
+}
+
+.item span {
+    cursor: pointer;
+}
+
+.item.active {
+    color: #a020f0;
+    font-weight: bold;
+}
+
+/* BOTÓN */
+button {
+    background: linear-gradient(to right, #a020f0, #6a0dad);
+    border: none;
+    padding: 14px;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+    transition: opacity 0.2s;
+}
+
+button:hover {
+    opacity: 0.85;
+}
+
+.header{
+    position:relative;
+}
+
+.volver{
+    position:absolute;
+    left:20px;
+    top:50%;
+    transform:translateY(-50%);
+    font-size:40px;
+    color:white;
+    text-decoration:none;
+}
+
+.cerrar{
+    position:absolute;
+    right:20px;
+    top:50%;
+    transform:translateY(-50%);
+    font-size:24px;
+    color:white;
+    text-decoration:none;
+}
+
+.volver:hover,
+.cerrar:hover{
+    opacity:0.7;
+}
