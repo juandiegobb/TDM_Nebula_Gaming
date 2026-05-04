@@ -4,6 +4,56 @@ const channelList = document.getElementById("channelList");
 const currentChannelName = document.getElementById("currentChannelName");
 const messageInput = document.getElementById("messageInput");
 const sendButton = document.querySelector(".send-btn");
+const channelInfoPanel = document.getElementById("channelInfoPanel");
+const channelInfoHeader = document.getElementById("channelInfoHeader");
+const channelInfoContent = document.getElementById("channelInfoContent");
+const closeChannelInfoBtn = document.getElementById("closeChannelInfoBtn");
+let currentChannel = null;
+let currentInfoType = "description";
+
+function renderChannelInfo(type = "description") {
+    if (!channelInfoPanel || !channelInfoHeader || !channelInfoContent) return;
+    currentInfoType = type;
+    channelInfoPanel.classList.remove("hidden");
+
+    if (!currentChannel) {
+        channelInfoHeader.textContent = "Información del canal";
+        channelInfoContent.innerHTML = "<p>Selecciona un canal primero.</p>";
+        return;
+    }
+
+    const channelName = currentChannel.name ? `#${currentChannel.name}` : "este canal";
+
+    if (type === "rules") {
+        channelInfoHeader.textContent = `Reglas de ${channelName}`;
+        const rules = Array.isArray(currentChannel.rules) ? currentChannel.rules : [];
+        channelInfoContent.innerHTML = rules.length
+            ? `<ol>${rules.map(rule => `<li>${escapeHTML(rule)}</li>`).join("")}</ol>`
+            : "<p>No hay reglas definidas para este canal.</p>";
+        return;
+    }
+
+    channelInfoHeader.textContent = `Descripción de ${channelName}`;
+    const description = String(currentChannel.description || "").trim();
+    channelInfoContent.innerHTML = description
+        ? `<p>${escapeHTML(description)}</p>`
+        : "<p>No hay descripción definida para este canal.</p>";
+}
+
+export function showChannelInfo(type) {
+    renderChannelInfo(type);
+}
+
+export function hideChannelInfo() {
+    if (!channelInfoPanel) return;
+    channelInfoPanel.classList.add("hidden");
+}
+
+if (closeChannelInfoBtn) {
+    closeChannelInfoBtn.addEventListener("click", () => {
+        hideChannelInfo();
+    });
+}
 
 function fixChatHeight() {
     document.querySelector(".chat-container").style.height = window.innerHeight + "px";
@@ -92,11 +142,16 @@ export function renderChannels(channels, onJoinChannel) {
 }
 
 export function setActiveChannel(channel) {
+    currentChannel = channel;
     currentChannelName.textContent = `# ${channel.name}`;
 
     document.querySelectorAll("#channelList .server-channel-item").forEach(item => {
         item.classList.toggle("active", Number(item.dataset.channelId) === Number(channel.id));
     });
+
+    if (channelInfoPanel && !channelInfoPanel.classList.contains("hidden")) {
+        renderChannelInfo(currentInfoType);
+    }
 
     if (messageInput) {
         messageInput.disabled = false;

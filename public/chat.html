@@ -139,12 +139,12 @@
                 <i class="fa-solid fa-plus"></i>
                 </div>
 
-                <li class="channel-item">
+                <li class="channel-item" data-action="description">
                     <div class="channel-icon">#</div>
                     <span class="channel-name">Descripción</span>
                 </li>
 
-                <li class="channel-item">
+                <li class="channel-item" data-action="rules">
                     <div class="channel-icon">#</div>
                     <span class="channel-name">Reglas</span>
                 </li>
@@ -235,6 +235,13 @@
                         </div>
             </div>
 
+            <div id="channelInfoPanel" class="channel-info-panel hidden">
+                <div class="channel-info-top">
+                    <div id="channelInfoHeader" class="channel-info-header">Información del canal</div>
+                    <button id="closeChannelInfoBtn" class="channel-info-close" type="button">✕</button>
+                </div>
+                <div id="channelInfoContent" class="channel-info-content">Presiona "Descripción" o "Reglas" para ver los detalles del canal.</div>
+            </div>
 
             <div id="messages" class="messages"></div>
 

@@ -1,6 +1,6 @@
 import { getCurrentUser } from "./services/api.js";
 import { connect, sendMessage } from "./web/chatSocket.js";
-import { showUserList, clearUser, redirectToLogin } from "./ui/chatUI.js";
+import { showUserList, clearUser, redirectToLogin, showChannelInfo } from "./ui/chatUI.js";
 
 async function loadUser() {
     const localUser = JSON.parse(localStorage.getItem("user"));
@@ -56,6 +56,19 @@ async function initChat() {
 
     closeBtn.addEventListener("click", () => {
         showUserList(sidebar, false);
+    });
+
+    document.querySelectorAll('.channel-item[data-action]').forEach(item => {
+        item.addEventListener('click', () => {
+            const action = item.dataset.action;
+            if (!action) return;
+
+            document.querySelectorAll('.channel-item[data-action]').forEach(node => {
+                node.classList.toggle('active', node === item);
+            });
+
+            showChannelInfo(action);
+        });
     });
 }
 
