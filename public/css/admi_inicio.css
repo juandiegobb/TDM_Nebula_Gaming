@@ -89,13 +89,8 @@ body {
     display: flex;
     align-items: center;
     gap: 10px;
-}
-
-.circle {
-    width: 35px;
-    height: 35px;
-    background: #6b6b6b;
-    border-radius: 50%;
+    font-family: "Mr Tech-Ly St", sans-serif;
+    font-size: 23px;
 }
 
 .profile-mini {

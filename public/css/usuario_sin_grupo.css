@@ -25,23 +25,36 @@ body {
 .logo {
     display: flex;     
     align-items: center;
-    gap: 10px;         
+    gap: 10px;       
+     font-family: "Mr Tech-Ly St", sans-serif;
+    font-size: 23px;  
 }
 
 /* Círculo que simula el logo */
-.circle {
-    width: 30px;
-    height: 30px;
-    background-color: gray;
-    border-radius: 50%; 
+.brand-title{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-left: 1px;
+      font-family: "Mr Tech-Ly St", sans-serif;
+    font-size: 23px;
 }
 
-/* Texto del nombre */
-.logo span {
-    font-weight: bold;
-    letter-spacing: 1px; 
-}
+.brand-circle{
+    width:50px;
+    height:50px;
+    border-radius:50%;
+    background:#000;
+    color:#fff;
 
+    transform: translateX(-6px);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+
+    font-weight:bold;
+}
 /* ===== Acciones (iconos_lol) ===== */
 .actions {
     display: flex;
