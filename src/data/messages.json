@@ -19,6 +19,48 @@
             "userImg": "https://lh3.googleusercontent.com/a/ACg8ocLoXE5OI0or8EVG52imG6UXv5VCmEeIQRPKOoe-qnXbwTPFd3KL=s96-c",
             "text": "xxxxxxxxxxxxx",
             "createdAt": "2026-05-04T13:30:52.064Z"
+        },
+        {
+            "id": "1777904762558-wx2p9r",
+            "channelId": 1,
+            "user": "Admin",
+            "userId": 1,
+            "userRole": "admin",
+            "userImg": "https://i.pravatar.cc/150?img=1",
+            "text": "guituyoi",
+            "createdAt": "2026-05-04T14:26:02.558Z"
+        },
+        {
+            "id": "1777905204156-m7cpd0",
+            "channelId": 1,
+            "user": "Admin",
+            "userId": 1,
+            "userRole": "admin",
+            "userImg": "https://i.pravatar.cc/150?img=1",
+            "text": "holii",
+            "createdAt": "2026-05-04T14:33:24.156Z"
+        }
+    ],
+    "3": [
+        {
+            "id": "1777904998076-xltd1z",
+            "channelId": 3,
+            "user": "Admin",
+            "userId": 1,
+            "userRole": "admin",
+            "userImg": "https://i.pravatar.cc/150?img=1",
+            "text": "fyrty",
+            "createdAt": "2026-05-04T14:29:58.076Z"
+        },
+        {
+            "id": "1777905587559-aegm82",
+            "channelId": 3,
+            "user": "PAULA SELENE BECERRA MORALES",
+            "userId": 6,
+            "userRole": "user",
+            "userImg": "https://lh3.googleusercontent.com/a/ACg8ocKleuJs-jI2d_kgoasgy7iia7eT_yHuyalH8wdhutjWUEYVPw=s96-c",
+            "text": "ghkjgh",
+            "createdAt": "2026-05-04T14:39:47.559Z"
         }
     ],
     "4": [
@@ -41,6 +83,26 @@
             "userImg": "https://lh3.googleusercontent.com/a/ACg8ocLoXE5OI0or8EVG52imG6UXv5VCmEeIQRPKOoe-qnXbwTPFd3KL=s96-c",
             "text": "assssssssssssssssssss",
             "createdAt": "2026-05-04T13:31:47.435Z"
+        },
+        {
+            "id": "1777904751791-6la69f",
+            "channelId": 4,
+            "user": "Admin",
+            "userId": 1,
+            "userRole": "admin",
+            "userImg": "https://i.pravatar.cc/150?img=1",
+            "text": "erty",
+            "createdAt": "2026-05-04T14:25:51.791Z"
+        },
+        {
+            "id": "1777905538620-43yp86",
+            "channelId": 4,
+            "user": "Admin",
+            "userId": 1,
+            "userRole": "admin",
+            "userImg": "https://i.pravatar.cc/150?img=1",
+            "text": "jsjsj",
+            "createdAt": "2026-05-04T14:38:58.620Z"
         }
     ]
 }

@@ -322,11 +322,9 @@
 .offline{
     background:#777;
 }
-
 /* ===============================
    MENSAJES
 =============================== */
-/* ===== MENSAJES ESTILO FIGMA ===== */
 
 .messages {
     display: flex;
@@ -335,26 +333,31 @@
     padding: 18px;
 }
 
-/* fila completa del mensaje */
+/* contenedor del mensaje */
 .message {
     display: flex;
     align-items: flex-start;
     gap: 10px;
     width: 100%;
+    background: transparent;
 }
 
 /* mensajes propios a la derecha */
 .message.self {
-    justify-content: flex-start;
     flex-direction: row-reverse;
 }
 
-/* avatar */
+/* ===== AVATAR (SIEMPRE AL LADO) ===== */
 .msg-avatar-wrapper {
     width: 38px;
     height: 38px;
+    min-width: 38px;
+    min-height: 38px;
     flex-shrink: 0;
-    margin-top: 14px;
+    margin-top: 18px;
+    overflow: hidden;
+    border-radius: 50%;
+    background: transparent;
 }
 
 .msg-avatar,
@@ -362,45 +365,51 @@
     width: 38px;
     height: 38px;
     border-radius: 50%;
-}
-
-.msg-avatar {
     object-fit: cover;
-}
-
-.msg-avatar-fallback {
-    background: #b8b8b8;
-    color: #222;
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.msg-avatar {
+    display: block;
+}
+
+.msg-avatar-fallback {
+    background: #ef3b7d;
+    color: white;
     font-weight: bold;
 }
 
-/* contenido del mensaje */
+/* ===== CONTENIDO ===== */
 .msg-content {
     max-width: 58%;
     display: flex;
     flex-direction: column;
+    background: transparent;
 }
 
-/* texto del usuario arriba */
+/* alineación para mensajes propios */
+.message.self .msg-content {
+    align-items: flex-end;
+}
+
+/* nombre del usuario */
 .message-header {
     display: flex;
-    justify-content: flex-start;
     align-items: center;
     margin-bottom: 4px;
 }
 
 .message-user {
-    font-size: 12px;          
+    font-size: 12px;
     font-weight: bold;
-    color: #68d391;  
-    margin-bottom: 4px;
+    color: #68d391;
 }
 
-/* burbuja */
+/* ===== BURBUJA REAL ===== */
 .message-text {
+    min-width: 90px;
     min-height: 28px;
     background: #e8e8e8;
     color: #111;
@@ -411,15 +420,10 @@
     word-break: break-word;
 }
 
-/* mensaje propio verde */
+/* mensaje propio */
 .message.self .message-text {
     background: #d8ffd4;
     border-top: 8px solid #73ff00;
-}
-
-/* nombre del mensaje propio */
-.message.self .message-user {
-    color: #68d391;
 }
 
 /* admin */
@@ -427,18 +431,24 @@
     border-top-color: #8c00ff;
 }
 
-/* mensaje del sistema */
+/* sistema */
 .message.system {
     justify-content: center;
     color: #ddd;
     font-style: italic;
     font-size: 14px;
+    text-align: center;
 }
 
 .message.system .msg-avatar-wrapper {
     display: none;
 }
 
+/* ===== FIX DEFINITIVO IMAGEN GRANDE ===== */
+.message-text img,
+.msg-content img {
+    display: none !important;
+}
 /* ===============================
    INPUT
 =============================== */

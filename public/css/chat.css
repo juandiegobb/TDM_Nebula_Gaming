@@ -350,59 +350,108 @@
 /* ===============================
    MENSAJES
 =============================== */
-.messages{
-    display:flex;
-    flex-direction:column;
-    gap:15px;
+
+.messages {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    padding: 18px;
 }
 
-
-.message{
-    background:#dcf5d2;
-    border-top:8px solid #8c00ff;
-    align-self:flex-start;
-    color:rgb(0, 0, 0);
-      max-width:70%;
-    padding:15px;
-    border-radius:12px;
+.message {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    width: 100%;
+    background: transparent;
+    padding: 0;
+    border: none;
+    border-radius: 0;
+    color: black;
 }
 
-/* TU MENSAJE */
-.message.self{
-    background:#dcf5d2;
-    border-top:8px solid #73ff00;
-    align-self:flex-end;
-    color:black;
+.message.self {
+    flex-direction: row-reverse;
 }
 
-/* MENSAJE OTROS */
-.message.other{
-    background:#dcf5d2;
-    color:rgb(0, 0, 0);
-    border-top:8px solid #8c00ff;
-    align-self:flex-start;
+.msg-avatar-wrapper {
+    width: 38px;
+    height: 38px;
+    min-width: 38px;
+    min-height: 38px;
+    flex-shrink: 0;
+    margin-top: 20px;
+    overflow: hidden;
+    border-radius: 50%;
 }
 
-/* SISTEMA */
-.message.system{
-    background:none;
-    border:none;
-    padding:5px;
-    color:#bbb;
-    font-size:14px;
-    text-align:center;
-    align-self:center;
+.msg-avatar,
+.msg-avatar-fallback {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    object-fit: cover;
 }
 
+.msg-avatar-fallback {
+    background: #ef3b7d;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
 
+.msg-content {
+    max-width: 60%;
+    display: flex;
+    flex-direction: column;
+}
 
+.message.self .msg-content {
+    align-items: flex-end;
+}
 
+.message-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 4px;
+}
 
+.message-user {
+    font-size: 12px;
+    font-weight: bold;
+    color: #68d391;
+}
 
+.message-text {
+    background: #dcf5d2;
+    color: black;
+    padding: 8px 14px;
+    border-radius: 12px;
+    border-top: 8px solid #8c00ff;
+    font-size: 14px;
+    word-break: break-word;
+}
 
+.message.self .message-text {
+    border-top: 8px solid #73ff00;
+}
 
+.message.system {
+    justify-content: center;
+    background: none;
+    border: none;
+    padding: 5px;
+    color: #bbb;
+    font-size: 14px;
+    text-align: center;
+}
 
-
+.message.system .msg-avatar-wrapper,
+.message.system .msg-content {
+    display: none;
+}
 
 /* ===============================
    INPUT

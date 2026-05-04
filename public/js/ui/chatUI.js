@@ -99,7 +99,6 @@ export function addMessage(user, text, isSelf = false) {
         <div class="msg-content">
             <div class="message-header">
                 <span class="message-user">${escapeHTML(userName)}</span>
-                ${isAdmin ? '<span class="message-role">ADMIN</span>' : ""}
             </div>
             <div class="message-text">${escapeHTML(text)}</div>
         </div>
