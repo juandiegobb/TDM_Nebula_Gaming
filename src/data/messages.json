@@ -41,6 +41,16 @@
             "userImg": "https://lh3.googleusercontent.com/a/ACg8ocLoXE5OI0or8EVG52imG6UXv5VCmEeIQRPKOoe-qnXbwTPFd3KL=s96-c",
             "text": "assssssssssssssssssss",
             "createdAt": "2026-05-04T13:31:47.435Z"
+        },
+        {
+            "id": "1777903225494-dazetz",
+            "channelId": 4,
+            "user": "JUAN DIEGO CASTILLO JIMÉNEZ",
+            "userId": 12,
+            "userRole": "user",
+            "userImg": "https://lh3.googleusercontent.com/a/ACg8ocLoXE5OI0or8EVG52imG6UXv5VCmEeIQRPKOoe-qnXbwTPFd3KL=s96-c",
+            "text": "mensaje prueba",
+            "createdAt": "2026-05-04T14:00:25.494Z"
         }
     ]
 }
