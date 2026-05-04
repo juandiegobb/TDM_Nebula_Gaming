@@ -18,12 +18,12 @@
     "rol": "user",
     "img": "https://i.pravatar.cc/150?img=2",
     "grupos": [
-      1,
       9,
       12,
       10,
       5,
-      2
+      2,
+      1
     ]
   },
   {
@@ -48,11 +48,11 @@
     "rol": "user",
     "img": "https://i.pravatar.cc/150?img=5",
     "grupos": [
-      1,
       4,
       10,
       5,
-      2
+      2,
+      1
     ]
   },
   {
@@ -77,9 +77,9 @@
     "rol": "user",
     "img": "https://i.pravatar.cc/150?img=6",
     "grupos": [
-      1,
       10,
-      2
+      2,
+      1
     ]
   },
   {
@@ -103,9 +103,9 @@
     "rol": "user",
     "img": "https://i.pravatar.cc/150?img=8",
     "grupos": [
-      1,
       4,
-      10
+      10,
+      1
     ]
   },
   {
@@ -131,10 +131,10 @@
     "img": "https://i.pravatar.cc/150?img=10",
     "grupos": [
       3,
-      1,
       9,
       11,
-      10
+      10,
+      1
     ]
   },
   {
@@ -145,10 +145,10 @@
     "rol": "user",
     "img": "https://lh3.googleusercontent.com/a/ACg8ocLoXE5OI0or8EVG52imG6UXv5VCmEeIQRPKOoe-qnXbwTPFd3KL=s96-c",
     "grupos": [
-      1,
       11,
       4,
-      2
+      2,
+      1
     ],
     "provider": "google"
   },
@@ -186,8 +186,8 @@
     "rol": "user",
     "img": "https://lh3.googleusercontent.com/a/ACg8ocIwHz-2lVAlRa2FTeEztbmy38CzW7yz5Civ2t_MUcRdyQnOHuwgDQ=s96-c",
     "grupos": [
-      1,
-      11
+      11,
+      1
     ],
     "provider": "google"
   },

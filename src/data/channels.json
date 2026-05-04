@@ -3,7 +3,7 @@
     "id": 1,
     "name": "Torneo de FIFA",
     "description": "Canal para organizar partidas, horarios y resultados del torneo de FIFA.",
-    "img": null,
+    "img": "https://i.pinimg.com/1200x/d4/8e/e5/d48ee5a5c2f104cb720309ed6ed31773.jpg",
     "rules": [
       "SÉ RESPETUOSO CON TODOS"
     ]
@@ -76,6 +76,15 @@
     "rules": [
       "Sé respetuoso con todos",
       "amar a messiiiii"
+    ]
+  },
+  {
+    "id": 13,
+    "name": "Canal sin admin?",
+    "description": "pruebaaaa",
+    "img": null,
+    "rules": [
+      "SÉ RESPETUOSO CON TODOS"
     ]
   }
 ]

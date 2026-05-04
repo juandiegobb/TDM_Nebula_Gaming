@@ -60,7 +60,9 @@ function normalizeMemberIds(memberIds) {
 }
 
 function getSafeUsers() {
-    return getUsers().map(safeUser);
+    return getUsers()
+        .filter(user => String(user.rol || "").toLowerCase() !== "admin")
+        .map(safeUser);
 }
 
 function assignUsersToChannel(users, memberIds, channelId) {
@@ -102,7 +104,10 @@ function buildChannelsWithUsers() {
     return channels.map(channel => {
         const channelId = Number(channel.id);
         const members = users
-            .filter(user => Array.isArray(user.grupos) && user.grupos.map(Number).includes(channelId))
+            .filter(user => Array.isArray(user.grupos)
+                && user.grupos.map(Number).includes(channelId)
+                && String(user.rol || "").toLowerCase() !== "admin"
+            )
             .map(safeUser);
 
         return {
