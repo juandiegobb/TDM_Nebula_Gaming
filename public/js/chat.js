@@ -22,6 +22,14 @@ async function initChat() {
 
     document.getElementById("chat-username").textContent = "Bienvenido " + user.name;
 
+    const profilePic = document.getElementById("profilePic");
+    if (profilePic) {
+        profilePic.src = user.img || "https://i.pravatar.cc/150";
+        profilePic.onerror = () => {
+            profilePic.src = "https://i.pravatar.cc/150";
+        };
+    }
+
     const chatForm = document.getElementById("chatForm");
     const messageInput = document.getElementById("messageInput");
     const logoutBtn = document.getElementById("logoutBtn");
