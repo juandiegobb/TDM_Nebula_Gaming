@@ -29,6 +29,8 @@ async function initChat() {
     const toggleBtn = document.getElementById("usersToggle");
     const closeBtn = document.getElementById("closeSidebar");
 
+
+
     const selectedChannelId = localStorage.getItem("selectedChannelId");
     connect(user, selectedChannelId);
     localStorage.removeItem("selectedChannelId");

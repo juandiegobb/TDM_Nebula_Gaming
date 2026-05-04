@@ -194,7 +194,7 @@
 }
 
 
-.modal{
+.modal-destacados{
     position:fixed;
     top:0;
     left:0;
@@ -208,7 +208,7 @@
     padding-top: 80px;
 }
 
-.modal:target{
+.modal-destacados:target{
     display:flex;
 }
 
@@ -485,3 +485,4 @@
     font-size: 13px;
     color: #ccc;
 }
+

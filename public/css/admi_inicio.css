@@ -571,11 +571,7 @@ body {
     gap: 24px;
 }
 
-.image-upload-section {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-}
+
 
 /* Imagen */
 .image-upload {

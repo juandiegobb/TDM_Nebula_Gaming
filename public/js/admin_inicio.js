@@ -406,12 +406,15 @@ async function initAdmin() {
     renderAdminProfile(admin);
     await loadChannels();
 
+    document.getElementById("openCrearServidor")
+?.addEventListener("click", openCreateModal);
     const modal = document.getElementById("crearServidorModal");
     const paso1 = document.getElementById("paso1");
     const paso2 = document.getElementById("paso2");
 
     refreshBtn.addEventListener("click", loadChannels);
 
+    
     document.getElementById("createChannelBtn").addEventListener("click", openCreateModal);
     document.querySelector(".add").addEventListener("click", openCreateModal);
     document.getElementById("editChannelBtn").addEventListener("click", openEditModal);
