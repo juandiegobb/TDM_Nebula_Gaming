@@ -374,6 +374,29 @@
     flex-direction: row-reverse;
 }
 
+/* .message.self .msg-avatar-wrapper {
+    position: relative;
+    
+    right: -10px;
+}
+
+.message.self .msg-avatar-wrapper::after {
+   content: "⭐";
+    position: absolute;
+
+    top: 0px;
+    right: -6px;
+
+    font-size: 14px;
+    color: gold;
+
+    border-radius: 50%;
+    padding: 3px;
+
+    z-index: 10;
+    
+}  */
+
 .msg-avatar-wrapper {
     width: 38px;
     height: 38px;
@@ -383,6 +406,8 @@
     margin-top: 20px;
     overflow: hidden;
     border-radius: 50%;
+
+    
 }
 
 .msg-avatar,
