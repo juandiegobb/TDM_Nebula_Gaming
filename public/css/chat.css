@@ -6,10 +6,14 @@
 .chat-container{
     margin-left:330px;
     width:calc(100% - 330px);
-    height:100vh;
+    height:100dvh;
     display:flex;
     flex-direction:column;
     padding:0; 
+    position: relative;
+    z-index: 1;
+
+    overflow: hidden;
 }
 /* ===============================
    HEADER
@@ -143,11 +147,17 @@
     background:var(--panel);
     border-radius:var(--radio);
     padding:16px;
+
     overflow-y:auto;
-    padding-top: 80px; /* SOLO PC */
+
+    /* 🔥 FIX IMPORTANTE */
+    display:flex;
+    flex-direction:column;
+    min-height:0;
+    box-sizing:border-box;
+
+    /* ❌ QUITA padding-top: 60px */
 }
-
-
 /* TOPBAR */
 .channel-topbar{
     display:flex;
@@ -161,7 +171,7 @@
     padding:12px 15px;
     border-radius:14px;
     margin-bottom:15px;
-    z-index: 10;
+    z-index: 2;
 
 }
 .channel-info-panel{
@@ -254,6 +264,33 @@
 .channel-actions a:hover{
     color: white;
     transform: scale(1.15);
+}
+/* ===============================
+   FIX BOTÓN "+"
+=============================== */
+
+.channel-actions a {
+    width: 32px;
+    height: 32px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+/* por si el ícono está raro */
+.channel-actions i {
+    font-size: 18px;
+    line-height: 1;
+}
+
+/* si el botón es el " + " específicamente */
+.channel-actions a.plus,
+.channel-actions a:first-child {
+    background: rgba(255,255,255,0.08);
 }
 
 /* ICONOS */
@@ -368,7 +405,14 @@
     display: flex;
     flex-direction: column;
     gap: 14px;
+
     padding: 18px;
+
+    /* 🔥 FIX REAL DEL CHAT */
+    flex: 1 1 auto;
+    min-height: 0;
+
+    overflow-y: auto;
 }
 
 .message {
@@ -499,6 +543,7 @@
     background:var(--gris);
     border-radius:var(--radio);
     padding:10px 15px;
+    z-index: 5;
 
 
     display:flex;
@@ -631,30 +676,45 @@
 @media (max-width: 768px) {
 
     /* =========================
-       OCULTAR SIDEBAR CANALES
+       SIDEBAR SERVIDORES (FIX REAL)
     ========================= */
-    .channel-sidebar {
-        display: none !important;
-    }
+    .server-sidebar{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
 
-    /* =========================
-       SERVERS MÁS PEQUEÑO
-    ========================= */
-    .server-sidebar {
+        height: 100vh;
         width: 60px;
+
+        padding: 10px 0;
+        overflow: hidden; /* evita que se vaya fuera */
+    }
+
+    /* lista de canales arriba */
+    .channel-list{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        gap: 12px;
+
+        flex: 1;              /* empuja el + hacia abajo */
+        overflow-y: auto;
+        width: 100%;
     }
 
     /* =========================
-       CONTENEDOR PRINCIPAL LIMPIO
+       CONTENEDOR PRINCIPAL
     ========================= */
     .chat-container {
         margin-left: 60px;
         width: calc(100% - 60px);
-        height: 100vh;
+        height: 100dvh;
         display: flex;
         flex-direction: column;
         padding: 0;
         overflow: hidden;
+        position: relative;
     }
 
     /* =========================
@@ -670,44 +730,40 @@
     }
 
     /* =========================
-       CHAT AREA (ESTO ES LO IMPORTANTE)
-        ========================= */
+       CHAT AREA
+    ========================= */
     .chat-main {
         flex: 1;
-
-        margin-top: 55px;   /* solo empuja debajo del header */
-        margin-bottom: 55px;
-
-        padding-top: 0;     /* 🔥 IMPORTANTE: elimina el hueco */
+        margin-top: 55px;
+        padding-top: 0 !important;
 
         display: flex;
         flex-direction: column;
-
+        min-height: 0;
         overflow: hidden;
-        background: var(--panel);
     }
+
     /* =========================
-       TOPBAR (YA NO FIXED)
+       TOPBAR
     ========================= */
     .channel-topbar {
-        position: relative;   /* 🔥 CLAVE */
+        position: relative;
         top: auto;
         left: auto;
         width: 100%;
         margin: 0;
         border-radius: 0;
         z-index: auto;
-        margin-top: 0;
     }
 
     /* =========================
-       MENSAJES OCUPAN TODO
+       MENSAJES
     ========================= */
     .messages {
         flex: 1;
         overflow-y: auto;
         padding: 10px;
-        background: var(--panel);
+        min-height: 0;
     }
 
     /* =========================
@@ -723,9 +779,31 @@
     }
 
     /* =========================
-       IMPORTANTE: EVITA FONDOS RAROS
+       BOTÓN +
     ========================= */
+    .add{
+        width: 45px;
+        height: 45px;
+
+        border-radius: 50%;
+        border: none;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        background: #39ff14;
+        color: #000;
+
+        font-size: 26px;
+        font-weight: bold;
+
+        margin-top: auto;   /* 👈 CLAVE: lo manda abajo */
+        margin-bottom: 15px;
+    }
+
     body {
-        background: var(--fondo);
+        margin: 0;
+        overflow: hidden;
     }
 }

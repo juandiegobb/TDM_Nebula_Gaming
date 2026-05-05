@@ -59,6 +59,386 @@
             "userImg": "https://i.pravatar.cc/150?img=1",
             "text": "JBDJD",
             "createdAt": "2026-05-04T16:44:24.437Z"
+        },
+        {
+            "id": "1777951885908-ihvrm1",
+            "channelId": 1,
+            "user": "Admin",
+            "userId": 1,
+            "userRole": "admin",
+            "userImg": "https://i.pravatar.cc/150?img=1",
+            "text": "el papu",
+            "createdAt": "2026-05-05T03:31:25.908Z"
+        },
+        {
+            "id": "1777953153481-7d43fi",
+            "channelId": 1,
+            "user": "Admin",
+            "userId": 1,
+            "userRole": "admin",
+            "userImg": "https://i.pravatar.cc/150?img=1",
+            "text": "soy el papu de la grada",
+            "createdAt": "2026-05-05T03:52:33.482Z"
+        },
+        {
+            "id": "1777953165974-5mrzqa",
+            "channelId": 1,
+            "user": "Admin",
+            "userId": 1,
+            "userRole": "admin",
+            "userImg": "https://i.pravatar.cc/150?img=1",
+            "text": "jueputa",
+            "createdAt": "2026-05-05T03:52:45.974Z"
+        },
+        {
+            "id": "1777953534773-5rfwv5",
+            "channelId": 1,
+            "user": "Admin",
+            "userId": 1,
+            "userRole": "admin",
+            "userImg": "https://i.pravatar.cc/150?img=1",
+            "text": "pito",
+            "createdAt": "2026-05-05T03:58:54.773Z"
+        },
+        {
+            "id": "1777955607358-hdrel7",
+            "channelId": 1,
+            "user": "Admin",
+            "userId": 1,
+            "userRole": "admin",
+            "userImg": "https://i.pravatar.cc/150?img=1",
+            "text": "yipe",
+            "createdAt": "2026-05-05T04:33:27.359Z"
+        },
+        {
+            "id": "1777955944862-z3u4bh",
+            "channelId": 1,
+            "user": "Admin",
+            "userId": 1,
+            "userRole": "admin",
+            "userImg": "https://i.pravatar.cc/150?img=1",
+            "text": "el pepe",
+            "createdAt": "2026-05-05T04:39:04.862Z"
+        },
+        {
+            "id": "1777955952004-91vjal",
+            "channelId": 1,
+            "user": "Admin",
+            "userId": 1,
+            "userRole": "admin",
+            "userImg": "https://i.pravatar.cc/150?img=1",
+            "text": "pura",
+            "createdAt": "2026-05-05T04:39:12.004Z"
+        },
+        {
+            "id": "1777955953596-bvmbne",
+            "channelId": 1,
+            "user": "Admin",
+            "userId": 1,
+            "userRole": "admin",
+            "userImg": "https://i.pravatar.cc/150?img=1",
+            "text": "aaa",
+            "createdAt": "2026-05-05T04:39:13.596Z"
+        },
+        {
+            "id": "1777955953968-4abz77",
+            "channelId": 1,
+            "user": "Admin",
+            "userId": 1,
+            "userRole": "admin",
+            "userImg": "https://i.pravatar.cc/150?img=1",
+            "text": "a",
+            "createdAt": "2026-05-05T04:39:13.968Z"
+        },
+        {
+            "id": "1777955954166-rtw27c",
+            "channelId": 1,
+            "user": "Admin",
+            "userId": 1,
+            "userRole": "admin",
+            "userImg": "https://i.pravatar.cc/150?img=1",
+            "text": "a",
+            "createdAt": "2026-05-05T04:39:14.166Z"
+        },
+        {
+            "id": "1777955954343-iyaw0h",
+            "channelId": 1,
+            "user": "Admin",
+            "userId": 1,
+            "userRole": "admin",
+            "userImg": "https://i.pravatar.cc/150?img=1",
+            "text": "a",
+            "createdAt": "2026-05-05T04:39:14.343Z"
+        },
+        {
+            "id": "1777955954510-n6lqcf",
+            "channelId": 1,
+            "user": "Admin",
+            "userId": 1,
+            "userRole": "admin",
+            "userImg": "https://i.pravatar.cc/150?img=1",
+            "text": "a",
+            "createdAt": "2026-05-05T04:39:14.510Z"
+        },
+        {
+            "id": "1777955954681-ljkaeq",
+            "channelId": 1,
+            "user": "Admin",
+            "userId": 1,
+            "userRole": "admin",
+            "userImg": "https://i.pravatar.cc/150?img=1",
+            "text": "a",
+            "createdAt": "2026-05-05T04:39:14.681Z"
+        },
+        {
+            "id": "1777955954855-l3kstw",
+            "channelId": 1,
+            "user": "Admin",
+            "userId": 1,
+            "userRole": "admin",
+            "userImg": "https://i.pravatar.cc/150?img=1",
+            "text": "a",
+            "createdAt": "2026-05-05T04:39:14.855Z"
+        },
+        {
+            "id": "1777955955036-tvxkaj",
+            "channelId": 1,
+            "user": "Admin",
+            "userId": 1,
+            "userRole": "admin",
+            "userImg": "https://i.pravatar.cc/150?img=1",
+            "text": "a",
+            "createdAt": "2026-05-05T04:39:15.036Z"
+        },
+        {
+            "id": "1777955955187-c6dxf2",
+            "channelId": 1,
+            "user": "Admin",
+            "userId": 1,
+            "userRole": "admin",
+            "userImg": "https://i.pravatar.cc/150?img=1",
+            "text": "a",
+            "createdAt": "2026-05-05T04:39:15.187Z"
+        },
+        {
+            "id": "1777955958860-arnfsv",
+            "channelId": 1,
+            "user": "Admin",
+            "userId": 1,
+            "userRole": "admin",
+            "userImg": "https://i.pravatar.cc/150?img=1",
+            "text": "a",
+            "createdAt": "2026-05-05T04:39:18.860Z"
+        },
+        {
+            "id": "1777955959486-b0x31x",
+            "channelId": 1,
+            "user": "Admin",
+            "userId": 1,
+            "userRole": "admin",
+            "userImg": "https://i.pravatar.cc/150?img=1",
+            "text": "a",
+            "createdAt": "2026-05-05T04:39:19.486Z"
+        },
+        {
+            "id": "1777955959753-z647pp",
+            "channelId": 1,
+            "user": "Admin",
+            "userId": 1,
+            "userRole": "admin",
+            "userImg": "https://i.pravatar.cc/150?img=1",
+            "text": "aa",
+            "createdAt": "2026-05-05T04:39:19.753Z"
+        },
+        {
+            "id": "1777955959961-uqv47z",
+            "channelId": 1,
+            "user": "Admin",
+            "userId": 1,
+            "userRole": "admin",
+            "userImg": "https://i.pravatar.cc/150?img=1",
+            "text": "a",
+            "createdAt": "2026-05-05T04:39:19.961Z"
+        },
+        {
+            "id": "1777955960138-ka1v9x",
+            "channelId": 1,
+            "user": "Admin",
+            "userId": 1,
+            "userRole": "admin",
+            "userImg": "https://i.pravatar.cc/150?img=1",
+            "text": "a",
+            "createdAt": "2026-05-05T04:39:20.138Z"
+        },
+        {
+            "id": "1777955960311-lyle02",
+            "channelId": 1,
+            "user": "Admin",
+            "userId": 1,
+            "userRole": "admin",
+            "userImg": "https://i.pravatar.cc/150?img=1",
+            "text": "a",
+            "createdAt": "2026-05-05T04:39:20.311Z"
+        },
+        {
+            "id": "1777955960481-qj17xr",
+            "channelId": 1,
+            "user": "Admin",
+            "userId": 1,
+            "userRole": "admin",
+            "userImg": "https://i.pravatar.cc/150?img=1",
+            "text": "a",
+            "createdAt": "2026-05-05T04:39:20.481Z"
+        },
+        {
+            "id": "1777955960658-c7jp6v",
+            "channelId": 1,
+            "user": "Admin",
+            "userId": 1,
+            "userRole": "admin",
+            "userImg": "https://i.pravatar.cc/150?img=1",
+            "text": "a",
+            "createdAt": "2026-05-05T04:39:20.658Z"
+        },
+        {
+            "id": "1777955960833-pf4aqa",
+            "channelId": 1,
+            "user": "Admin",
+            "userId": 1,
+            "userRole": "admin",
+            "userImg": "https://i.pravatar.cc/150?img=1",
+            "text": "a",
+            "createdAt": "2026-05-05T04:39:20.833Z"
+        },
+        {
+            "id": "1777955961354-c7wtkm",
+            "channelId": 1,
+            "user": "Admin",
+            "userId": 1,
+            "userRole": "admin",
+            "userImg": "https://i.pravatar.cc/150?img=1",
+            "text": "aa",
+            "createdAt": "2026-05-05T04:39:21.354Z"
+        },
+        {
+            "id": "1777955961552-b9zmdv",
+            "channelId": 1,
+            "user": "Admin",
+            "userId": 1,
+            "userRole": "admin",
+            "userImg": "https://i.pravatar.cc/150?img=1",
+            "text": "a",
+            "createdAt": "2026-05-05T04:39:21.552Z"
+        },
+        {
+            "id": "1777955961727-paiinz",
+            "channelId": 1,
+            "user": "Admin",
+            "userId": 1,
+            "userRole": "admin",
+            "userImg": "https://i.pravatar.cc/150?img=1",
+            "text": "a",
+            "createdAt": "2026-05-05T04:39:21.727Z"
+        },
+        {
+            "id": "1777955961923-urzc0g",
+            "channelId": 1,
+            "user": "Admin",
+            "userId": 1,
+            "userRole": "admin",
+            "userImg": "https://i.pravatar.cc/150?img=1",
+            "text": "a",
+            "createdAt": "2026-05-05T04:39:21.924Z"
+        },
+        {
+            "id": "1777955962105-2zsguv",
+            "channelId": 1,
+            "user": "Admin",
+            "userId": 1,
+            "userRole": "admin",
+            "userImg": "https://i.pravatar.cc/150?img=1",
+            "text": "a",
+            "createdAt": "2026-05-05T04:39:22.105Z"
+        },
+        {
+            "id": "1777955962277-i1iy3d",
+            "channelId": 1,
+            "user": "Admin",
+            "userId": 1,
+            "userRole": "admin",
+            "userImg": "https://i.pravatar.cc/150?img=1",
+            "text": "a",
+            "createdAt": "2026-05-05T04:39:22.277Z"
+        },
+        {
+            "id": "1777955962439-rmhzcn",
+            "channelId": 1,
+            "user": "Admin",
+            "userId": 1,
+            "userRole": "admin",
+            "userImg": "https://i.pravatar.cc/150?img=1",
+            "text": "a",
+            "createdAt": "2026-05-05T04:39:22.439Z"
+        },
+        {
+            "id": "1777956010032-v5qu7g",
+            "channelId": 1,
+            "user": "Admin",
+            "userId": 1,
+            "userRole": "admin",
+            "userImg": "https://i.pravatar.cc/150?img=1",
+            "text": "aaaa",
+            "createdAt": "2026-05-05T04:40:10.032Z"
+        },
+        {
+            "id": "1777956012798-i8gbvj",
+            "channelId": 1,
+            "user": "Admin",
+            "userId": 1,
+            "userRole": "admin",
+            "userImg": "https://i.pravatar.cc/150?img=1",
+            "text": "fgg",
+            "createdAt": "2026-05-05T04:40:12.798Z"
+        },
+        {
+            "id": "1777956014378-uac02v",
+            "channelId": 1,
+            "user": "Admin",
+            "userId": 1,
+            "userRole": "admin",
+            "userImg": "https://i.pravatar.cc/150?img=1",
+            "text": "gb",
+            "createdAt": "2026-05-05T04:40:14.378Z"
+        },
+        {
+            "id": "1777956330647-jxwbcc",
+            "channelId": 1,
+            "user": "Admin",
+            "userId": 1,
+            "userRole": "admin",
+            "userImg": "https://i.pravatar.cc/150?img=1",
+            "text": "a",
+            "createdAt": "2026-05-05T04:45:30.647Z"
+        },
+        {
+            "id": "1777956334701-2a5hjj",
+            "channelId": 1,
+            "user": "Admin",
+            "userId": 1,
+            "userRole": "admin",
+            "userImg": "https://i.pravatar.cc/150?img=1",
+            "text": "casca",
+            "createdAt": "2026-05-05T04:45:34.701Z"
+        },
+        {
+            "id": "1777956340128-gqczo6",
+            "channelId": 1,
+            "user": "Admin",
+            "userId": 1,
+            "userRole": "admin",
+            "userImg": "https://i.pravatar.cc/150?img=1",
+            "text": "scaas",
+            "createdAt": "2026-05-05T04:45:40.128Z"
         }
     ],
     "3": [

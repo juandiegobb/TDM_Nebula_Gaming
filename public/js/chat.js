@@ -37,23 +37,40 @@ async function initChat() {
     const toggleBtn = document.getElementById("usersToggle");
     const closeBtn = document.getElementById("closeSidebar");
 
+    const messages = document.getElementById("messages");
 
+    /* =========================
+       🔥 AUTO SCROLL CHAT FIX
+    ========================= */
+    const scrollToBottom = () => {
+        messages.scrollTop = messages.scrollHeight;
+    };
+
+    // Observa nuevos mensajes (MUY IMPORTANTE)
+    const observer = new MutationObserver(() => {
+        scrollToBottom();
+    });
+
+    observer.observe(messages, { childList: true });
 
     const selectedChannelId = localStorage.getItem("selectedChannelId");
     connect(user, selectedChannelId);
     localStorage.removeItem("selectedChannelId");
 
-    chatForm.addEventListener("submit", function(e) {
+    chatForm.addEventListener("submit", function (e) {
         e.preventDefault();
         const text = messageInput.value.trim();
 
         if (text) {
             sendMessage(text);
             messageInput.value = "";
+
+            // 🔥 fuerza scroll después de enviar
+            setTimeout(scrollToBottom, 0);
         }
     });
 
-    logoutBtn.addEventListener("click", function() {
+    logoutBtn.addEventListener("click", function () {
         clearUser();
         window.location.href = "/auth/logout";
     });
