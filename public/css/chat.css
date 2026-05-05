@@ -1,16 +1,16 @@
 /* ===============================
    CONTENEDOR CHAT
 =============================== */
+
+
 .chat-container{
-    margin-left:330px; /* 70 + 260 */
+    margin-left:330px;
     width:calc(100% - 330px);
     height:100vh;
     display:flex;
     flex-direction:column;
-    padding:18px;
-    padding-top: 80px;
+    padding:0; 
 }
-
 /* ===============================
    HEADER
 =============================== */
@@ -144,6 +144,7 @@
     border-radius:var(--radio);
     padding:16px;
     overflow-y:auto;
+    padding-top: 80px; /* SOLO PC */
 }
 
 
@@ -152,13 +153,17 @@
     display:flex;
     justify-content:space-between;
     align-items:center;
-    position: sticky;
+
+    position: relative;
+    top: 0px;
+
     background:var(--gris);
     padding:12px 15px;
     border-radius:14px;
     margin-bottom:15px;
-}
+    z-index: 10;
 
+}
 .channel-info-panel{
     background:#f9fafb;
     border:1px solid #d5d7db;
@@ -623,3 +628,104 @@
     color: #ccc;
 }
 
+@media (max-width: 768px) {
+
+    /* =========================
+       OCULTAR SIDEBAR CANALES
+    ========================= */
+    .channel-sidebar {
+        display: none !important;
+    }
+
+    /* =========================
+       SERVERS MÁS PEQUEÑO
+    ========================= */
+    .server-sidebar {
+        width: 60px;
+    }
+
+    /* =========================
+       CONTENEDOR PRINCIPAL LIMPIO
+    ========================= */
+    .chat-container {
+        margin-left: 60px;
+        width: calc(100% - 60px);
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        padding: 0;
+        overflow: hidden;
+    }
+
+    /* =========================
+       HEADER FIJO
+    ========================= */
+    .chat-header {
+        position: fixed;
+        top: 0;
+        left: 60px;
+        width: calc(100% - 60px);
+        height: 55px;
+        z-index: 1000;
+    }
+
+    /* =========================
+       CHAT AREA (ESTO ES LO IMPORTANTE)
+        ========================= */
+    .chat-main {
+        flex: 1;
+
+        margin-top: 55px;   /* solo empuja debajo del header */
+        margin-bottom: 55px;
+
+        padding-top: 0;     /* 🔥 IMPORTANTE: elimina el hueco */
+
+        display: flex;
+        flex-direction: column;
+
+        overflow: hidden;
+        background: var(--panel);
+    }
+    /* =========================
+       TOPBAR (YA NO FIXED)
+    ========================= */
+    .channel-topbar {
+        position: relative;   /* 🔥 CLAVE */
+        top: auto;
+        left: auto;
+        width: 100%;
+        margin: 0;
+        border-radius: 0;
+        z-index: auto;
+        margin-top: 0;
+    }
+
+    /* =========================
+       MENSAJES OCUPAN TODO
+    ========================= */
+    .messages {
+        flex: 1;
+        overflow-y: auto;
+        padding: 10px;
+        background: var(--panel);
+    }
+
+    /* =========================
+       INPUT FIJO ABAJO
+    ========================= */
+    .chat-input {
+        position: fixed;
+        bottom: 0;
+        left: 60px;
+        width: calc(100% - 60px);
+        height: 55px;
+        z-index: 1000;
+    }
+
+    /* =========================
+       IMPORTANTE: EVITA FONDOS RAROS
+    ========================= */
+    body {
+        background: var(--fondo);
+    }
+}

@@ -86,5 +86,28 @@
     "rules": [
       "SÉ RESPETUOSO CON TODOS"
     ]
+  },
+  {
+    "id": 14,
+    "name": "el papu de la grasa",
+    "description": "",
+    "img": null,
+    "rules": [
+      "Sé respetuoso con todos",
+      "Sé respetuoso con todos",
+      "Sé respetuoso con todos",
+      "lol"
+    ]
+  },
+  {
+    "id": 15,
+    "name": "MUCHAS GRASAS UN SALUDO A LA GRASA",
+    "description": "",
+    "img": null,
+    "rules": [
+      "Sé respetuoso con todos",
+      "Sé respetuoso con todos",
+      "Sé respetuoso con todos"
+    ]
   }
 ]
