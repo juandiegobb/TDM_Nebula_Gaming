@@ -503,3 +503,224 @@
     font-size:20px;
     cursor:pointer;
 }
+
+
+@media (max-width: 768px) {
+    .modal-overlay{
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.7);
+
+    display: none;
+    justify-content: center;
+    align-items: center;
+
+    z-index:99999 !important; /* 🔥 MÁS ALTO QUE TODO */
+    }
+
+    .modal-overlay.active{
+        display: flex;
+    }
+
+
+    /* ===============================
+       SERVIDORES (SIEMPRE ENCIMA)
+    =============================== */
+    .server-sidebar{
+        position: fixed;
+        top: 55px;
+        left: 0;
+        width: 60px;
+        height: calc(100vh - 55px);
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        background: #1D2020;
+
+        z-index: 2000 !important; /* 🔥 arriba de todo el chat */
+    }
+
+    .channel-list{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+        flex: 1;
+        overflow-y: auto;
+        width: 100%;
+    }
+
+    /* ===============================
+       CHAT BASE
+    =============================== */
+    .chat-container {
+        margin-left: 60px;
+        width: calc(100% - 60px);
+        height: 100vh;
+
+        display: flex;
+        flex-direction: column;
+
+        padding: 0;
+        overflow: visible;
+        position: relative;
+        position: relative;
+
+        z-index: 1;
+    }
+
+    .chat-main {
+        flex: 1;
+        margin-top: 55px;
+        margin-bottom: 55px;
+
+        padding: 16px;
+
+        display: flex;
+        flex-direction: column;
+        min-height: 0;
+        overflow: hidden;
+    }
+
+    .chat-header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 55px;
+
+        z-index: 1500;
+    }
+
+    /* ===============================
+       INPUT
+    =============================== */
+    .chat-input {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+
+        padding-left: 72px;
+        height: 55px;
+
+        display: flex;
+        align-items: center;
+
+        box-sizing: border-box;
+
+        z-index: 1500;
+    }
+
+    /* ===============================
+       SIDEBAR CANALES
+    =============================== */
+    .channel-sidebar{
+        position: fixed;
+        top: 55px;
+        left: -260px;
+        width: 260px;
+        height: calc(100% - 55px);
+
+        background: #1e1f22;
+
+        z-index: 1200;
+
+        transition: transform 0.3s ease;
+        transform: translateX(-100%);
+    }
+
+    .channel-sidebar.open{
+        transform: translateX(0);
+        left: 60px;
+    }
+
+    .channel-arrow{
+        cursor: pointer;
+    }
+
+    /* ===============================
+       USUARIOS
+    =============================== */
+    .user-sidebar{
+        position: fixed;
+        top: 55px;
+        right: 0;
+
+        width: 80%;
+        max-width: 300px;
+        height: calc(100vh - 55px);
+
+        background: #2B2D31;
+
+        z-index: 2000;
+
+        transform: translateX(100%);
+        transition: transform 0.3s ease;
+
+        display: flex;
+        flex-direction: column;
+    }
+
+    .user-sidebar.active{
+        transform: translateX(0);
+    }
+
+    .user-overlay{
+        position: fixed;
+        inset: 0;
+        background: rgba(0,0,0,0.6);
+
+        z-index: 1500;
+        display: none;
+    }
+
+    .user-overlay.active{
+        display: block;
+    }
+
+    /* ===============================
+       INTRO (DEBAJO DE SERVIDORES)
+    =============================== */
+    .channel-info-panel{
+        position: relative;
+
+        z-index: 1; /* 🔥 debajo del sidebar */
+    }
+
+    .channel-topbar{
+        z-index: 1;
+    }
+
+    .messages{
+        z-index: 1;
+    }
+
+    /* ===============================
+       BOTÓN ADD
+    =============================== */
+    .add{
+        width: 45px;
+        height: 45px;
+
+        border-radius: 50%;
+        border: none;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        background: #39ff14;
+        color: #000;
+
+        font-size: 26px;
+        font-weight: bold;
+    }
+
+    body{
+        margin: 0;
+        overflow: hidden;
+    }
+}

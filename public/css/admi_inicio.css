@@ -136,7 +136,7 @@ body {
 }
 
 .left {
-    display: contents;
+    display: block;
 }
 
 .right {
@@ -562,7 +562,7 @@ body {
     background: #2b2b2b;
     border-radius: 14px;
     padding: 30px;
-    width: 620px;
+    width: min(620px,95vw);
     max-width: 95vw;
     max-height: calc(100vh - 40px);
     overflow-y: auto;
@@ -608,7 +608,8 @@ body {
 /* Imagen */
 .image-upload {
     position: relative;
-    width: 160px;
+    width: 100px;
+    max-width: 160px;
     height: 160px;
     background: #3a3a3a;
     border-radius: 12px;
@@ -629,6 +630,7 @@ body {
     display: flex;
     flex-direction: column;
     gap: 6px;
+    width: 100%;
 }
 
 .image-url-input label {
@@ -1173,4 +1175,149 @@ body {
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
     overflow: hidden;
+}
+/* =========================
+   MOBILE / TABLET BASE FIX
+========================= */
+@media (max-width: 768px) {
+
+    body {
+        flex-direction: row;
+        overflow-x: hidden;
+    }
+
+    /* SIDEBAR */
+    .sidebar {
+        width: 58px;
+        padding: 10px 0;
+        gap: 10px;
+    }
+
+    .sidebar-title {
+        width: 38px;
+        height: 38px;
+    }
+
+    .channel-dot,
+    .add {
+        width: 38px;
+        height: 38px;
+    }
+
+    /* MAIN */
+    .main {
+        width: calc(100% - 58px);
+        min-width: 0;
+    }
+
+    /* TOPBAR */
+    .topbar {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+        padding: 12px;
+    }
+
+    .topbar-actions {
+        width: 100%;
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+    .ghost-btn {
+        flex: 1;
+        justify-content: center;
+        font-size: 11px;
+        padding: 8px;
+    }
+
+    /* LAYOUT PRINCIPAL (IMPORTANTE) */
+    .container {
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
+        gap: 12px;
+    }
+
+    /* CARDS */
+    .card {
+        padding: 12px;
+    }
+
+    .card-header {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .header-buttons {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 6px;
+        width: 100%;
+    }
+
+    .card-header button {
+        font-size: 11px;
+        padding: 8px;
+    }
+
+    /* GRIDS */
+    .channels-grid,
+    .users-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* RIGHT PANEL */
+    .right {
+        position: relative;
+        width: 100%;
+        padding: 16px;
+        margin-top: 10px;
+    }
+
+    .profile-big {
+        width: 85px;
+        height: 85px;
+    }
+
+    .stats {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    /* MODAL */
+    .modal {
+        width: 95vw;
+        padding: 16px;
+    }
+
+    .modal-body {
+        flex-direction: column;
+    }
+
+    .image-upload {
+        width: 120px;
+        height: 120px;
+    }
+
+    /* EVITA DESBORDES */
+    .channel-info span,
+    .user-card span {
+        font-size: 12px;
+    }
+
+    .modal-body {
+    flex-direction: column;
+    align-items: stretch;
+}
+
+.image-upload-section {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.image-url-input input {
+    width: 100%;
+}
 }

@@ -1,410 +1,503 @@
 {
     "1": [
         {
-            "id": "1778044682545-sj3665",
-            "channelId": 1,
-            "user": "JUAN DIEGO CASTILLO JIMÉNEZ",
-            "userId": 12,
-            "userRole": "user",
-            "userImg": "https://lh3.googleusercontent.com/a/ACg8ocLoXE5OI0or8EVG52imG6UXv5VCmEeIQRPKOoe-qnXbwTPFd3KL=s96-c",
-            "text": "holaaaaaaaaaaaaaaa",
-            "createdAt": "2026-05-06T05:18:02.545Z"
-        },
-        {
-            "id": "1778044705674-chvwf0",
+            "id": "1777901439294-2f9cvd",
             "channelId": 1,
             "user": "Admin",
             "userId": 1,
             "userRole": "admin",
             "userImg": "https://i.pravatar.cc/150?img=1",
-            "text": "Pruebaaaa",
-            "createdAt": "2026-05-06T05:18:25.674Z"
+            "text": "hollllll",
+            "createdAt": "2026-05-04T13:30:39.294Z"
         },
         {
-            "id": "1778044712372-14aj7p",
-            "channelId": 1,
-            "user": "Admin",
-            "userId": 1,
-            "userRole": "admin",
-            "userImg": "https://i.pravatar.cc/150?img=1",
-            "text": "pruebaaaaa",
-            "createdAt": "2026-05-06T05:18:32.372Z"
-        },
-        {
-            "id": "1778044714336-sjdknv",
-            "channelId": 1,
-            "user": "Admin",
-            "userId": 1,
-            "userRole": "admin",
-            "userImg": "https://i.pravatar.cc/150?img=1",
-            "text": "pruebaaaaa",
-            "createdAt": "2026-05-06T05:18:34.336Z"
-        },
-        {
-            "id": "1778044716140-nvqvsm",
-            "channelId": 1,
-            "user": "Admin",
-            "userId": 1,
-            "userRole": "admin",
-            "userImg": "https://i.pravatar.cc/150?img=1",
-            "text": "pruebaaaaapruebaaaaa",
-            "createdAt": "2026-05-06T05:18:36.140Z"
-        },
-        {
-            "id": "1778044717085-vrlpqm",
-            "channelId": 1,
-            "user": "Admin",
-            "userId": 1,
-            "userRole": "admin",
-            "userImg": "https://i.pravatar.cc/150?img=1",
-            "text": "pruebaaaaa",
-            "createdAt": "2026-05-06T05:18:37.085Z"
-        },
-        {
-            "id": "1778044717674-2y1ror",
-            "channelId": 1,
-            "user": "Admin",
-            "userId": 1,
-            "userRole": "admin",
-            "userImg": "https://i.pravatar.cc/150?img=1",
-            "text": "pruebaaaaa",
-            "createdAt": "2026-05-06T05:18:37.674Z"
-        },
-        {
-            "id": "1778044718238-teezqu",
-            "channelId": 1,
-            "user": "Admin",
-            "userId": 1,
-            "userRole": "admin",
-            "userImg": "https://i.pravatar.cc/150?img=1",
-            "text": "pruebaaaaa",
-            "createdAt": "2026-05-06T05:18:38.238Z"
-        },
-        {
-            "id": "1778044718750-5lcbon",
-            "channelId": 1,
-            "user": "Admin",
-            "userId": 1,
-            "userRole": "admin",
-            "userImg": "https://i.pravatar.cc/150?img=1",
-            "text": "pruebaaaaa",
-            "createdAt": "2026-05-06T05:18:38.750Z"
-        },
-        {
-            "id": "1778044722287-dlgz6w",
-            "channelId": 1,
-            "user": "Admin",
-            "userId": 1,
-            "userRole": "admin",
-            "userImg": "https://i.pravatar.cc/150?img=1",
-            "text": "pruebaaaaapruebaaaaapruebaaaaapruebaaaaapruebaaaaa",
-            "createdAt": "2026-05-06T05:18:42.287Z"
-        },
-        {
-            "id": "1778044746832-xjob6r",
+            "id": "1777901452064-3gsdfo",
             "channelId": 1,
             "user": "JUAN DIEGO CASTILLO JIMÉNEZ",
             "userId": 12,
             "userRole": "user",
             "userImg": "https://lh3.googleusercontent.com/a/ACg8ocLoXE5OI0or8EVG52imG6UXv5VCmEeIQRPKOoe-qnXbwTPFd3KL=s96-c",
-            "text": "pruebaaaaa",
-            "createdAt": "2026-05-06T05:19:06.832Z"
+            "text": "xxxxxxxxxxxxx",
+            "createdAt": "2026-05-04T13:30:52.064Z"
         },
         {
-            "id": "1778044749733-306600",
-            "channelId": 1,
-            "user": "JUAN DIEGO CASTILLO JIMÉNEZ",
-            "userId": 12,
-            "userRole": "user",
-            "userImg": "https://lh3.googleusercontent.com/a/ACg8ocLoXE5OI0or8EVG52imG6UXv5VCmEeIQRPKOoe-qnXbwTPFd3KL=s96-c",
-            "text": "pruebaaaaa",
-            "createdAt": "2026-05-06T05:19:09.733Z"
-        },
-        {
-            "id": "1778044752260-64o7xc",
-            "channelId": 1,
-            "user": "JUAN DIEGO CASTILLO JIMÉNEZ",
-            "userId": 12,
-            "userRole": "user",
-            "userImg": "https://lh3.googleusercontent.com/a/ACg8ocLoXE5OI0or8EVG52imG6UXv5VCmEeIQRPKOoe-qnXbwTPFd3KL=s96-c",
-            "text": "pruebaaaaa",
-            "createdAt": "2026-05-06T05:19:12.261Z"
-        },
-        {
-            "id": "1778044752902-6zcc7g",
-            "channelId": 1,
-            "user": "JUAN DIEGO CASTILLO JIMÉNEZ",
-            "userId": 12,
-            "userRole": "user",
-            "userImg": "https://lh3.googleusercontent.com/a/ACg8ocLoXE5OI0or8EVG52imG6UXv5VCmEeIQRPKOoe-qnXbwTPFd3KL=s96-c",
-            "text": "pruebaaaaa",
-            "createdAt": "2026-05-06T05:19:12.902Z"
-        },
-        {
-            "id": "1778044754115-1zumfw",
-            "channelId": 1,
-            "user": "JUAN DIEGO CASTILLO JIMÉNEZ",
-            "userId": 12,
-            "userRole": "user",
-            "userImg": "https://lh3.googleusercontent.com/a/ACg8ocLoXE5OI0or8EVG52imG6UXv5VCmEeIQRPKOoe-qnXbwTPFd3KL=s96-c",
-            "text": "pruebaaaaapruebaaaaa",
-            "createdAt": "2026-05-06T05:19:14.115Z"
-        },
-        {
-            "id": "1778044755888-08yijk",
-            "channelId": 1,
-            "user": "JUAN DIEGO CASTILLO JIMÉNEZ",
-            "userId": 12,
-            "userRole": "user",
-            "userImg": "https://lh3.googleusercontent.com/a/ACg8ocLoXE5OI0or8EVG52imG6UXv5VCmEeIQRPKOoe-qnXbwTPFd3KL=s96-c",
-            "text": "pruebaaaaapruebaaaaa",
-            "createdAt": "2026-05-06T05:19:15.888Z"
-        },
-        {
-            "id": "1778044757222-vmib6d",
-            "channelId": 1,
-            "user": "JUAN DIEGO CASTILLO JIMÉNEZ",
-            "userId": 12,
-            "userRole": "user",
-            "userImg": "https://lh3.googleusercontent.com/a/ACg8ocLoXE5OI0or8EVG52imG6UXv5VCmEeIQRPKOoe-qnXbwTPFd3KL=s96-c",
-            "text": "pruebaaaaa",
-            "createdAt": "2026-05-06T05:19:17.222Z"
-        },
-        {
-            "id": "1778044776497-hyb9uw",
+            "id": "1777904762558-wx2p9r",
             "channelId": 1,
             "user": "Admin",
             "userId": 1,
             "userRole": "admin",
             "userImg": "https://i.pravatar.cc/150?img=1",
-            "text": "pruebaaaaa",
-            "createdAt": "2026-05-06T05:19:36.497Z"
+            "text": "guituyoi",
+            "createdAt": "2026-05-04T14:26:02.558Z"
         },
         {
-            "id": "1778044777102-5ruzdm",
+            "id": "1777905204156-m7cpd0",
             "channelId": 1,
             "user": "Admin",
             "userId": 1,
             "userRole": "admin",
             "userImg": "https://i.pravatar.cc/150?img=1",
-            "text": "pruebaaaaa",
-            "createdAt": "2026-05-06T05:19:37.102Z"
+            "text": "holii",
+            "createdAt": "2026-05-04T14:33:24.156Z"
         },
         {
-            "id": "1778044777603-ry2gb7",
+            "id": "1777913063338-tzlir8",
             "channelId": 1,
             "user": "Admin",
             "userId": 1,
             "userRole": "admin",
             "userImg": "https://i.pravatar.cc/150?img=1",
-            "text": "pruebaaaaa",
-            "createdAt": "2026-05-06T05:19:37.603Z"
+            "text": "yajF",
+            "createdAt": "2026-05-04T16:44:23.338Z"
         },
         {
-            "id": "1778044778580-ukvxn2",
+            "id": "1777913064437-b9ku2g",
             "channelId": 1,
             "user": "Admin",
             "userId": 1,
             "userRole": "admin",
             "userImg": "https://i.pravatar.cc/150?img=1",
-            "text": "pruebaaaaapruebaaaaa",
-            "createdAt": "2026-05-06T05:19:38.580Z"
+            "text": "JBDJD",
+            "createdAt": "2026-05-04T16:44:24.437Z"
         },
         {
-            "id": "1778044779363-xl713q",
+            "id": "1777951885908-ihvrm1",
             "channelId": 1,
             "user": "Admin",
             "userId": 1,
             "userRole": "admin",
             "userImg": "https://i.pravatar.cc/150?img=1",
-            "text": "pruebaaaaa",
-            "createdAt": "2026-05-06T05:19:39.363Z"
+            "text": "el papu",
+            "createdAt": "2026-05-05T03:31:25.908Z"
         },
         {
-            "id": "1778044780157-dhw7bs",
+            "id": "1777953153481-7d43fi",
             "channelId": 1,
             "user": "Admin",
             "userId": 1,
             "userRole": "admin",
             "userImg": "https://i.pravatar.cc/150?img=1",
-            "text": "pruebaaaaa",
-            "createdAt": "2026-05-06T05:19:40.157Z"
+            "text": "soy el papu de la grada",
+            "createdAt": "2026-05-05T03:52:33.482Z"
         },
         {
-            "id": "1778044790353-j2z0er",
-            "channelId": 1,
-            "user": "JUAN DIEGO CASTILLO JIMÉNEZ",
-            "userId": 12,
-            "userRole": "user",
-            "userImg": "https://lh3.googleusercontent.com/a/ACg8ocLoXE5OI0or8EVG52imG6UXv5VCmEeIQRPKOoe-qnXbwTPFd3KL=s96-c",
-            "text": "pruebaaaaa",
-            "createdAt": "2026-05-06T05:19:50.353Z"
-        },
-        {
-            "id": "1778044790994-3t8ok8",
-            "channelId": 1,
-            "user": "JUAN DIEGO CASTILLO JIMÉNEZ",
-            "userId": 12,
-            "userRole": "user",
-            "userImg": "https://lh3.googleusercontent.com/a/ACg8ocLoXE5OI0or8EVG52imG6UXv5VCmEeIQRPKOoe-qnXbwTPFd3KL=s96-c",
-            "text": "pruebaaaaa",
-            "createdAt": "2026-05-06T05:19:50.994Z"
-        },
-        {
-            "id": "1778044791555-yfk3s2",
-            "channelId": 1,
-            "user": "JUAN DIEGO CASTILLO JIMÉNEZ",
-            "userId": 12,
-            "userRole": "user",
-            "userImg": "https://lh3.googleusercontent.com/a/ACg8ocLoXE5OI0or8EVG52imG6UXv5VCmEeIQRPKOoe-qnXbwTPFd3KL=s96-c",
-            "text": "pruebaaaaa",
-            "createdAt": "2026-05-06T05:19:51.555Z"
-        },
-        {
-            "id": "1778045045230-5jyeu6",
+            "id": "1777953165974-5mrzqa",
             "channelId": 1,
             "user": "Admin",
             "userId": 1,
             "userRole": "admin",
             "userImg": "https://i.pravatar.cc/150?img=1",
-            "text": "prueba",
-            "createdAt": "2026-05-06T05:24:05.230Z"
+            "text": "jueputa",
+            "createdAt": "2026-05-05T03:52:45.974Z"
         },
         {
-            "id": "1778045045912-cf0tj9",
+            "id": "1777953534773-5rfwv5",
             "channelId": 1,
             "user": "Admin",
             "userId": 1,
             "userRole": "admin",
             "userImg": "https://i.pravatar.cc/150?img=1",
-            "text": "prueba",
-            "createdAt": "2026-05-06T05:24:05.912Z"
+            "text": "pito",
+            "createdAt": "2026-05-05T03:58:54.773Z"
         },
         {
-            "id": "1778045048148-kd15oj",
+            "id": "1777955607358-hdrel7",
             "channelId": 1,
             "user": "Admin",
             "userId": 1,
             "userRole": "admin",
             "userImg": "https://i.pravatar.cc/150?img=1",
-            "text": "pruebaprueba",
-            "createdAt": "2026-05-06T05:24:08.148Z"
+            "text": "yipe",
+            "createdAt": "2026-05-05T04:33:27.359Z"
         },
         {
-            "id": "1778045063253-iqx2t4",
-            "channelId": 1,
-            "user": "JUAN DIEGO CASTILLO JIMÉNEZ",
-            "userId": 12,
-            "userRole": "user",
-            "userImg": "https://lh3.googleusercontent.com/a/ACg8ocLoXE5OI0or8EVG52imG6UXv5VCmEeIQRPKOoe-qnXbwTPFd3KL=s96-c",
-            "text": "pruebaaaaa",
-            "createdAt": "2026-05-06T05:24:23.253Z"
-        },
-        {
-            "id": "1778045066859-2ymdg9",
-            "channelId": 1,
-            "user": "JUAN DIEGO CASTILLO JIMÉNEZ",
-            "userId": 12,
-            "userRole": "user",
-            "userImg": "https://lh3.googleusercontent.com/a/ACg8ocLoXE5OI0or8EVG52imG6UXv5VCmEeIQRPKOoe-qnXbwTPFd3KL=s96-c",
-            "text": "prueba",
-            "createdAt": "2026-05-06T05:24:26.859Z"
-        },
-        {
-            "id": "1778045067521-2oy67s",
-            "channelId": 1,
-            "user": "JUAN DIEGO CASTILLO JIMÉNEZ",
-            "userId": 12,
-            "userRole": "user",
-            "userImg": "https://lh3.googleusercontent.com/a/ACg8ocLoXE5OI0or8EVG52imG6UXv5VCmEeIQRPKOoe-qnXbwTPFd3KL=s96-c",
-            "text": "prueba",
-            "createdAt": "2026-05-06T05:24:27.521Z"
-        },
-        {
-            "id": "1778045069108-msg477",
-            "channelId": 1,
-            "user": "JUAN DIEGO CASTILLO JIMÉNEZ",
-            "userId": 12,
-            "userRole": "user",
-            "userImg": "https://lh3.googleusercontent.com/a/ACg8ocLoXE5OI0or8EVG52imG6UXv5VCmEeIQRPKOoe-qnXbwTPFd3KL=s96-c",
-            "text": "prueba",
-            "createdAt": "2026-05-06T05:24:29.108Z"
-        },
-        {
-            "id": "1778045514628-139xjx",
-            "channelId": 1,
-            "user": "JUAN DIEGO CASTILLO JIMÉNEZ",
-            "userId": 12,
-            "userRole": "user",
-            "userImg": "https://lh3.googleusercontent.com/a/ACg8ocLoXE5OI0or8EVG52imG6UXv5VCmEeIQRPKOoe-qnXbwTPFd3KL=s96-c",
-            "text": "hola prueba",
-            "createdAt": "2026-05-06T05:31:54.628Z"
-        },
-        {
-            "id": "1778045516447-mc488w",
-            "channelId": 1,
-            "user": "JUAN DIEGO CASTILLO JIMÉNEZ",
-            "userId": 12,
-            "userRole": "user",
-            "userImg": "https://lh3.googleusercontent.com/a/ACg8ocLoXE5OI0or8EVG52imG6UXv5VCmEeIQRPKOoe-qnXbwTPFd3KL=s96-c",
-            "text": "hola prueba",
-            "createdAt": "2026-05-06T05:31:56.447Z"
-        },
-        {
-            "id": "1778045517570-lcy67f",
-            "channelId": 1,
-            "user": "JUAN DIEGO CASTILLO JIMÉNEZ",
-            "userId": 12,
-            "userRole": "user",
-            "userImg": "https://lh3.googleusercontent.com/a/ACg8ocLoXE5OI0or8EVG52imG6UXv5VCmEeIQRPKOoe-qnXbwTPFd3KL=s96-c",
-            "text": "hola pruebahola prueba",
-            "createdAt": "2026-05-06T05:31:57.570Z"
-        },
-        {
-            "id": "1778045518548-dzrfuh",
-            "channelId": 1,
-            "user": "JUAN DIEGO CASTILLO JIMÉNEZ",
-            "userId": 12,
-            "userRole": "user",
-            "userImg": "https://lh3.googleusercontent.com/a/ACg8ocLoXE5OI0or8EVG52imG6UXv5VCmEeIQRPKOoe-qnXbwTPFd3KL=s96-c",
-            "text": "hola prueba",
-            "createdAt": "2026-05-06T05:31:58.548Z"
-        },
-        {
-            "id": "1778045519207-35ywki",
-            "channelId": 1,
-            "user": "JUAN DIEGO CASTILLO JIMÉNEZ",
-            "userId": 12,
-            "userRole": "user",
-            "userImg": "https://lh3.googleusercontent.com/a/ACg8ocLoXE5OI0or8EVG52imG6UXv5VCmEeIQRPKOoe-qnXbwTPFd3KL=s96-c",
-            "text": "hola prueba",
-            "createdAt": "2026-05-06T05:31:59.207Z"
-        },
-        {
-            "id": "1778045537230-mxqbk8",
+            "id": "1777955944862-z3u4bh",
             "channelId": 1,
             "user": "Admin",
             "userId": 1,
             "userRole": "admin",
             "userImg": "https://i.pravatar.cc/150?img=1",
-            "text": "hola prueba",
-            "createdAt": "2026-05-06T05:32:17.230Z"
+            "text": "el pepe",
+            "createdAt": "2026-05-05T04:39:04.862Z"
         },
         {
-            "id": "1778045538873-005pdg",
+            "id": "1777955952004-91vjal",
             "channelId": 1,
             "user": "Admin",
             "userId": 1,
             "userRole": "admin",
             "userImg": "https://i.pravatar.cc/150?img=1",
-            "text": "hola prueba",
-            "createdAt": "2026-05-06T05:32:18.873Z"
+            "text": "pura",
+            "createdAt": "2026-05-05T04:39:12.004Z"
+        },
+        {
+            "id": "1777955953596-bvmbne",
+            "channelId": 1,
+            "user": "Admin",
+            "userId": 1,
+            "userRole": "admin",
+            "userImg": "https://i.pravatar.cc/150?img=1",
+            "text": "aaa",
+            "createdAt": "2026-05-05T04:39:13.596Z"
+        },
+        {
+            "id": "1777955953968-4abz77",
+            "channelId": 1,
+            "user": "Admin",
+            "userId": 1,
+            "userRole": "admin",
+            "userImg": "https://i.pravatar.cc/150?img=1",
+            "text": "a",
+            "createdAt": "2026-05-05T04:39:13.968Z"
+        },
+        {
+            "id": "1777955954166-rtw27c",
+            "channelId": 1,
+            "user": "Admin",
+            "userId": 1,
+            "userRole": "admin",
+            "userImg": "https://i.pravatar.cc/150?img=1",
+            "text": "a",
+            "createdAt": "2026-05-05T04:39:14.166Z"
+        },
+        {
+            "id": "1777955954343-iyaw0h",
+            "channelId": 1,
+            "user": "Admin",
+            "userId": 1,
+            "userRole": "admin",
+            "userImg": "https://i.pravatar.cc/150?img=1",
+            "text": "a",
+            "createdAt": "2026-05-05T04:39:14.343Z"
+        },
+        {
+            "id": "1777955954510-n6lqcf",
+            "channelId": 1,
+            "user": "Admin",
+            "userId": 1,
+            "userRole": "admin",
+            "userImg": "https://i.pravatar.cc/150?img=1",
+            "text": "a",
+            "createdAt": "2026-05-05T04:39:14.510Z"
+        },
+        {
+            "id": "1777955954681-ljkaeq",
+            "channelId": 1,
+            "user": "Admin",
+            "userId": 1,
+            "userRole": "admin",
+            "userImg": "https://i.pravatar.cc/150?img=1",
+            "text": "a",
+            "createdAt": "2026-05-05T04:39:14.681Z"
+        },
+        {
+            "id": "1777955954855-l3kstw",
+            "channelId": 1,
+            "user": "Admin",
+            "userId": 1,
+            "userRole": "admin",
+            "userImg": "https://i.pravatar.cc/150?img=1",
+            "text": "a",
+            "createdAt": "2026-05-05T04:39:14.855Z"
+        },
+        {
+            "id": "1777955955036-tvxkaj",
+            "channelId": 1,
+            "user": "Admin",
+            "userId": 1,
+            "userRole": "admin",
+            "userImg": "https://i.pravatar.cc/150?img=1",
+            "text": "a",
+            "createdAt": "2026-05-05T04:39:15.036Z"
+        },
+        {
+            "id": "1777955955187-c6dxf2",
+            "channelId": 1,
+            "user": "Admin",
+            "userId": 1,
+            "userRole": "admin",
+            "userImg": "https://i.pravatar.cc/150?img=1",
+            "text": "a",
+            "createdAt": "2026-05-05T04:39:15.187Z"
+        },
+        {
+            "id": "1777955958860-arnfsv",
+            "channelId": 1,
+            "user": "Admin",
+            "userId": 1,
+            "userRole": "admin",
+            "userImg": "https://i.pravatar.cc/150?img=1",
+            "text": "a",
+            "createdAt": "2026-05-05T04:39:18.860Z"
+        },
+        {
+            "id": "1777955959486-b0x31x",
+            "channelId": 1,
+            "user": "Admin",
+            "userId": 1,
+            "userRole": "admin",
+            "userImg": "https://i.pravatar.cc/150?img=1",
+            "text": "a",
+            "createdAt": "2026-05-05T04:39:19.486Z"
+        },
+        {
+            "id": "1777955959753-z647pp",
+            "channelId": 1,
+            "user": "Admin",
+            "userId": 1,
+            "userRole": "admin",
+            "userImg": "https://i.pravatar.cc/150?img=1",
+            "text": "aa",
+            "createdAt": "2026-05-05T04:39:19.753Z"
+        },
+        {
+            "id": "1777955959961-uqv47z",
+            "channelId": 1,
+            "user": "Admin",
+            "userId": 1,
+            "userRole": "admin",
+            "userImg": "https://i.pravatar.cc/150?img=1",
+            "text": "a",
+            "createdAt": "2026-05-05T04:39:19.961Z"
+        },
+        {
+            "id": "1777955960138-ka1v9x",
+            "channelId": 1,
+            "user": "Admin",
+            "userId": 1,
+            "userRole": "admin",
+            "userImg": "https://i.pravatar.cc/150?img=1",
+            "text": "a",
+            "createdAt": "2026-05-05T04:39:20.138Z"
+        },
+        {
+            "id": "1777955960311-lyle02",
+            "channelId": 1,
+            "user": "Admin",
+            "userId": 1,
+            "userRole": "admin",
+            "userImg": "https://i.pravatar.cc/150?img=1",
+            "text": "a",
+            "createdAt": "2026-05-05T04:39:20.311Z"
+        },
+        {
+            "id": "1777955960481-qj17xr",
+            "channelId": 1,
+            "user": "Admin",
+            "userId": 1,
+            "userRole": "admin",
+            "userImg": "https://i.pravatar.cc/150?img=1",
+            "text": "a",
+            "createdAt": "2026-05-05T04:39:20.481Z"
+        },
+        {
+            "id": "1777955960658-c7jp6v",
+            "channelId": 1,
+            "user": "Admin",
+            "userId": 1,
+            "userRole": "admin",
+            "userImg": "https://i.pravatar.cc/150?img=1",
+            "text": "a",
+            "createdAt": "2026-05-05T04:39:20.658Z"
+        },
+        {
+            "id": "1777955960833-pf4aqa",
+            "channelId": 1,
+            "user": "Admin",
+            "userId": 1,
+            "userRole": "admin",
+            "userImg": "https://i.pravatar.cc/150?img=1",
+            "text": "a",
+            "createdAt": "2026-05-05T04:39:20.833Z"
+        },
+        {
+            "id": "1777955961354-c7wtkm",
+            "channelId": 1,
+            "user": "Admin",
+            "userId": 1,
+            "userRole": "admin",
+            "userImg": "https://i.pravatar.cc/150?img=1",
+            "text": "aa",
+            "createdAt": "2026-05-05T04:39:21.354Z"
+        },
+        {
+            "id": "1777955961552-b9zmdv",
+            "channelId": 1,
+            "user": "Admin",
+            "userId": 1,
+            "userRole": "admin",
+            "userImg": "https://i.pravatar.cc/150?img=1",
+            "text": "a",
+            "createdAt": "2026-05-05T04:39:21.552Z"
+        },
+        {
+            "id": "1777955961727-paiinz",
+            "channelId": 1,
+            "user": "Admin",
+            "userId": 1,
+            "userRole": "admin",
+            "userImg": "https://i.pravatar.cc/150?img=1",
+            "text": "a",
+            "createdAt": "2026-05-05T04:39:21.727Z"
+        },
+        {
+            "id": "1777955961923-urzc0g",
+            "channelId": 1,
+            "user": "Admin",
+            "userId": 1,
+            "userRole": "admin",
+            "userImg": "https://i.pravatar.cc/150?img=1",
+            "text": "a",
+            "createdAt": "2026-05-05T04:39:21.924Z"
+        },
+        {
+            "id": "1777955962105-2zsguv",
+            "channelId": 1,
+            "user": "Admin",
+            "userId": 1,
+            "userRole": "admin",
+            "userImg": "https://i.pravatar.cc/150?img=1",
+            "text": "a",
+            "createdAt": "2026-05-05T04:39:22.105Z"
+        },
+        {
+            "id": "1777955962277-i1iy3d",
+            "channelId": 1,
+            "user": "Admin",
+            "userId": 1,
+            "userRole": "admin",
+            "userImg": "https://i.pravatar.cc/150?img=1",
+            "text": "a",
+            "createdAt": "2026-05-05T04:39:22.277Z"
+        },
+        {
+            "id": "1777955962439-rmhzcn",
+            "channelId": 1,
+            "user": "Admin",
+            "userId": 1,
+            "userRole": "admin",
+            "userImg": "https://i.pravatar.cc/150?img=1",
+            "text": "a",
+            "createdAt": "2026-05-05T04:39:22.439Z"
+        },
+        {
+            "id": "1777956010032-v5qu7g",
+            "channelId": 1,
+            "user": "Admin",
+            "userId": 1,
+            "userRole": "admin",
+            "userImg": "https://i.pravatar.cc/150?img=1",
+            "text": "aaaa",
+            "createdAt": "2026-05-05T04:40:10.032Z"
+        },
+        {
+            "id": "1777956012798-i8gbvj",
+            "channelId": 1,
+            "user": "Admin",
+            "userId": 1,
+            "userRole": "admin",
+            "userImg": "https://i.pravatar.cc/150?img=1",
+            "text": "fgg",
+            "createdAt": "2026-05-05T04:40:12.798Z"
+        },
+        {
+            "id": "1777956014378-uac02v",
+            "channelId": 1,
+            "user": "Admin",
+            "userId": 1,
+            "userRole": "admin",
+            "userImg": "https://i.pravatar.cc/150?img=1",
+            "text": "gb",
+            "createdAt": "2026-05-05T04:40:14.378Z"
+        },
+        {
+            "id": "1777956330647-jxwbcc",
+            "channelId": 1,
+            "user": "Admin",
+            "userId": 1,
+            "userRole": "admin",
+            "userImg": "https://i.pravatar.cc/150?img=1",
+            "text": "a",
+            "createdAt": "2026-05-05T04:45:30.647Z"
+        },
+        {
+            "id": "1777956334701-2a5hjj",
+            "channelId": 1,
+            "user": "Admin",
+            "userId": 1,
+            "userRole": "admin",
+            "userImg": "https://i.pravatar.cc/150?img=1",
+            "text": "casca",
+            "createdAt": "2026-05-05T04:45:34.701Z"
+        },
+        {
+            "id": "1777956340128-gqczo6",
+            "channelId": 1,
+            "user": "Admin",
+            "userId": 1,
+            "userRole": "admin",
+            "userImg": "https://i.pravatar.cc/150?img=1",
+            "text": "scaas",
+            "createdAt": "2026-05-05T04:45:40.128Z"
+        },
+        {
+            "id": "1778042782789-ts9oq9",
+            "channelId": 1,
+            "user": "Admin",
+            "userId": 1,
+            "userRole": "admin",
+            "userImg": "https://i.pravatar.cc/150?img=1",
+            "text": "hols",
+            "createdAt": "2026-05-06T04:46:22.789Z"
+        },
+        {
+            "id": "1778042802474-138ygk",
+            "channelId": 1,
+            "user": "JUAN DIEGO CASTILLO JIMÉNEZ",
+            "userId": 12,
+            "userRole": "user",
+            "userImg": "https://lh3.googleusercontent.com/a/ACg8ocLoXE5OI0or8EVG52imG6UXv5VCmEeIQRPKOoe-qnXbwTPFd3KL=s96-c",
+            "text": "x",
+            "createdAt": "2026-05-06T04:46:42.474Z"
+        }
+    ],
+    "3": [
+        {
+            "id": "1777904998076-xltd1z",
+            "channelId": 3,
+            "user": "Admin",
+            "userId": 1,
+            "userRole": "admin",
+            "userImg": "https://i.pravatar.cc/150?img=1",
+            "text": "fyrty",
+            "createdAt": "2026-05-04T14:29:58.076Z"
+        },
+        {
+            "id": "1777905587559-aegm82",
+            "channelId": 3,
+            "user": "PAULA SELENE BECERRA MORALES",
+            "userId": 6,
+            "userRole": "user",
+            "userImg": "https://lh3.googleusercontent.com/a/ACg8ocKleuJs-jI2d_kgoasgy7iia7eT_yHuyalH8wdhutjWUEYVPw=s96-c",
+            "text": "ghkjgh",
+            "createdAt": "2026-05-04T14:39:47.559Z"
+        },
+        {
+            "id": "1778041423234-iqcgsr",
+            "channelId": 3,
+            "user": "Admin",
+            "userId": 1,
+            "userRole": "admin",
+            "userImg": "https://i.pravatar.cc/150?img=1",
+            "text": "hola",
+            "createdAt": "2026-05-06T04:23:43.235Z"
         }
     ],
     "4": [
         {
-            "id": "1778044732396-kfi1o4",
+            "id": "1777901464989-w6jy2r",
             "channelId": 4,
+<<<<<<< HEAD
             "user": "Admin",
             "userId": 1,
             "userRole": "admin",
@@ -509,12 +602,172 @@
         {
             "id": "1778044263765-kyruvs",
             "channelId": 17,
+=======
+>>>>>>> c411e7026ec437600eadeccbdef3fd30d5f0770d
             "user": "JUAN DIEGO CASTILLO JIMÉNEZ",
             "userId": 12,
             "userRole": "user",
             "userImg": "https://lh3.googleusercontent.com/a/ACg8ocLoXE5OI0or8EVG52imG6UXv5VCmEeIQRPKOoe-qnXbwTPFd3KL=s96-c",
-            "text": "hola",
-            "createdAt": "2026-05-06T05:11:03.765Z"
+            "text": "golllllllllllllllllll",
+            "createdAt": "2026-05-04T13:31:04.989Z"
+        },
+        {
+            "id": "1777901507435-96vieb",
+            "channelId": 4,
+            "user": "JUAN DIEGO CASTILLO JIMÉNEZ",
+            "userId": 12,
+            "userRole": "user",
+            "userImg": "https://lh3.googleusercontent.com/a/ACg8ocLoXE5OI0or8EVG52imG6UXv5VCmEeIQRPKOoe-qnXbwTPFd3KL=s96-c",
+            "text": "assssssssssssssssssss",
+            "createdAt": "2026-05-04T13:31:47.435Z"
+        },
+        {
+            "id": "1777911329259-clf0my",
+            "channelId": 4,
+            "user": "JUAN DIEGO CASTILLO JIMÉNEZ",
+            "userId": 12,
+            "userRole": "user",
+            "userImg": "https://lh3.googleusercontent.com/a/ACg8ocLoXE5OI0or8EVG52imG6UXv5VCmEeIQRPKOoe-qnXbwTPFd3KL=s96-c",
+            "text": "hollllllllllllllllllllll",
+            "createdAt": "2026-05-04T16:15:29.259Z"
+        },
+        {
+            "id": "1777911350862-w2k6c4",
+            "channelId": 4,
+            "user": "Admin",
+            "userId": 1,
+            "userRole": "admin",
+            "userImg": "https://i.pravatar.cc/150?img=1",
+            "text": "sssssssssss",
+            "createdAt": "2026-05-04T16:15:50.862Z"
+        }
+    ],
+    "9": [
+        {
+            "id": "1778040461626-f4c3id",
+            "channelId": 9,
+            "user": "Admin",
+            "userId": 1,
+            "userRole": "admin",
+            "userImg": "https://i.pravatar.cc/150?img=1",
+            "text": "csacsa",
+            "createdAt": "2026-05-06T04:07:41.626Z"
+        }
+    ],
+    "11": [
+        {
+            "id": "1777911450418-8t76gm",
+            "channelId": 11,
+            "user": "Yenifer Pulido Leon",
+            "userId": 14,
+            "userRole": "user",
+            "userImg": "https://lh3.googleusercontent.com/a/ACg8ocI2dNIDlotq6-DpQFkzmSbSxmGiyUt3dHP0FrzJzQdvyGXXDl8=s96-c",
+            "text": "awooo",
+            "createdAt": "2026-05-04T16:17:30.418Z"
+        },
+        {
+            "id": "1777911453679-uapbck",
+            "channelId": 11,
+            "user": "Yenifer Pulido Leon",
+            "userId": 14,
+            "userRole": "user",
+            "userImg": "https://lh3.googleusercontent.com/a/ACg8ocI2dNIDlotq6-DpQFkzmSbSxmGiyUt3dHP0FrzJzQdvyGXXDl8=s96-c",
+            "text": "nkanaknc",
+            "createdAt": "2026-05-04T16:17:33.679Z"
+        },
+        {
+            "id": "1777911465171-6ncpmh",
+            "channelId": 11,
+            "user": "Admin",
+            "userId": 1,
+            "userRole": "admin",
+            "userImg": "https://i.pravatar.cc/150?img=1",
+            "text": "sfsss",
+            "createdAt": "2026-05-04T16:17:45.171Z"
+        },
+        {
+            "id": "1777911467038-ln0nl7",
+            "channelId": 11,
+            "user": "Admin",
+            "userId": 1,
+            "userRole": "admin",
+            "userImg": "https://i.pravatar.cc/150?img=1",
+            "text": "sss",
+            "createdAt": "2026-05-04T16:17:47.038Z"
+        }
+    ],
+    "14": [
+        {
+            "id": "1778042598206-9cmnla",
+            "channelId": 14,
+            "user": "Admin",
+            "userId": 1,
+            "userRole": "admin",
+            "userImg": "https://i.pravatar.cc/150?img=1",
+            "text": "acsasc",
+            "createdAt": "2026-05-06T04:43:18.206Z"
+        }
+    ],
+    "17": [
+        {
+            "id": "1778044947303-kshaxb",
+            "channelId": 17,
+            "user": "Admin",
+            "userId": 1,
+            "userRole": "admin",
+            "userImg": "https://i.pravatar.cc/150?img=1",
+            "text": "acascsa",
+            "createdAt": "2026-05-06T05:22:27.303Z"
+        },
+        {
+            "id": "1778057627870-cswg94",
+            "channelId": 17,
+            "user": "Admin",
+            "userId": 1,
+            "userRole": "admin",
+            "userImg": "https://i.pravatar.cc/150?img=1",
+            "text": "ASXSACSACA",
+            "createdAt": "2026-05-06T08:53:47.870Z"
+        },
+        {
+            "id": "1778057630652-cu6utt",
+            "channelId": 17,
+            "user": "Admin",
+            "userId": 1,
+            "userRole": "admin",
+            "userImg": "https://i.pravatar.cc/150?img=1",
+            "text": "A",
+            "createdAt": "2026-05-06T08:53:50.652Z"
+        },
+        {
+            "id": "1778057632410-jo1yhp",
+            "channelId": 17,
+            "user": "Admin",
+            "userId": 1,
+            "userRole": "admin",
+            "userImg": "https://i.pravatar.cc/150?img=1",
+            "text": "ACSCASCSA",
+            "createdAt": "2026-05-06T08:53:52.410Z"
+        },
+        {
+            "id": "1778057634716-3cct2z",
+            "channelId": 17,
+            "user": "Admin",
+            "userId": 1,
+            "userRole": "admin",
+            "userImg": "https://i.pravatar.cc/150?img=1",
+            "text": "ACSSACACS",
+            "createdAt": "2026-05-06T08:53:54.716Z"
+        },
+        {
+            "id": "1778057639009-l3lvjq",
+            "channelId": 17,
+            "user": "Admin",
+            "userId": 1,
+            "userRole": "admin",
+            "userImg": "https://i.pravatar.cc/150?img=1",
+            "text": "ASCAC",
+            "createdAt": "2026-05-06T08:53:59.009Z"
         }
     ]
 }

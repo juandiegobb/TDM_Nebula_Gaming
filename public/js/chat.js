@@ -48,7 +48,6 @@ async function initChat() {
         requestAnimationFrame(() => {
             messages.scrollTop = messages.scrollHeight;
 
-            // Respaldo para vistas donde el scroll quede en el contenedor principal.
             const chatMain = messages.closest(".chat-main");
             if (chatMain) {
                 chatMain.scrollTop = chatMain.scrollHeight;
@@ -56,9 +55,7 @@ async function initChat() {
         });
     };
 
-    // Observa nuevos mensajes (MUY IMPORTANTE) - detecta cambios inmediatos
     const observer = new MutationObserver((mutations) => {
-        // Scroll inmediato cuando detecta nuevos nodos
         mutations.forEach((mutation) => {
             if (mutation.addedNodes.length > 0) {
                 scrollToBottom();
@@ -66,8 +63,7 @@ async function initChat() {
         });
     });
 
-    // Configuración más robusta del observer
-    observer.observe(messages, { 
+    observer.observe(messages, {
         childList: true,
         subtree: true,
         characterData: true
@@ -76,8 +72,7 @@ async function initChat() {
     const selectedChannelId = localStorage.getItem("selectedChannelId");
     connect(user, selectedChannelId);
     localStorage.removeItem("selectedChannelId");
-    
-    // Scroll inicial después de conectar
+
     setTimeout(scrollToBottom, 300);
 
     chatForm.addEventListener("submit", function (e) {
@@ -88,7 +83,6 @@ async function initChat() {
             sendMessage(text);
             messageInput.value = "";
 
-            // Fuerza scroll múltiple para asegurar que funcione
             setTimeout(scrollToBottom, 0);
             setTimeout(scrollToBottom, 50);
             setTimeout(scrollToBottom, 150);
@@ -120,6 +114,33 @@ async function initChat() {
             showChannelInfo(action);
         });
     });
+
+const channelSidebar = document.querySelector(".channel-sidebar");
+const toggleChannels = document.querySelector(".channel-arrow");
+
+if (toggleChannels && channelSidebar) {
+    toggleChannels.addEventListener("click", (e) => {
+        e.stopPropagation();
+
+        // 🔥 FIX: solo en móvil
+        if (window.innerWidth <= 768) {
+            channelSidebar.classList.toggle("open");
+        }
+    });
+}
+
+if (toggleChannels && channelSidebar) {
+    document.addEventListener("click", (e) => {
+        if (window.innerWidth > 768) return; // 🔥 FIX desktop bloqueado
+
+        if (
+            !channelSidebar.contains(e.target) &&
+            !toggleChannels.contains(e.target)
+        ) {
+            channelSidebar.classList.remove("open");
+        }
+    });
+}
 }
 
 initChat().catch((err) => {
