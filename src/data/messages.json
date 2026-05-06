@@ -451,6 +451,58 @@
             "userImg": "https://i.pravatar.cc/150?img=1",
             "text": "pruebaaaaapruebaaaaa",
             "createdAt": "2026-05-06T05:18:56.392Z"
+        },
+        {
+            "id": "1778046154892-hpwomy",
+            "channelId": 4,
+            "user": "Admin",
+            "userId": 1,
+            "userRole": "admin",
+            "userImg": "https://i.pravatar.cc/150?img=1",
+            "text": "Hola",
+            "createdAt": "2026-05-06T05:42:34.892Z"
+        }
+    ],
+    "5": [
+        {
+            "id": "1778046617153-jmu7nj",
+            "channelId": 5,
+            "user": "Admin",
+            "userId": 1,
+            "userRole": "admin",
+            "userImg": "https://i.pravatar.cc/150?img=1",
+            "text": "Hola",
+            "createdAt": "2026-05-06T05:50:17.153Z"
+        },
+        {
+            "id": "1778046766288-i2qn1w",
+            "channelId": 5,
+            "user": "Admin",
+            "userId": 1,
+            "userRole": "admin",
+            "userImg": "https://i.pravatar.cc/150?img=1",
+            "text": "Hola Juan",
+            "createdAt": "2026-05-06T05:52:46.288Z"
+        },
+        {
+            "id": "1778046786910-g61phn",
+            "channelId": 5,
+            "user": "JUAN DIEGO CASTILLO JIMÉNEZ",
+            "userId": 12,
+            "userRole": "user",
+            "userImg": "https://lh3.googleusercontent.com/a/ACg8ocLoXE5OI0or8EVG52imG6UXv5VCmEeIQRPKOoe-qnXbwTPFd3KL=s96-c",
+            "text": "Punto",
+            "createdAt": "2026-05-06T05:53:06.910Z"
+        },
+        {
+            "id": "1778046850340-864k38",
+            "channelId": 5,
+            "user": "Admin",
+            "userId": 1,
+            "userRole": "admin",
+            "userImg": "https://i.pravatar.cc/150?img=1",
+            "text": "Punto y coma",
+            "createdAt": "2026-05-06T05:54:10.340Z"
         }
     ],
     "17": [
