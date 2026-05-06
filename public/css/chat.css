@@ -851,6 +851,7 @@
     }
 
     /* =========================
+<<<<<<< Updated upstream
    SERVER SIDEBAR (SIEMPRE ARRIBA)
 ========================= */
 .server-sidebar{
@@ -972,3 +973,47 @@
 
 }
 
+=======
+   SIDEBAR CANALES (OCULTO EN MÓVIL)
+========================= */
+.channel-sidebar{
+    position: fixed;
+    top: 55px; /* debajo del header */
+    left: -260px; /* oculto */
+    transform: translateX(-100%);
+    width: 260px;
+    height: calc(100% - 55px);
+
+    background: #1e1f22;
+    z-index: 1200;
+
+    transition: left 0.3s ease;
+}
+
+
+/* flechita clickeable */
+.channel-arrow{
+    cursor: pointer;
+}
+.channel-sidebar.open{
+    left: 60px;
+    transform: translateX(0);
+}
+
+}
+
+.channel-sidebar{
+    position: fixed;
+    top: 55px;
+    left: -260px !important; /* 👈 oculto SIEMPRE */
+    width: 260px;
+    height: calc(100% - 55px);
+    background: #1e1f22;
+    z-index: 1200;
+    transition: left 0.3s ease;
+}
+
+.channel-sidebar.open{
+    left: 60px !important;
+}
+>>>>>>> Stashed changes

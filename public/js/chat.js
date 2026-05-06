@@ -121,6 +121,7 @@ async function initChat() {
         });
     });
 
+<<<<<<< Updated upstream
     const toggleChannels = document.querySelector(".channel-arrow");
     const channelSidebar = document.querySelector(".channel-sidebar");
 
@@ -128,10 +129,22 @@ async function initChat() {
         toggleChannels.addEventListener("click", (e) => {
             e.stopPropagation();
             channelSidebar.classList.toggle("open");
+=======
+        /* =========================
+    TOGGLE SIDEBAR CANALES (MÓVIL)
+    ========================= */
+    const channelSidebar = document.querySelector(".channel-sidebar");
+    const channelArrow = document.querySelector(".channel-arrow");
+    if (channelArrow && channelSidebar) {
+       channelArrow.addEventListener("click", (e) => {
+        e.stopPropagation(); 
+        channelSidebar.classList.toggle("open");
+>>>>>>> Stashed changes
         });
     }
 
     document.addEventListener("click", (e) => {
+<<<<<<< Updated upstream
         if (!channelSidebar || !toggleChannels) return;
 
         if (!channelSidebar.contains(e.target) && !toggleChannels.contains(e.target)) {
@@ -139,6 +152,17 @@ async function initChat() {
         }
     });
     }
+=======
+    if (
+        channelSidebar.classList.contains("open") &&
+        !channelSidebar.contains(e.target) &&
+        !channelArrow.contains(e.target)
+    ) {
+        channelSidebar.classList.remove("open");
+    }
+});
+}
+>>>>>>> Stashed changes
 
 initChat().catch((err) => {
     console.error("Error iniciando chat:", err);

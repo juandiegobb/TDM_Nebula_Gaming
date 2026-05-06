@@ -687,6 +687,46 @@
             "userImg": "https://i.pravatar.cc/150?img=1",
             "text": "acsbucas",
             "createdAt": "2026-05-06T04:41:23.904Z"
+        },
+        {
+            "id": "1778042589559-16ra2o",
+            "channelId": 1,
+            "user": "Admin",
+            "userId": 1,
+            "userRole": "admin",
+            "userImg": "https://i.pravatar.cc/150?img=1",
+            "text": "sacsac",
+            "createdAt": "2026-05-06T04:43:09.559Z"
+        },
+        {
+            "id": "1778042593443-xghqzr",
+            "channelId": 1,
+            "user": "Admin",
+            "userId": 1,
+            "userRole": "admin",
+            "userImg": "https://i.pravatar.cc/150?img=1",
+            "text": "acsaca",
+            "createdAt": "2026-05-06T04:43:13.443Z"
+        },
+        {
+            "id": "1778043318899-2nomet",
+            "channelId": 1,
+            "user": "Admin",
+            "userId": 1,
+            "userRole": "admin",
+            "userImg": "https://i.pravatar.cc/150?img=1",
+            "text": "peppe",
+            "createdAt": "2026-05-06T04:55:18.899Z"
+        },
+        {
+            "id": "1778043320294-qttk5k",
+            "channelId": 1,
+            "user": "Admin",
+            "userId": 1,
+            "userRole": "admin",
+            "userImg": "https://i.pravatar.cc/150?img=1",
+            "text": "sacasca",
+            "createdAt": "2026-05-06T04:55:20.294Z"
         }
     ],
     "2": [
@@ -1018,6 +1058,30 @@
             "userImg": "https://i.pravatar.cc/150?img=1",
             "text": "sss",
             "createdAt": "2026-05-04T16:17:47.038Z"
+        }
+    ],
+    "14": [
+        {
+            "id": "1778042598206-9cmnla",
+            "channelId": 14,
+            "user": "Admin",
+            "userId": 1,
+            "userRole": "admin",
+            "userImg": "https://i.pravatar.cc/150?img=1",
+            "text": "acsasc",
+            "createdAt": "2026-05-06T04:43:18.206Z"
+        }
+    ],
+    "17": [
+        {
+            "id": "1778044947303-kshaxb",
+            "channelId": 17,
+            "user": "Admin",
+            "userId": 1,
+            "userRole": "admin",
+            "userImg": "https://i.pravatar.cc/150?img=1",
+            "text": "acascsa",
+            "createdAt": "2026-05-06T05:22:27.303Z"
         }
     ]
 }
