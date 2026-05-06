@@ -704,43 +704,37 @@
 
 @media (max-width: 768px) {
 
-    /* =========================
-       SIDEBAR SERVIDORES (FIX REAL)
-    ========================= */
     .server-sidebar{
+        position: fixed;
+        top: 55px;
+        left: 0;
+        width: 60px;
+        height: calc(100vh - 55px);
+
         display: flex;
         flex-direction: column;
         align-items: center;
 
-        height: 100vh;
-        width: 60px;
-
-        padding: 10px 0;
-        overflow: hidden; /* evita que se vaya fuera */
+        background: #1D2020;
+        z-index: 1000;
     }
 
-    /* lista de canales arriba */
     .channel-list{
         display: flex;
         flex-direction: column;
         align-items: center;
 
         gap: 12px;
-
-        flex: 1;              /* empuja el + hacia abajo */
+        flex: 1;
         overflow-y: auto;
         width: 100%;
     }
 
-    /* =========================
-       CONTENEDOR PRINCIPAL
-    ========================= */
     .chat-container {
         margin-left: 60px;
         width: calc(100% - 60px);
+        height: 100vh;
 
-        height: 100vh; /* 🔥 cambia de 100dvh a 100vh */
-        
         display: flex;
         flex-direction: column;
 
@@ -749,51 +743,35 @@
         position: relative;
     }
 
-    /* =========================
-       HEADER FIJO
-    ========================= */
     .chat-header {
         position: fixed;
         top: 0;
-        left: 0px;
+        left: 0;
         width: 100%;
         height: 55px;
         z-index: 1000;
     }
 
-    /* =========================
-       CHAT AREA
-    ========================= */
     .chat-main {
         flex: 1;
+        margin-top: 55px;
+        margin-bottom: 55px;
 
-        margin-top: 55px;     /* 👈 SOLO esto */
-        margin-bottom: 55px;  /* 👈 para el input */
+        padding: 16px;
 
-        padding: 16px;        /* tu padding normal */
-        
         display: flex;
         flex-direction: column;
         min-height: 0;
         overflow: hidden;
-}
-    /* =========================
-       TOPBAR
-    ========================= */
-    .channel-topbar {
-        margin-top: 0px !important;
-        position: relative;
-        top: auto;
-        left: auto;
-        width: 100%;
-        margin: 0;
-        border-radius: 0;
-        z-index: auto;
     }
 
-    /* =========================
-       MENSAJES
-    ========================= */
+    .channel-topbar {
+        margin: 0 !important;
+        width: 100%;
+        border-radius: 0;
+        position: relative;
+    }
+
     .messages {
         flex: 1;
         overflow-y: auto;
@@ -801,29 +779,22 @@
         min-height: 0;
     }
 
-    /* =========================
-       INPUT FIJO ABAJO
-    ========================= */
     .chat-input {
         position: fixed;
         bottom: 0;
-        left: 0;        /* 👈 CAMBIO CLAVE */
-        width: 100%;    /* 👈 ocupa todo */
-        
-        padding-left: 72px; /* 👈 compensas sidebar (60 + margen bonito) */
+        left: 0;
+        width: 100%;
 
+        padding-left: 72px;
         height: 55px;
-        z-index: 1000;
 
         display: flex;
         align-items: center;
 
         box-sizing: border-box;
+        z-index: 1000;
     }
 
-    /* =========================
-       BOTÓN +
-    ========================= */
     .add{
         width: 45px;
         height: 45px;
@@ -840,9 +811,6 @@
 
         font-size: 26px;
         font-weight: bold;
-
-        margin-top: auto;   /* 👈 CLAVE: lo manda abajo */
-        margin-bottom: 15px;
     }
 
     body {
@@ -850,127 +818,66 @@
         overflow: hidden;
     }
 
-    /* =========================
-   SERVER SIDEBAR (SIEMPRE ARRIBA)
-========================= */
-.server-sidebar{
-    position: fixed;
-    top: 55px;
-    left: 0;
+    .channel-sidebar{
+        position: fixed;
+        top: 55px;
+        left: 60px;
 
-    width: 60px;
-    height: calc(100vh - 55px);
+        width: 260px;
+        height: calc(100vh - 55px);
 
-    background: #1D2020;
+        background: #2B292C;
 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
 
-    z-index: 1000; /* 👈 IMPORTANTE */
-}
+        transform: translateX(-260px);
+        transition: transform 0.3s ease;
 
+        z-index: 900;
+    }
 
-/* =========================
-   CHANNEL SIDEBAR (DETRO DE SERVERS)
-========================= */
-/* =========================
-   CHANNEL SIDEBAR (CORRECTO)
-========================= */
-.channel-sidebar{
-    position: fixed;
-    top: 55px;
+    .channel-sidebar.open{
+        transform: translateX(0);
+    }
 
-    left: 60px; /* 👈 justo después de servers */
-    width: 260px;
-    height: calc(100vh - 55px);
+    .user-sidebar{
+        position: fixed;
+        top: 55px;
+        right: 0;
 
-    background: #2B292C;
+        width: 80%;
+        max-width: 300px;
 
-    padding: 15px;
+        height: calc(100vh - 55px);
 
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+        background: #2B2D31;
+        z-index: 2000;
 
-    /* 🔥 clave */
-    transform: translateX(-260px); /* 👈 oculto SOLO su ancho */
-    
-    z-index: 900; /* debajo de servers */
-    transition: transform 0.3s ease;
-}
+        transform: translateX(100%);
+        transition: transform 0.3s ease;
 
-/* abierto */
-.channel-sidebar.open{
-    transform: translateX(0);
-}
+        display: flex;
+        flex-direction: column;
+    }
 
-.channel-toggle{
-    cursor: pointer;
-    font-size: 20px;
-    color: #aaa;
-    margin-right: 10px;
-    transition: 0.2s;
-}
+    .user-sidebar.active{
+        transform: translateX(0);
+    }
 
-.channel-toggle:hover{
-    color: white;
-    transform: scale(1.1);
-}
+    .user-overlay{
+        position: fixed;
+        inset: 0;
+        background: rgba(0,0,0,0.6);
+        z-index: 1500;
+        display: none;
+    }
 
-.channel-arrow {
-    cursor: pointer;
-    transition: 0.2s;
-}
+    .user-overlay.active{
+        display: block;
+    }
 
-.channel-arrow:hover {
-    color: white;
-    transform: scale(1.1);
-}
-
-/* =========================
-   USER SIDEBAR (MÓVIL FIX REAL)
-========================= */
-.user-sidebar{
-    position: fixed;
-    top: 55px;
-    right: 0;
-
-    width: 80%;          /* 👈 no toda la pantalla */
-    max-width: 300px;
-
-    height: calc(100vh - 55px);
-
-    background: #2B2D31;
-
-    z-index: 2000;       /* 👈 por encima de TODO */
-
-    transform: translateX(100%); /* 👈 oculto */
-    transition: transform 0.3s ease;
-
-    display: flex;
-    flex-direction: column;
-}
-
-/* cuando está abierto */
-.user-sidebar.active{
-    transform: translateX(0);
-}
-
-/* fondo oscuro opcional (pro) */
-.user-overlay{
-    position: fixed;
-    inset: 0;
-    background: rgba(0,0,0,0.6);
-    z-index: 1500;
-    display: none;
-}
-
-.user-overlay.active{
-    display: block;
-}
-
-}
 
 .channel-sidebar{
     position: fixed;
@@ -1009,4 +916,27 @@
 
 .channel-sidebar.open{
     left: 60px !important;
+}
+
+ /* 🔥 INTRO DETRÁS DE SERVIDORES */
+    .channel-info-panel{
+        position: relative;
+        z-index: 1;
+    }
+
+    /* 🔥 SERVIDORES ENCIMA DE TODO */
+    .server-sidebar{
+        z-index: 2000 !important;
+    }
+
+    /* 🔥 CHAT POR DEBAJO DE SERVIDORES */
+    .chat-container{
+        z-index: 1;
+    }
+
+    /* 🔥 TOPBAR TAMBIÉN DETRÁS */
+    .channel-topbar{
+        z-index: 1;
+    }
+
 }

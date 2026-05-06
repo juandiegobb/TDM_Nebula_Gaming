@@ -115,28 +115,32 @@ async function initChat() {
         });
     });
 
-    const channelSidebar = document.querySelector(".channel-sidebar");
-    const toggleChannels = document.querySelector(".channel-arrow");
+const channelSidebar = document.querySelector(".channel-sidebar");
+const toggleChannels = document.querySelector(".channel-arrow");
 
-    if (toggleChannels && channelSidebar) {
-        toggleChannels.addEventListener("click", (e) => {
-            e.stopPropagation();
+if (toggleChannels && channelSidebar) {
+    toggleChannels.addEventListener("click", (e) => {
+        e.stopPropagation();
+
+        // 🔥 FIX: solo en móvil
+        if (window.innerWidth <= 768) {
             channelSidebar.classList.toggle("open");
-        });
-    }
+        }
+    });
+}
 
-    if (toggleChannels && channelSidebar) {
-        document.addEventListener("click", (e) => {
-            if (!channelSidebar || !toggleChannels) return;
+if (toggleChannels && channelSidebar) {
+    document.addEventListener("click", (e) => {
+        if (window.innerWidth > 768) return; // 🔥 FIX desktop bloqueado
 
-            if (
-                !channelSidebar.contains(e.target) &&
-                !toggleChannels.contains(e.target)
-            ) {
-                channelSidebar.classList.remove("open");
-            }
-        });
-    }
+        if (
+            !channelSidebar.contains(e.target) &&
+            !toggleChannels.contains(e.target)
+        ) {
+            channelSidebar.classList.remove("open");
+        }
+    });
+}
 }
 
 initChat().catch((err) => {
