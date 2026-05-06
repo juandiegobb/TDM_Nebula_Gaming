@@ -15,7 +15,7 @@ Características principales
 ✅ Protección contra nombres largos en canales
 ✅ Interfaz moderna orientada a gaming
 
-ecnologías utilizadas
+Tecnologías utilizadas
 Frontend
 HTML5
 CSS3
@@ -23,9 +23,35 @@ JavaScript
 Backend
 Node.js
 Express.js
-Base de datos
-MySQL
 Librerías y herramientas
 Socket.io
 SweetAlert2
 Git & GitHub
+
+
+TDM_Nebula_Gaming/
+│
+├── public/
+│   ├── css/
+│   ├── js/
+│   ├── img/
+│   └── *.html
+│
+├── src/
+│   ├── routes/
+│   ├── controllers/
+│   ├── config/
+│   └── database/
+│
+├── package.json
+└── README.md
+
+Instalación del proyecto
+1. Clonar repositorio
+git clone https://github.com/juandiegobb/TDM_Nebula_Gaming.git
+2. Instalar dependencias
+npm install
+3. Añadir archivo .env (Leer .env.example)
+4. Ejecutar proyecto
+   npm src\server.js
+
