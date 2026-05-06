@@ -611,6 +611,56 @@
             "userImg": "https://i.pravatar.cc/150?img=1",
             "text": "acascsa",
             "createdAt": "2026-05-06T05:22:27.303Z"
+        },
+        {
+            "id": "1778057627870-cswg94",
+            "channelId": 17,
+            "user": "Admin",
+            "userId": 1,
+            "userRole": "admin",
+            "userImg": "https://i.pravatar.cc/150?img=1",
+            "text": "ASXSACSACA",
+            "createdAt": "2026-05-06T08:53:47.870Z"
+        },
+        {
+            "id": "1778057630652-cu6utt",
+            "channelId": 17,
+            "user": "Admin",
+            "userId": 1,
+            "userRole": "admin",
+            "userImg": "https://i.pravatar.cc/150?img=1",
+            "text": "A",
+            "createdAt": "2026-05-06T08:53:50.652Z"
+        },
+        {
+            "id": "1778057632410-jo1yhp",
+            "channelId": 17,
+            "user": "Admin",
+            "userId": 1,
+            "userRole": "admin",
+            "userImg": "https://i.pravatar.cc/150?img=1",
+            "text": "ACSCASCSA",
+            "createdAt": "2026-05-06T08:53:52.410Z"
+        },
+        {
+            "id": "1778057634716-3cct2z",
+            "channelId": 17,
+            "user": "Admin",
+            "userId": 1,
+            "userRole": "admin",
+            "userImg": "https://i.pravatar.cc/150?img=1",
+            "text": "ACSSACACS",
+            "createdAt": "2026-05-06T08:53:54.716Z"
+        },
+        {
+            "id": "1778057639009-l3lvjq",
+            "channelId": 17,
+            "user": "Admin",
+            "userId": 1,
+            "userRole": "admin",
+            "userImg": "https://i.pravatar.cc/150?img=1",
+            "text": "ASCAC",
+            "createdAt": "2026-05-06T08:53:59.009Z"
         }
     ]
 }
