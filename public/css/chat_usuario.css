@@ -4,11 +4,14 @@
 .chat-container{
     margin-left:330px; /* 70 + 260 */
     width:calc(100% - 330px);
-    height:100vh;
+    height:100dvh;
     display:flex;
     flex-direction:column;
-    padding:18px;
-    padding-top: 80px;
+    padding:0;
+    padding-top: 60px;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
 }
 
 /* ===============================
@@ -119,7 +122,13 @@
     background:var(--panel);
     border-radius:var(--radio);
     padding:16px;
-    overflow-y:auto;
+    overflow:hidden;
+
+    /* FIX: permite que la lista de mensajes sea el área que scrollea */
+    display:flex;
+    flex-direction:column;
+    min-height:0;
+    box-sizing:border-box;
 }
 
 
@@ -339,6 +348,12 @@
     flex-direction: column;
     gap: 14px;
     padding: 18px;
+
+    /* FIX: el scroll automático funciona sobre este contenedor */
+    flex: 1 1 auto;
+    min-height: 0;
+    overflow-y: auto;
+    scroll-behavior: smooth;
 }
 
 /* contenedor del mensaje */
@@ -461,7 +476,7 @@
    INPUT
 =============================== */
 .chat-input{
-    margin-top:14px;
+    margin:14px 18px 18px;
     background:var(--gris);
     border-radius:var(--radio);
     padding:10px 15px;
@@ -469,6 +484,7 @@
 
     display:flex;
     align-items:center;
+    flex-shrink:0;
 }
 
 
