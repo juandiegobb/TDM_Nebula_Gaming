@@ -95,7 +95,25 @@ async function initChat() {
             showChannelInfo(action);
         });
     });
-}
+
+    const toggleChannels = document.querySelector(".channel-arrow");
+    const channelSidebar = document.querySelector(".channel-sidebar");
+
+    if (toggleChannels && channelSidebar) {
+        toggleChannels.addEventListener("click", (e) => {
+            e.stopPropagation();
+            channelSidebar.classList.toggle("open");
+        });
+    }
+
+    document.addEventListener("click", (e) => {
+        if (!channelSidebar || !toggleChannels) return;
+
+        if (!channelSidebar.contains(e.target) && !toggleChannels.contains(e.target)) {
+            channelSidebar.classList.remove("open");
+        }
+    });
+    }
 
 initChat().catch((err) => {
     console.error("Error iniciando chat:", err);
