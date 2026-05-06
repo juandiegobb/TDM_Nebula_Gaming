@@ -7,6 +7,13 @@ const {
     userCanAccessChannel
 } = require("../models/channels");
 
+    function removeHTML(value) {
+        return String(value || "")
+            .replace(/<script[\s\S]*?>[\s\S]*?<\/script>/gi, "")
+            .replace(/<[^>]*>/g, "")
+            .trim();
+}
+
 let connections = [];
 
 function normalizeId(id) {
@@ -202,8 +209,10 @@ function setupChat(wss) {
                     return;
                 }
 
-                const text = String(data.text || "").trim();
+                const text = removeHTML(data.text);
+
                 if (!text) return;
+
 
                 const storedMessage = addMessageToChannel(channelId, {
                     user: currentConnection.user.name,

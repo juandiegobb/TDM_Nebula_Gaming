@@ -893,6 +893,16 @@
             "userImg": "https://lh3.googleusercontent.com/a/ACg8ocKleuJs-jI2d_kgoasgy7iia7eT_yHuyalH8wdhutjWUEYVPw=s96-c",
             "text": "ghkjgh",
             "createdAt": "2026-05-04T14:39:47.559Z"
+        },
+        {
+            "id": "1778041423234-iqcgsr",
+            "channelId": 3,
+            "user": "Admin",
+            "userId": 1,
+            "userRole": "admin",
+            "userImg": "https://i.pravatar.cc/150?img=1",
+            "text": "hola",
+            "createdAt": "2026-05-06T04:23:43.235Z"
         }
     ],
     "4": [
