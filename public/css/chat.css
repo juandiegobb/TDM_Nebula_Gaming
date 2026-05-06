@@ -851,7 +851,6 @@
     }
 
     /* =========================
-<<<<<<< Updated upstream
    SERVER SIDEBAR (SIEMPRE ARRIBA)
 ========================= */
 .server-sidebar{
@@ -973,9 +972,6 @@
 
 }
 
-=======
-   SIDEBAR CANALES (OCULTO EN MÓVIL)
-========================= */
 .channel-sidebar{
     position: fixed;
     top: 55px; /* debajo del header */
@@ -1000,8 +996,6 @@
     transform: translateX(0);
 }
 
-}
-
 .channel-sidebar{
     position: fixed;
     top: 55px;
@@ -1016,4 +1010,3 @@
 .channel-sidebar.open{
     left: 60px !important;
 }
->>>>>>> Stashed changes
