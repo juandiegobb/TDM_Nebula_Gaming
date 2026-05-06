@@ -57,7 +57,7 @@ function resetModal() {
 // CONTADORES
 // ===============================
 document.getElementById("serverName").addEventListener("input", function () {
-    document.getElementById("nameCount").textContent = `${this.value.length}/100`;
+    document.getElementById("nameCount").textContent = `${this.value.length}/40`;
 });
 
 document.getElementById("serverDesc").addEventListener("input", function () {

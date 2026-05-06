@@ -439,6 +439,26 @@
             "userImg": "https://i.pravatar.cc/150?img=1",
             "text": "scaas",
             "createdAt": "2026-05-05T04:45:40.128Z"
+        },
+        {
+            "id": "1778042782789-ts9oq9",
+            "channelId": 1,
+            "user": "Admin",
+            "userId": 1,
+            "userRole": "admin",
+            "userImg": "https://i.pravatar.cc/150?img=1",
+            "text": "hols",
+            "createdAt": "2026-05-06T04:46:22.789Z"
+        },
+        {
+            "id": "1778042802474-138ygk",
+            "channelId": 1,
+            "user": "JUAN DIEGO CASTILLO JIMÉNEZ",
+            "userId": 12,
+            "userRole": "user",
+            "userImg": "https://lh3.googleusercontent.com/a/ACg8ocLoXE5OI0or8EVG52imG6UXv5VCmEeIQRPKOoe-qnXbwTPFd3KL=s96-c",
+            "text": "x",
+            "createdAt": "2026-05-06T04:46:42.474Z"
         }
     ],
     "3": [

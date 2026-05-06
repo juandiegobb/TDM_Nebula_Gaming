@@ -547,7 +547,7 @@ async function initAdmin() {
     });
 
     document.getElementById("serverName").addEventListener("input", function () {
-        document.getElementById("nameCount").textContent = `${this.value.length}/100`;
+        document.getElementById("nameCount").textContent = `${this.value.length}/40`;
     });
 
     document.getElementById("serverDesc").addEventListener("input", function () {
@@ -636,6 +636,11 @@ async function initAdmin() {
 
         if (!name) {
             alert("El nombre del canal es obligatorio.");
+            return;
+        }
+
+        if (name.length > 40) {
+            alert("El nombre del canal no puede superar 40 caracteres.");
             return;
         }
 
