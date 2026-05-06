@@ -43,19 +43,42 @@ async function initChat() {
        🔥 AUTO SCROLL CHAT FIX
     ========================= */
     const scrollToBottom = () => {
-        messages.scrollTop = messages.scrollHeight;
+        if (!messages) return;
+
+        requestAnimationFrame(() => {
+            messages.scrollTop = messages.scrollHeight;
+
+            // Respaldo para vistas donde el scroll quede en el contenedor principal.
+            const chatMain = messages.closest(".chat-main");
+            if (chatMain) {
+                chatMain.scrollTop = chatMain.scrollHeight;
+            }
+        });
     };
 
-    // Observa nuevos mensajes (MUY IMPORTANTE)
-    const observer = new MutationObserver(() => {
-        scrollToBottom();
+    // Observa nuevos mensajes (MUY IMPORTANTE) - detecta cambios inmediatos
+    const observer = new MutationObserver((mutations) => {
+        // Scroll inmediato cuando detecta nuevos nodos
+        mutations.forEach((mutation) => {
+            if (mutation.addedNodes.length > 0) {
+                scrollToBottom();
+            }
+        });
     });
 
-    observer.observe(messages, { childList: true });
+    // Configuración más robusta del observer
+    observer.observe(messages, { 
+        childList: true,
+        subtree: true,
+        characterData: true
+    });
 
     const selectedChannelId = localStorage.getItem("selectedChannelId");
     connect(user, selectedChannelId);
     localStorage.removeItem("selectedChannelId");
+    
+    // Scroll inicial después de conectar
+    setTimeout(scrollToBottom, 300);
 
     chatForm.addEventListener("submit", function (e) {
         e.preventDefault();
@@ -65,8 +88,10 @@ async function initChat() {
             sendMessage(text);
             messageInput.value = "";
 
-            // 🔥 fuerza scroll después de enviar
+            // Fuerza scroll múltiple para asegurar que funcione
             setTimeout(scrollToBottom, 0);
+            setTimeout(scrollToBottom, 50);
+            setTimeout(scrollToBottom, 150);
         }
     });
 
